@@ -15,7 +15,7 @@
 
 ## 動作環境
 
-- Windows 10 / 11 (64bit)
+- Windows 11 (64bit) のみ
 - DirectX 12 対応GPU
 - 空き容量 約2GB
 
