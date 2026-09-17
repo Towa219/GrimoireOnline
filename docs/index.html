@@ -1,0 +1,677 @@
+<title>グリオン攻略ガイド</title>
+<style>
+:root{--paper:#f7f2e8;--paper2:#efe7d6;--ink:#252633;--dim:#6b6a75;--line:#d9cfb8;--green:#2f6b4f;--green2:#e3efe6;--gold:#b0801f;--gold2:#fbf1d8;--red:#a8382c;--red2:#fbe4e0;--blue:#2c5a8a;--blue2:#e2ecf7;--max:1100px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;font-size:16px;line-height:1.75}
+a{color:var(--blue)}img{max-width:100%;height:auto;display:block}
+.hero{max-width:100%;background:linear-gradient(135deg,#1d3b2f,#2f6b4f 55%,#5a8a3a);color:#fff;padding-block:40px 34px;padding-inline:16px;position:relative;overflow:hidden}
+.hero .in{max-width:var(--max);margin:0 auto}
+.hero h1{font-family:"Shippori Mincho B1","Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:.04em;text-wrap:balance}
+.hero p{margin:0;color:#dfeee2;font-size:15px}
+.hero .tag{display:inline-block;margin-top:14px;padding:3px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:12px;letter-spacing:.12em;color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:16px;display:grid;grid-template-columns:230px 1fr;gap:28px;padding-block:20px 60px}
+nav.toc{position:sticky;top:12px;align-self:start;font-size:13px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;max-height:calc(100vh - 24px);overflow:auto}
+nav.toc b{display:block;margin-bottom:6px;color:var(--green);letter-spacing:.1em;font-size:11px}
+nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:3px 0;border-bottom:1px dotted var(--line)}
+nav.toc a:hover{color:var(--green)}
+main{min-width:0}
+section{margin-block:0 42px;scroll-margin-top:12px}
+h2{font-family:"Shippori Mincho B1","Yu Mincho","Hiragino Mincho ProN",serif;font-size:26px;margin:0 0 14px;padding-bottom:8px;border-bottom:3px double var(--gold);color:#1d3b2f;text-wrap:balance}
+h3{font-size:19px;margin:26px 0 8px;color:var(--green);border-left:5px solid var(--green);padding-left:10px}
+h4{font-size:16px;margin:18px 0 6px;color:#333}
+p{margin:0 0 10px;max-width:70ch}
+ul,ol{margin:0 0 10px;padding-left:1.4em}li{margin-bottom:4px}
+.tw{overflow-x:auto;margin:8px 0 14px;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--paper2);font-weight:700;white-space:nowrap}
+tr.nm td{background:var(--gold2)}
+td.lv{white-space:nowrap;font-weight:700;color:var(--green)}
+.dim{color:var(--dim);font-size:12.5px;line-height:1.5}
+table.keys th{width:230px;background:var(--paper2);font-weight:500}
+kbd{display:inline-block;padding:1px 7px;border:1px solid #bbb;border-bottom-width:3px;border-radius:5px;background:#fff;font-family:inherit;font-size:13px;white-space:nowrap}
+code{background:#fff;border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-size:13px}
+figure{margin:12px 0 16px}figure img{border-radius:10px;border:1px solid var(--line)}
+figcaption{font-size:12.5px;color:var(--dim);margin-top:4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h4{margin:0 0 6px;font-size:17px}.card h4 small{color:var(--dim);font-weight:400;font-size:12px;margin-left:6px}
+.card dl{margin:8px 0 0;font-size:13.5px}.card dt{float:left;clear:left;width:74px;color:var(--dim)}.card dd{margin:0 0 3px 74px}
+.note{background:var(--gold2);border-left:5px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.warn{background:var(--red2);border-left:5px solid var(--red);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.tip{background:var(--green2);border-left:5px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+details.zone{border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 14px;margin-bottom:10px}
+details.zone summary{cursor:pointer;padding:12px 0;font-size:16px}
+details.zone summary .lv{color:var(--green);margin-left:8px;font-size:13px}
+details.zone[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px}
+.map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:720px;margin:10px 0 16px;font-size:12.5px}
+.map div{border:1px solid var(--line);border-radius:8px;padding:8px 4px;background:#fff;text-align:center;min-height:56px;min-width:0;overflow-wrap:anywhere;line-break:anywhere}
+.map .town{background:var(--blue2);border-color:#9ab7d6}.map .low{background:var(--green2)}.map .mid{background:var(--gold2)}.map .high{background:var(--red2)}
+.map small{display:block;color:var(--dim)}
+.steps{counter-reset:s;padding-left:0;list-style:none}.steps li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:10px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;text-align:center;line-height:28px;font-weight:700}
+footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line)}
+@media (max-width:820px){.wrap{grid-template-columns:1fr}nav.toc{position:static;max-height:none;columns:2}.map{grid-template-columns:repeat(5,1fr);font-size:10.5px}table.keys th{width:140px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<header class="hero"><div class="in">
+<h1>グリオン攻略ガイド</h1>
+<p>Grimoire Online（グリオン）を初めて遊ぶ人のための手引き。操作・最初の一歩・レベル別の進め方・ゾーン・ジョブ・仲間・競クルル・Webポータルまで。</p>
+<span class="tag">対応版 1.5.74　更新 2026年09月17日</span>
+</div></header>
+<div class="wrap">
+<nav class="toc"><b>もくじ</b><a href="#start">はじめに</a><a href="#ctrl">操作のまとめ</a><a href="#first">最初にやること</a><a href="#road">レベル別の進め方</a><a href="#quest">クエスト一覧</a><a href="#zone">ゾーン紹介</a><a href="#job">ジョブ紹介</a><a href="#kizuna">絆(仲間)</a><a href="#battle">戦いの基礎</a><a href="#derby">競クルル</a><a href="#web">Webポータル(スマホ)</a><a href="#play">釣り・採取・合成・グリカ</a><a href="#high">高レベルの遊び</a><a href="#item">アイテム</a><a href="#tips">便利な機能と設定</a><a href="#faq">困った時</a></nav>
+<main>
+
+<section id="start"><h2>はじめに</h2>
+<p>グリオンは、剣と魔法の世界で仲間と一緒に魔物を狩り、依頼をこなして強くなるオンラインRPGです。無料で遊べます（Windows 11／10）。町の外の魔物を倒すと経験値と「グリム」（お金）が手に入り、レベルは最大60まで上がります。</p>
+<figure><img src="img/王城大通り.jpg" alt="ロックヒルの町の王城大通り" loading="lazy" width="1120" height="630"><figcaption>はじまりの町「ロックヒル」。奥に見えるのが領主の城</figcaption></figure>
+<h3>始めるまで</h3>
+<ol class="steps">
+<li>インストーラー <code>GrimoireOnline_Setup.exe</code> を開いて「次へ」。「WindowsによってPCが保護されました」と出たら「詳細情報」→「実行」を押します（個人で作ったアプリのため出ます）。</li>
+<li>最後の「ネットワークの登録を始める」にチェックを付けたまま「完了」。メールアドレスを入れ、届いた6桁のコードを入れます。<b>登録は最初の1回だけ</b>です。</li>
+<li>デスクトップの「Grimoire Online」を開き、ログイン名とパスワードを決めて「アカウントを作る」。</li>
+<li>キャラクターを作ります。種族5つ×性別、ジョブ6つから選びます（ジョブは後から町で何度でも変えられます）。</li>
+</ol>
+<div class="tw"><table><thead><tr><th>種族</th><th>特徴</th></tr></thead><tbody>
+<tr><td>アルデン</td><td>偏りのない万能種族。どのジョブでも扱いやすい。迷ったらこれ</td></tr>
+<tr><td>セルヴァ</td><td>長身で力と信仰に篤い。腕力と精神に優れるが、知性と素早さは苦手</td></tr>
+<tr><td>ミュル</td><td>小柄だが魔力は随一。打たれ弱いが知性が飛び抜けている</td></tr>
+<tr><td>フェリン</td><td>敏捷な獣人。器用さと素早さに優れ、前衛の手数で戦う</td></tr>
+<tr><td>グラウド</td><td>巨躯の剛力種族。体力と腕力に優れるが魔法は不得手</td></tr>
+</tbody></table></div>
+<p class="dim">種族の差は能力値の「味付け」程度です。性格はジョブで決まります。</p>
+<div class="tip">2回目からはデスクトップのアイコンを押すだけ。起動時に新しい版を自分で確かめて入れ替えます。</div>
+</section>
+
+<section id="ctrl"><h2>操作のまとめ（これだけ覚えれば動ける）</h2>
+<div class="note"><b>いちばん大事な流れ:</b> 近づく → <kbd>TAB</kbd>で相手を選ぶ → <kbd>ENTER</kbd>で話す・調べる（魔物なら<kbd>R</kbd>で攻撃）。<kbd>−</kbd>でメインメニュー、<kbd>\</kbd>で操作一覧が開きます。マウスカーソルは出ません。</div>
+<figure><img src="img/操作一覧.jpg" alt="操作一覧の窓" loading="lazy" width="1120" height="630"><figcaption>バックスラッシュ(\)キーで開く操作一覧。ここで全部のキーを確かめられる</figcaption></figure>
+<h4>動く</h4><table class="keys"><tbody><tr><th><kbd>W A S D</kbd></th><td>前後左右に歩く</td></tr><tr><th><kbd>Space</kbd></th><td>ジャンプ</td></tr><tr><th><kbd>マウス右ボタンを押しながら動かす</kbd></th><td>視点を回す</td></tr><tr><th><kbd>マウス左右ボタンを同時押し</kbd></th><td>前へ歩く(押したまま動かすと向きが変わる)</td></tr><tr><th><kbd>マウスホイール</kbd></th><td>カメラの距離</td></tr><tr><th><kbd>マウス左クリック</kbd></th><td>画面に見えている相手を選ぶ</td></tr><tr><th><kbd>V</kbd></th><td>クルルに乗る・降りる(クルルの笛が要る)</td></tr><tr><th><kbd>T</kbd></th><td>選んだ人に付いて歩く(フォロー)</td></tr></tbody></table>
+<h4>選ぶ・話す</h4><table class="keys"><tbody><tr><th><kbd>TAB</kbd></th><td>近くの魔物・NPC・人を順に選ぶ</td></tr><tr><th><kbd>ENTER</kbd></th><td>選んだ相手に「話す」「調べる」／コマンド窓を開く／決定</td></tr><tr><th><kbd>ESC</kbd></th><td>窓を閉じる・取り消し・攻撃をやめる</td></tr><tr><th><kbd>Z</kbd></th><td>自分を選ぶ</td></tr><tr><th><kbd>↑↓←→</kbd></th><td>窓の中で選ぶ</td></tr><tr><th><kbd>F1〜F6</kbd></th><td>回復や強化の相手(パーティの1〜6人目)</td></tr></tbody></table>
+<h4>戦う</h4><table class="keys"><tbody><tr><th><kbd>R</kbd></th><td>選んだ相手を攻撃し始める(もう一度で止める)</td></tr><tr><th><kbd>1</kbd></th><td>武技(TPが100%以上でだけ使える)</td></tr><tr><th><kbd>2</kbd></th><td>魔法</td></tr><tr><th><kbd>E</kbd></th><td>仲間が攻撃している相手を自分も狙う(アシスト)</td></tr><tr><th><kbd>H</kbd></th><td>座って休む(HP・MPが回復)</td></tr><tr><th><kbd>G</kbd></th><td>選んだ相手にマーカーを付ける</td></tr></tbody></table>
+<h4>窓を開く</h4><table class="keys"><tbody><tr><th><kbd>−(マイナス)</kbd></th><td>メインメニュー(全部の機能はここから)</td></tr><tr><th><kbd>P</kbd></th><td>装備・持ち物</td></tr><tr><th><kbd>C</kbd></th><td>ステータス・称号</td></tr><tr><th><kbd>U</kbd></th><td>スキル</td></tr><tr><th><kbd>L</kbd></th><td>習得している技の一覧</td></tr><tr><th><kbd>J</kbd></th><td>クエスト</td></tr><tr><th><kbd>M</kbd></th><td>地図</td></tr><tr><th><kbd>K</kbd></th><td>広域探知(周りの魔物一覧)</td></tr><tr><th><kbd>Y</kbd></th><td>フレンド</td></tr><tr><th><kbd>B</kbd></th><td>カード帳(グリカ)</td></tr><tr><th><kbd>X</kbd></th><td>選んだ相手にグリカで勝負を挑む</td></tr><tr><th><kbd>N</kbd></th><td>釣り(竿と餌を装備して水辺で)</td></tr><tr><th><kbd>\(バックスラッシュ)</kbd></th><td>操作一覧</td></tr></tbody></table>
+<h4>その他</h4><table class="keys"><tbody><tr><th><kbd>/(スラッシュ)</kbd></th><td>チャット・コマンド入力</td></tr><tr><th><kbd>Ctrl+Q</kbd></th><td>欠けている絆(仲間)を順に呼び足す</td></tr><tr><th><kbd>Ctrl+Shift+Q</kbd></th><td>自動狩り(AIモード)の入切。Lv30から</td></tr><tr><th><kbd>Shift+Ctrl+@</kbd></th><td>移動コマンド</td></tr></tbody></table>
+<figure><img src="img/コマンド窓.jpg" alt="コマンド窓" loading="lazy" width="1120" height="630"><figcaption>相手を選んでENTERを押すと出るコマンド窓。攻撃・魔法・武技・アビリティ・話す・調べる・絆の者を呼ぶ など</figcaption></figure>
+<h4>NPCと話す・店で買う</h4>
+<p class="dim">キーの割り当ては <kbd>ESC</kbd>→「設定」で自分の好みに変えられます。</p>
+<p>NPCに近づいて<kbd>TAB</kbd>で選び<kbd>ENTER</kbd>。店は品を選んで<kbd>ENTER</kbd>で買い、売るときは自分の持ち物の欄へ<kbd>←→</kbd>で移ります。頭の上に「！」が出ているNPCは依頼を持っています（「！！」は絆の証、「？」は報告できる／進行中）。</p>
+</section>
+
+<section id="first"><h2>最初にやること（Lv1〜10）</h2>
+<figure><img src="img/街.jpg" alt="ロックヒルの町の東の街道" loading="lazy" width="1120" height="630"><figcaption>町の東門を出ると「ロックヒル北部」。最初の狩り場</figcaption></figure>
+<ol class="steps">
+<li><b>町で依頼を受ける。</b>町の中央にいる「街の住人」から「ゴブリン退治」（ゴブリン16体）。同じ広場の「衛兵」「怪しい男」「鉱夫」「旅の商人」も低レベル向けの依頼を出します。</li>
+<li><b>道具屋でポーションを2〜3本買う。</b>ポーション（HP60回復）は序盤の命綱。「初心者の加護」でLv1〜3は受ける傷が減りますが、それでも同時に2体に絡まれると危険です。</li>
+<li><b>東門を出て、ロックヒル北部でゴブリン（Lv1）とチキン（Lv1）を狩る。</b><kbd>TAB</kbd>で選んで<kbd>R</kbd>。1体ずつ相手にし、HPが半分を切ったら<kbd>H</kbd>で座って休むか町へ戻ります。Lv4〜5までここで。</li>
+<li><b>Lv3〜5でコウモリ・スライム・サソリへ。</b>コウモリとサソリは「足音に反応」するので、走らずに近づけば不意打ちされにくくなります。</li>
+<li><b>依頼を報告してグリムと装備をもらう。</b>「ゴブリン退治」の褒美「冒険者の指輪」（HP/MP+10）はすぐ着けましょう（<kbd>P</kbd>）。</li>
+<li><b>Lv6〜9はゴブリンガード・カクタス、そしてロックヒル南部の入口へ。</b>「ゴブリンの頭目退治」（ギルド受付）を終えると冒険者ギルドの連続依頼が始まります。</li>
+<li><b>Lv10で「白導士セラ」を仲間に。</b>町の「導師エルナ」の依頼「絆の証・癒」（南部のアルマビー8匹）を終えると、回復役の絆を呼べるようになります。ここから一気に楽になります。</li>
+</ol>
+<div class="warn"><b>倒れたら:</b> Lv9以上は、そのレベルで貯めた経験値の一部を失います（レベルは下がりません。Lv8以下と円月闘技場では減りません）。「帰還の印で復活」を選ぶと、最後に触れた帰還の印の場所（最初は町）に戻ります。白導士のリザレクト（Lv25）で起こしてもらうと失った分の一部が戻ります。</div>
+<h3>町にある物</h3>
+<ul>
+<li><b>帰還の印</b>: 触れて(ENTER)おくと復活する場所になる。<code>/homepoint</code>で帰れる。</li>
+<li><b>宿屋（眠り猫亭）</b>: 女将に話すとHP・MPが全快。</li>
+<li><b>道具屋・武器屋・防具屋</b>: 序盤〜Lv10の装備、ポーション、釣り竿と餌。</li>
+<li><b>倉庫番</b>: 使わない品を預ける。<b>郵便ポスト</b>: 他の人へ品や手紙を送る。<b>競売の係員</b>: 人と品を売り買い（<code>/ah</code>）。</li>
+<li><b>ジョブ指南役</b>: ジョブを変える。各ジョブのレベルは別々に育つ。</li>
+<li><b>ギルド受付／訓練官ドルグ／導師エルナ／ポムリー／クルル舎の親方／回廊の案内人</b>: それぞれの章で説明。</li>
+</ul>
+<div class="tip">毎日ログインすると、その日最初の入場で<b>ログインボーナス200グリム</b>がもらえます（Webポータルと共通で1日1回）。</div>
+</section>
+
+<section id="road"><h2>レベル別の進め方</h2>
+<p>「同じレベル〜少し上」の魔物を狩るのがいちばん効率よく、格上（レベルが5以上上）は絆を呼んでも危険です。狩り場を移す目安をまとめました。</p>
+<div class="tw"><table><thead><tr><th>レベル</th><th>狩り場</th><th>相手にする魔物</th><th>受ける依頼</th><th>ひとこと</th></tr></thead><tbody><tr><td class="lv">Lv1〜5</td><td>ロックヒル北部</td><td>ゴブリン(Lv1)・チキン(Lv1)→コウモリ(Lv2)→スライム(Lv3)→サソリ・カエル(Lv4)→マッシュ(Lv5)</td><td>「ゴブリン退治」「薬包の奪還」「盗賊団への入団試験」「鉱山の通行許可」「古びた地図の調査」</td><td>Lv1〜3は「初心者の加護」で受ける傷が減る(Lv1で−30%)。Lv8までは倒れても経験値が減らない。</td></tr>
+<tr><td class="lv">Lv5〜10</td><td>北部の奥・ロックヒル南部・大坑道</td><td>ゴブリンガード(Lv6)・カクタス(Lv7)→南部のスライム・バーブ・トゲスライム(Lv6〜8)・アルマビー(Lv9)。大坑道(Lv5〜9)</td><td>「珍味の食材」「カクタス退治」「ゴブリンの頭目退治」→ギルドの依頼が始まる。Lv10「坑道の主を鎮めよ」「釣り人への道」</td><td>Lv10で絆「白導士セラ」の証(導師エルナ)。指輪・ピアス・ブラス装備が着けられる。</td></tr>
+<tr><td class="lv">Lv10〜15</td><td>ロックヒル南部・ミストヴェイル密林</td><td>オーク(Lv11)・ワーグ(Lv12)・ゴブリンメイジ(Lv13)／密林のピンクゼリー(Lv10)・サーベルキャット(Lv12)・モンクルース(Lv13)</td><td>ギルド「オーク隊の掃討」「ワーグの群れ」「牙猫の狩り場」。Lv12〜16 クルル舎の親方の3つ(クルルに乗れる)</td><td>Lv15で絆「戦士リオ」(訓練官ドルグ)。ここから絆と一緒に狩ると楽。</td></tr>
+<tr><td class="lv">Lv15〜20</td><td>ヴェルダン高原・密林の奥</td><td>ラビット(Lv14)・スクイドル(Lv16)・ハイワール(Lv17)・サーベルキャット(Lv18)・ゴースト(Lv19)・ディノ(Lv20)</td><td>Lv18 ポムリーの「炎・土・水の証」→Lv20「ポムリーの試練」でサポートジョブ。Lv17「聖印のかけら」、Lv20「墓守の依頼」</td><td>ぬし退治(ガラ・ヘイLv17、ソルジャークロウラーLv18、プリンセストードLv20、蛇司祭シェザルLv20)は絆を3〜4人呼んで挑む。</td></tr>
+<tr><td class="lv">Lv20〜30</td><td>ヴェルダン高原の奥・万魔の谷の入口・モルガ胞子林・地下霊廟</td><td>オークスカル(Lv22)・コーカス(Lv22)・イエティ(Lv25)／谷のゴーレリング(Lv21)・コルヴ(Lv24)／胞子林(Lv24〜30)／地下霊廟(Lv24〜36)</td><td>ギルド「オークスカルの砦」、Lv22「牙の交易品」、Lv25「女王の宝珠」、Lv28「雪男の毛皮」</td><td>Lv20 絆「黒導士ノア」、Lv25「モンクガイ」。Lv28以降は上級ジョブの依頼が始まる。</td></tr>
+<tr><td class="lv">Lv30〜40</td><td>万魔の谷・サルタ塩湖跡</td><td>エイリアン・スカルゴースト(Lv30)・デーモン(Lv32)・ブルーデーモン(Lv35)／塩湖跡の塩殻ガニ(Lv32)〜白骨番兵(Lv38)</td><td>Lv30 上級ジョブの依頼5本(ナイト・暗黒騎士・獣使い・忍者・吟遊詩人)。ギルド「万魔の谷のデーモン」</td><td>Lv30で自動狩り(AIモード)が使える。絆はミナ(Lv32)・リラ(Lv35)・リュカ(Lv36)。</td></tr>
+<tr><td class="lv">Lv40〜50</td><td>エメル海岸・万魔の谷の奥・地底塩窟</td><td>浜の魔物(Lv40〜50)／谷の奥の戦慄竜(Lv44)・魂喰竜(Lv46)／地底塩窟(Lv40〜52)</td><td>Lv41 絆「ナイトアルド」。Lv45 ギルド「竜殺しの証」→Lv46〜50「アダマン」3本</td><td>Lv50で「勇者の資格」(鏡の祠)。王のぬし3体(モルガLv35・サルタLv44・ガルマーレLv52)を討つ。</td></tr>
+<tr><td class="lv">Lv50〜60</td><td>鈍色の塩底・ヴェルミア岬・影ロックヒル</td><td>塩底の枯塩の徘徊者(Lv48)〜白晶の巨躯(Lv60)／岬の大蟹(Lv58)〜廃城の黒騎士(Lv70)</td><td>ギルド「湖」の依頼4本(Lv54〜60)。Lv58〜60 剣聖の道3本。絆カゲロウ(Lv51)・ルカ(Lv52)・ヴァル(Lv57)</td><td>レベルの上限は60。影ロックヒルの11階を降りて【勇者】の称号を目指す。</td></tr></tbody></table></div>
+<h3>節目で覚えておくこと</h3>
+<ul>
+<li><b>Lv10</b>: 指輪・ピアス。絆セラ。釣りの依頼。大坑道の主ドルガン（Lv9）に挑める。</li>
+<li><b>Lv12〜16</b>: クルル舎の親方の3つの依頼で「クルルの笛」。<kbd>V</kbd>で乗れて、走るより速く移動できる。</li>
+<li><b>Lv18〜20</b>: ポムリーの依頼で<b>サポートジョブ</b>。メインのジョブに、もう1つのジョブの能力を半分ぶん重ねられる（例: 戦士／白導士でヒールが使える）。</li>
+<li><b>Lv30</b>: 上級ジョブ5つの解放依頼。<b>自動狩り（AIモード）</b>が使えるようになる（<kbd>Ctrl+Shift+Q</kbd>または<code>/ai</code>）。</li>
+<li><b>Lv50</b>: 「勇者の資格」の依頼。影ロックヒルへの道が開く。影銅〜勇者の装備。</li>
+<li><b>Lv60</b>: 上限。称号「熟練の冒険者」。</li>
+</ul>
+</section>
+
+<section id="quest"><h2>クエスト一覧</h2>
+<p>依頼は<kbd>J</kbd>の窓で確かめられます。「受注中に倒すと『だいじなもの』に入る」型の依頼は、受けてから倒さないと品が落ちません。連続する依頼は前の1つを終えると次が出ます。</p>
+<h3>町の依頼(初心者向け)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td><b>ゴブリン退治</b><div class="dim">ロックヒル北部のゴブリンを16体倒してきておくれ。</div></td><td>街の住人</td><td>ゴブリン ×16</td><td>50グリム、冒険者の指輪</td></tr>
+<tr><td class="lv">Lv8</td><td><b>カクタス退治</b><div class="dim">ミストヴェイル密林のカクタスを16体退治してほしい。針が厄介でな。</div></td><td>街の住人</td><td>カクタス ×16</td><td>80グリム、不動のマント</td></tr>
+<tr><td class="lv">Lv2</td><td><b>薬包の奪還</b><div class="dim">ゴブリンが薬包を盗んでいった。受注中に倒して取り返してくれ（だいじなものに入る）。</div></td><td>衛兵</td><td>品を集めて渡す</td><td>40グリム、韋駄天の靴</td></tr>
+<tr><td class="lv">Lv3</td><td><b>盗賊団への入団試験</b><div class="dim">腕を見せてもらおう。コウモリを8匹始末してこい。</div></td><td>怪しい男</td><td>コウモリ ×8</td><td>70グリム、盗賊団のドクロ章</td></tr>
+<tr><td class="lv">Lv4</td><td><b>鉱山の通行許可</b><div class="dim">スライムが坑道を塞いでてな。6匹退治してくれれば通行証を出そう。</div></td><td>鉱夫</td><td>スライム ×6</td><td>65グリム、鉱山の通行証</td></tr>
+<tr><td class="lv">Lv10</td><td><b>坑道の主を鎮めよ</b><div class="dim">坑道の奥に主が居着いてしまった。あれを鎮めんと、掘るに掘れん。</div></td><td>鉱夫</td><td>大坑道の主ドルガン ×1</td><td>110グリム</td></tr>
+<tr><td class="lv">Lv5</td><td><b>古びた地図の調査</b><div class="dim">サソリを6匹退治してくれたら、この古びた地図を譲ろう。</div></td><td>旅の商人</td><td>サソリ ×6</td><td>60グリム、古びた地図</td></tr>
+<tr><td class="lv">Lv6</td><td><b>珍味の食材</b><div class="dim">料理に使うサソリの尾が欲しい。受注中にサソリを倒すとだいじなものに入る。</div></td><td>料理人</td><td>品を集めて渡す</td><td>35グリム、詠唱のサークレット</td></tr>
+<tr><td class="lv">Lv15</td><td><b>ラビット狩り</b><div class="dim">ヴェルダン高原のラビットを20匹狩ってきておくれ。</div></td><td>猟師</td><td>ラビット ×20</td><td>100グリム、勇者の剣</td></tr>
+<tr><td class="lv">Lv11</td><td><b>密書を届けよ</b><div class="dim">情報屋が密書を持っている。受け取って私（町長）に届けてくれ。</div></td><td>町長</td><td>品を集めて渡す</td><td>90グリム、賢者のピアス</td></tr>
+<tr><td class="lv">Lv17</td><td><b>聖印のかけらを探せ</b><div class="dim">ゴブリンガードが聖印のかけらを持っているはずだ。受注中に奴を倒して取り戻してくれ。</div></td><td>神官</td><td>品を集めて渡す</td><td>120グリム、戦人の腕輪</td></tr>
+<tr><td class="lv">Lv25</td><td><b>女王の宝珠を求めて</b><div class="dim">街はずれの古い宝箱に女王の宝珠が眠っているという。受注中に宝箱を開けて持ってきてくれ。</div></td><td>学者</td><td>品を集めて渡す</td><td>140グリム、盗賊の短剣</td></tr>
+<tr><td class="lv">Lv10</td><td><b>釣り人への道</b><div class="dim">釣りは いいぞう。竿と餌を装備して、水辺で釣りキー(N)か /fish だ。魚を20匹釣ってきたら、わしの匠の竿を譲ってやろう。</div></td><td>釣り師ヴェッド</td><td>魚を20匹釣る</td><td>60グリム、匠の釣り竿</td></tr></tbody></table></div><h3>冒険者ギルドの依頼(連続)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv9</td><td><b>ゴブリンの頭目退治</b><div class="dim">厄介なゴブリンガードを10体討伐してくれ。</div></td><td>ギルド受付</td><td>ゴブリンガード ×10</td><td>70グリム、守りの兜</td></tr>
+<tr><td class="lv">Lv11</td><td><b>オーク隊の掃討</b><div class="dim">ロックヒル南部でオークが徒党を組んでいる。12体ほど散らしてきてほしい。</div></td><td>ギルド受付</td><td>オーク ×12</td><td>75グリム</td></tr>
+<tr><td class="lv">Lv12</td><td><b>ワーグの群れ</b><div class="dim">街道にワーグが出た。10頭ほど間引いてくれ。旅人が通れん。</div></td><td>ギルド受付</td><td>ワーグ ×10</td><td>85グリム</td></tr>
+<tr><td class="lv">Lv13</td><td><b>牙猫の狩り場</b><div class="dim">ミストヴェイル密林のサーベルキャットを10頭。狩り場を取り戻したい。</div></td><td>ギルド受付</td><td>サーベルキャット ×10</td><td>95グリム</td></tr>
+<tr><td class="lv">Lv18</td><td><b>ナーガの祈祷を断て</b><div class="dim">ナーガの司祭がミストヴェイル密林で怪しい祈祷を続けている。6体を鎮めてきてくれ。</div></td><td>ギルド受付</td><td>ナーガの司祭 ×6</td><td>130グリム</td></tr>
+<tr><td class="lv">Lv23</td><td><b>オークスカルの砦</b><div class="dim">ヴェルダン高原の砦にオークスカルが居座った。8体、砦から追い出してくれ。</div></td><td>ギルド受付</td><td>オークスカル ×8</td><td>190グリム</td></tr>
+<tr><td class="lv">Lv33</td><td><b>万魔の谷のデーモン</b><div class="dim">万魔の谷にデーモンが湧いている。5体。……無理はするな、と言っても行くのだろう?</div></td><td>ギルド受付</td><td>デーモン ×5</td><td>320グリム</td></tr>
+<tr><td class="lv">Lv45</td><td><b>竜殺しの証</b><div class="dim">ギルド最後の依頼だ。ドラゴンロードを討て。生きて戻れば、君の名は記録に残る。</div></td><td>ギルド受付</td><td>ドラゴンロード ×1</td><td>900グリム、アダマンソード</td></tr>
+<tr><td class="lv">Lv46</td><td><b>炉に灯を</b><div class="dim">その剣を打った鉱がまだ要る。万魔の谷の奥にいる戦慄竜の腹にアダマン鉱が眠っている。持って帰れるか。</div></td><td>ギルド受付</td><td>品を集めて渡す</td><td>1200グリム、アダマンガントレ</td></tr>
+<tr><td class="lv">Lv48</td><td><b>拳に鋼を</b><div class="dim">万魔の谷の奥の魂喰竜を3頭。鋼は打つほど締まる。お前も同じだ。</div></td><td>ギルド受付</td><td>魂喰竜 ×3</td><td>1500グリム、アダマンクロー</td></tr>
+<tr><td class="lv">Lv50</td><td><b>不退の脚</b><div class="dim">最後だ。竜王の鱗を一枚剥いでこい。あれを踏み固めた脚甲は、生涯退かずに済む。</div></td><td>ギルド受付</td><td>品を集めて渡す</td><td>2000グリム、アダマングリーブ</td></tr>
+<tr><td class="lv">Lv54</td><td><b>湖底の影を祓え</b><div class="dim">鈍色の塩底の奥に、形を持たぬ影が湧いている。5つ祓ってくれ。あそこは灯りが効かん。</div></td><td>ギルド受付</td><td>湖底の影 ×5</td><td>2400グリム、静寂の環</td></tr>
+<tr><td class="lv">Lv57</td><td><b>黒騎士の残骸</b><div class="dim">鈍色の塩底をさまよう黒騎士がいる。兜の欠片を一つ持ち帰ってくれ。名も知れぬ古い兵だ。</div></td><td>ギルド受付</td><td>品を集めて渡す</td><td>2800グリム、鎮魂の耳環</td></tr>
+<tr><td class="lv">Lv59</td><td><b>白晶を砕く</b><div class="dim">湖の一番深い所で、塩の巨躯が育ちきっている。3体砕け。育つ前でないと手が付けられん。</div></td><td>ギルド受付</td><td>白晶の巨躯 ×3</td><td>3400グリム、白晶の指輪</td></tr>
+<tr><td class="lv">Lv60</td><td><b>湖底王ネルガル</b><div class="dim">乾いた湖の底に、王を名乗る者が座っている。ネルガル。……生きて戻れとは言わん、が、戻ってこい。</div></td><td>ギルド受付</td><td>湖底王ネルガル ×1</td><td>6000グリム、湖底王の首飾り</td></tr></tbody></table></div><h3>サポートジョブ(ポムリー)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv18</td><td><b>炎の証</b><div class="dim">まずはロックヒル南部のガラ・ヘイを倒し、『炎の証』を持ち帰るポム！ 強敵だから油断しないポム！</div></td><td>ポムリー</td><td>品を集めて渡す</td><td>180グリム</td></tr>
+<tr><td class="lv">Lv18</td><td><b>土の証</b><div class="dim">次はソルジャークロウラーを倒し、『土の証』を持ち帰るポム！ 固い殻に負けないポム！</div></td><td>ポムリー</td><td>品を集めて渡す</td><td>220グリム</td></tr>
+<tr><td class="lv">Lv18</td><td><b>水の証</b><div class="dim">最後の証はプリンセストードが持つ『水の証』ポム！ 跳ね回る強敵を仕留めてくるポム！</div></td><td>ポムリー</td><td>品を集めて渡す</td><td>300グリム</td></tr>
+<tr><td class="lv">Lv20</td><td><b>ポムリーの試練</b><div class="dim">三つの証だけでは終わりじゃないポム！ 蛇司祭シェザルと呼ばれるナーガの司祭を倒し、本当の力を示すポム！</div></td><td>ポムリー</td><td>蛇司祭シェザル ×1</td><td>500グリム、サポートジョブ(ポムリーに話す)</td></tr></tbody></table></div><h3>クルルに乗る(クルル舎の親方)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv12</td><td><b>クルルの好物</b><div class="dim">クルルと仲良くなりたいなら、まず腹を満たしてやることだ。香草を3束、摘んできな。</div></td><td>クルル舎の親方</td><td>品を集めて渡す</td><td>90グリム</td></tr>
+<tr><td class="lv">Lv14</td><td><b>野生のクルル</b><div class="dim">野生のクルルは、ワーグの臭いをひどく嫌う。南の野で7頭追い払い、道を静かにしてきな。</div></td><td>クルル舎の親方</td><td>ワーグ ×7</td><td>130グリム</td></tr>
+<tr><td class="lv">Lv16</td><td><b>クルル乗りの証</b><div class="dim">仕上げだ。南の野を縄張りにするアルパキングを退けてこい。あいつの前で怯まなければ、クルルも背を預ける。</div></td><td>クルル舎の親方</td><td>アルパキング ×1</td><td>210グリム、クルルの笛、クルルの笛(騎乗できる)</td></tr></tbody></table></div><h3>上級ジョブの解放</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv13</td><td><b>オークの脅威</b><div class="dim">ロックヒル南部にオークの一団が居座っている。8体討ち払ってくれ。</div></td><td>傭兵団長</td><td>オーク ×8</td><td>90グリム、チェーンメイル</td></tr>
+<tr><td class="lv">Lv30</td><td><b>影を追う者</b><div class="dim">影を名乗りたきゃ、空の影から逃げるな。コルヴを14体叩き落としてこい！</div></td><td>傭兵団長</td><td>コルヴ ×14</td><td>550グリム</td></tr>
+<tr><td class="lv">Lv38</td><td><b>悪夢竜の逆鱗</b><div class="dim">悪夢竜ヴァルガナの懐へ潜り、逆鱗を奪ってこい。生きて戻れたら影の技を認めてやる！</div></td><td>傭兵団長</td><td>品を集めて渡す</td><td>900グリム、上級ジョブ「忍者」</td></tr>
+<tr><td class="lv">Lv20</td><td><b>墓守の依頼</b><div class="dim">ヴェルダン高原に亡霊がさまよっている。6体を鎮めてやってくれ。</div></td><td>墓守</td><td>ゴースト ×6</td><td>110グリム、浄魔の指輪</td></tr>
+<tr><td class="lv">Lv30</td><td><b>骸の行進</b><div class="dim">墓の底で骨どもが歩いている……スカルゴーストを14体、もう一度眠らせておくれ。</div></td><td>墓守</td><td>スカルゴースト ×14</td><td>500グリム</td></tr>
+<tr><td class="lv">Lv34</td><td><b>奈落王の黒角</b><div class="dim">奈落王グァルドスの黒角を折ってきな……闇を恐れる者には、決してできない。</div></td><td>墓守</td><td>品を集めて渡す</td><td>700グリム、上級ジョブ「暗黒騎士」</td></tr>
+<tr><td class="lv">Lv28</td><td><b>雪男の毛皮</b><div class="dim">ヴェルダン高原の奥に住むイエティの毛皮が欲しい。受注中に倒して剥いできてくれ（だいじなものに入る）。</div></td><td>毛皮商</td><td>品を集めて渡す</td><td>140グリム、グレートソード</td></tr>
+<tr><td class="lv">Lv30</td><td><b>群れを退ける</b><div class="dim">ワーグが16頭も群れて、獣道を荒らしてる。追っ払って、森に息をつかせてやってくれ。</div></td><td>毛皮商</td><td>ワーグ ×16</td><td>480グリム</td></tr>
+<tr><td class="lv">Lv33</td><td><b>森王の胞子</b><div class="dim">森の主を名乗るキノコ王がいる。森王の胞子を分けてもらってこい。手荒でも仕方ないさ。</div></td><td>毛皮商</td><td>品を集めて渡す</td><td>680グリム、上級ジョブ「獣使い」</td></tr>
+<tr><td class="lv">Lv22</td><td><b>牙の交易品</b><div class="dim">ミストヴェイル密林のサーベルキャットの牙は良い細工物になる。受注中に倒して取ってきてくれ（だいじなものに入る）。</div></td><td>牙細工師</td><td>品を集めて渡す</td><td>100グリム、猟兵のマント</td></tr>
+<tr><td class="lv">Lv30</td><td><b>森の音</b><div class="dim">歌は耳から入る。万魔の谷のエイリアンを12体しずめ、その鳴き声を覚えてこい。</div></td><td>牙細工師</td><td>エイリアン ×12</td><td>450グリム</td></tr>
+<tr><td class="lv">Lv34</td><td><b>竜の鳴き骨</b><div class="dim">竜の喉には鳴き骨がある。ヴェルダン高原のドラゴンから持ち帰れ。それが最初の楽器になる。</div></td><td>牙細工師</td><td>品を集めて渡す</td><td>700グリム、木の竪琴、上級ジョブ「吟遊詩人」</td></tr>
+<tr><td class="lv">Lv30</td><td><b>誉れの砦</b><div class="dim">誉れを望むなら、まず砦のオークスカルを14体討て。言葉ではなく剣で示せ。</div></td><td>領主(城)</td><td>オークスカル ×14</td><td>450グリム</td></tr>
+<tr><td class="lv">Lv32</td><td><b>聖騎士の紋章</b><div class="dim">竜を退け、聖騎士の紋章を持ち帰れ。それを成せば、ナイトの名を許す。</div></td><td>領主(城)</td><td>品を集めて渡す</td><td>650グリム、上級ジョブ「ナイト」</td></tr></tbody></table></div><h3>絆の証(仲間を呼べるようになる)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv10</td><td><b>絆の証・癒</b><div class="dim">ロックヒル南部のアルマビーを8匹しずめてください。癒やし手には、倒すべき時と手を差し伸べる時を見分ける心が要ります。</div></td><td>導師エルナ</td><td>アルマビー ×8</td><td>120グリム</td></tr>
+<tr><td class="lv">Lv15</td><td><b>絆の証・剣</b><div class="dim">ヴェルダン高原のスクイドルを8体退けてこい。誰かを守る戦士には、敵の動きを読む目が要る。戻ったらリオへ証を渡そう。</div></td><td>訓練官ドルグ</td><td>スクイドル ×8</td><td>160グリム</td></tr>
+<tr><td class="lv">Lv20</td><td><b>絆の証・炎</b><div class="dim">ヴェルダン高原のディノを8体しずめてください。炎を恐れず、状況を見て術を選ぶ心を示すのです。</div></td><td>導師エルナ</td><td>ディノ ×8</td><td>180グリム</td></tr>
+<tr><td class="lv">Lv25</td><td><b>絆の証・拳</b><div class="dim">ヴェルダン高原のイエティを8体倒してこい。大きな相手にも退かぬ拳を見せてもらおう。</div></td><td>訓練官ドルグ</td><td>イエティ ×8</td><td>280グリム</td></tr>
+<tr><td class="lv">Lv32</td><td><b>絆の証・影</b><div class="dim">モルガ胞子林の胞子眼を8体仕留めてこい。見られる前に死角へ入る勘を試す。</div></td><td>訓練官ドルグ</td><td>胞子眼 ×8</td><td>420グリム</td></tr>
+<tr><td class="lv">Lv35</td><td><b>絆の証・理</b><div class="dim">万魔の谷のブルーデーモンを8体退けてください。攻めと支えを選ぶ理を示すのです。</div></td><td>導師エルナ</td><td>ブルーデーモン ×8</td><td>720グリム</td></tr>
+<tr><td class="lv">Lv36</td><td><b>絆の証・音</b><div class="dim">万魔の谷のスカルゴーストを14体しずめてこい。骨の歌を聞き届けられる耳を見せろ。</div></td><td>導師エルナ</td><td>スカルゴースト ×14</td><td>950グリム</td></tr>
+<tr><td class="lv">Lv41</td><td><b>絆の証・盾</b><div class="dim">サルタ塩湖跡の塩晶ゴーレムを8体砕いてこい。重い一撃を正面から受ける覚悟を見せろ。</div></td><td>訓練官ドルグ</td><td>塩晶ゴーレム ×8</td><td>1050グリム</td></tr>
+<tr><td class="lv">Lv51</td><td><b>絆の証・霞</b><div class="dim">エメル海岸のゴーレリングを8体倒してこい。霞のように攻撃を受け流す腕を見せろ。</div></td><td>訓練官ドルグ</td><td>ゴーレリング ×8</td><td>1350グリム</td></tr>
+<tr><td class="lv">Lv52</td><td><b>絆の証・牙</b><div class="dim">鈍色の塩底の塩喰らいの蜥蜴を8体鎮めてこい。獣の気配と力を読めるか試す。</div></td><td>訓練官ドルグ</td><td>塩喰らいの蜥蜴 ×8</td><td>3000グリム</td></tr>
+<tr><td class="lv">Lv57</td><td><b>絆の証・闇</b><div class="dim">鈍色の塩底の鹹湖の黒騎士を8体倒してこい。命を削る闇に呑まれぬ意志を示せ。</div></td><td>訓練官ドルグ</td><td>鹹湖の黒騎士 ×8</td><td>4200グリム</td></tr></tbody></table></div><h3>ヴェイル村の合成(調理・錬金・鍛冶)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td><b>村の塩焼き指南</b><div class="dim">まずは火の扱いを見せてもらおう。塩焼きの魚を2皿作って持っておいで。</div></td><td>村の料理人(ヴェイル村)</td><td>品を集めて渡す</td><td>80グリム、香草</td></tr>
+<tr><td class="lv">Lv2</td><td><b>香草蒸しの頃合い</b><div class="dim">調理16まで腕が上がったら、ニジマスの香草蒸しを1皿仕上げておいで。</div></td><td>村の料理人(ヴェイル村)</td><td>品を集めて渡す</td><td>180グリム、霜降り材</td></tr>
+<tr><td class="lv">Lv3</td><td><b>霜香る燻製</b><div class="dim">調理32の火加減で、霜降り燻製を1皿作って持っておいで。</div></td><td>村の料理人(ヴェイル村)</td><td>品を集めて渡す</td><td>360グリム、竜血樹の芯</td></tr>
+<tr><td class="lv">Lv4</td><td><b>淵の王を煮込む</b><div class="dim">調理56に届いた腕で、淵の王の姿煮を1皿仕上げておいで。鍋から目を離すんじゃないよ。</div></td><td>村の料理人(ヴェイル村)</td><td>品を集めて渡す</td><td>900グリム、星屑草</td></tr>
+<tr><td class="lv">Lv1</td><td><b>薬草を煎じる手</b><div class="dim">錬金の初歩だ。ポーションを3本作って持ってきておくれ。</div></td><td>村の素材屋(ヴェイル村)</td><td>品を集めて渡す</td><td>70グリム、香草</td></tr>
+<tr><td class="lv">Lv2</td><td><b>魔力を澄ませる</b><div class="dim">錬金12まで磨いたら、マナポーションを2本調合して持ってきておくれ。</div></td><td>村の素材屋(ヴェイル村)</td><td>品を集めて渡す</td><td>160グリム、マナポーション</td></tr>
+<tr><td class="lv">Lv3</td><td><b>二滴をひとつに</b><div class="dim">錬金24の腕でマナポーションを重ね、ハイマナポーションを1本仕上げておくれ。</div></td><td>村の素材屋(ヴェイル村)</td><td>品を集めて渡す</td><td>340グリム、月光草</td></tr>
+<tr><td class="lv">Lv4</td><td><b>月光の霊薬</b><div class="dim">錬金45まで届いたら、月光草を使ったハイマナポーションを2本納めておくれ。</div></td><td>村の素材屋(ヴェイル村)</td><td>品を集めて渡す</td><td>820グリム、薬草</td></tr>
+<tr><td class="lv">Lv1</td><td><b>はじめての刃</b><div class="dim">鍛冶を始めるなら、まずブロンズソードを1本打って見せてくれ。</div></td><td>村の倉庫番(ヴェイル村)</td><td>品を集めて渡す</td><td>90グリム、堅木の丸太</td></tr>
+<tr><td class="lv">Lv2</td><td><b>銅板を重ねる</b><div class="dim">鍛冶18の腕で、銅張りの胸当てを1着仕上げてくれ。</div></td><td>村の倉庫番(ヴェイル村)</td><td>品を集めて渡す</td><td>210グリム、香草</td></tr>
+<tr><td class="lv">Lv3</td><td><b>香草を編む鎧</b><div class="dim">鍛冶34まで育ったら、香草の外套を1着作って持ってきてくれ。</div></td><td>村の倉庫番(ヴェイル村)</td><td>品を集めて渡す</td><td>430グリム、蒼鉄の原石</td></tr>
+<tr><td class="lv">Lv4</td><td><b>蒼鉄の大仕事</b><div class="dim">鍛冶58の腕を見せてくれ。蒼鉄の大剣を1本、最後まで打ち上げるんだ。</div></td><td>村の倉庫番(ヴェイル村)</td><td>品を集めて渡す</td><td>980グリム、星鉄の原石</td></tr></tbody></table></div><h3>勇者の資格・剣聖の道(高レベル)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>依頼</th><th>受ける相手</th><th>やること</th><th>褒美</th></tr></thead><tbody><tr><td class="lv">Lv50</td><td><b>勇者の資格 一 胞子の紋章</b><div class="dim">鏡の祠は、王を討った者にしか開かない。まずはモルガ胞子林の胞子母王モルガを討ち、胞子の紋章を持ってきなさい。</div></td><td>影守りのセイラ(鏡の祠)</td><td>品を集めて渡す</td><td>－</td></tr>
+<tr><td class="lv">Lv50</td><td><b>勇者の資格 二 塩の紋章</b><div class="dim">サルタ塩湖跡の塩冠王サルタを討ち、塩の紋章を持ってきなさい。</div></td><td>影守りのセイラ(鏡の祠)</td><td>品を集めて渡す</td><td>－</td></tr>
+<tr><td class="lv">Lv50</td><td><b>勇者の資格 三 潮の紋章</b><div class="dim">エメル海岸の海嘯王ガルマーレを討ち、潮の紋章を持ってきなさい。三つ揃えば、鏡の祠はお前たちに開かれる。</div></td><td>影守りのセイラ(鏡の祠)</td><td>品を集めて渡す</td><td>鏡の祠(影ロックヒル)が開く</td></tr>
+<tr><td class="lv">Lv58</td><td><b>剣聖の道・噂</b><div class="dim">……廃城の主を追ってここまで来た。だが城の手前は骸の騎士で埋まっている。50体、道を開けてくれ。お前の剣がどれほどか、見せてもらう。</div></td><td>剣聖シグルド(ヴェルミアの港)</td><td>廃城の骸騎士 ×50</td><td>4000グリム</td></tr>
+<tr><td class="lv">Lv59</td><td><b>剣聖の道・廃城の主</b><div class="dim">廃城の主ガルデリク。俺の師を斬った男だ。奴を討て。俺は手を出さん。お前がどう戦うかを見届ける。</div></td><td>剣聖シグルド(ヴェルミアの港)</td><td>廃城の主ガルデリク ×1</td><td>6000グリム</td></tr>
+<tr><td class="lv">Lv60</td><td><b>剣聖の道・試し</b><div class="dim">城壁の外を守る黒騎士たちは、主が倒れても剣を置かん。10体。これが最後の試しだ。</div></td><td>剣聖シグルド(ヴェルミアの港)</td><td>廃城の黒騎士 ×10</td><td>8000グリム</td></tr></tbody></table></div>
+</section>
+
+<section id="zone"><h2>ゾーン紹介</h2>
+<p>世界は「ゾーン」に分かれ、ゾーンの端の出入口を歩いて抜けると隣へ移ります。<kbd>M</kbd>の地図で自分の位置と出入口が見えます。★は<b>ぬし</b>（特別に強い魔物。依頼の相手になり、良い品を落とす）。</p>
+<figure><img src="img/マップ窓.jpg" alt="地図の窓" loading="lazy" width="1120" height="630"><figcaption>Mキーの地図。左が今いるゾーン、右が世界のつながり</figcaption></figure>
+<div class="map">
+<div class="town">ロックヒルの町<small>安全地帯・城</small></div><div class="low">ロックヒル北部<small>Lv1〜7</small></div><div class="low">ロックヒル南部<small>Lv6〜17</small></div><div class="mid">モルガ胞子林<small>Lv24〜35</small></div><div></div>
+<div class="mid">サルタ塩湖跡<small>Lv32〜44</small></div><div class="low">ミストヴェイル密林<small>Lv8〜20</small></div><div class="mid">ヴェルダン高原<small>Lv14〜30</small></div><div class="high">万魔の谷<small>Lv20〜46</small></div><div></div>
+<div class="high">鈍色の塩底<small>Lv48〜62</small></div><div class="town">ヴェイル村<small>合成の村</small></div><div class="high">エメル海岸<small>Lv40〜52</small></div><div class="high">ヴェルミア岬<small>Lv58〜72</small></div><div></div>
+</div>
+<p class="dim">上の並びは世界の地図と同じ。町の東が北部、北部の東が南部、北部の南が密林……とつながっています。</p>
+<details class="zone" open><summary><b>ロックヒル北部</b> <span class="lv">Lv1〜7</span></summary>
+<p>町の東門を出てすぐ。最初の狩り場。ゴブリンやチキンから始めて、ゴブリンガード・カクタスまで。大坑道の入口もこの近く。</p><figure><img src="img/草原.jpg" alt="ロックヒル北部" loading="lazy" width="1120" height="630"><figcaption>ロックヒル北部</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>ゴブリン</td><td class="lv">Lv1</td><td>見つかると襲う</td></tr>
+<tr><td>チキン</td><td class="lv">Lv1</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>コウモリ</td><td class="lv">Lv2</td><td>足音に反応</td></tr>
+<tr><td>スライム</td><td class="lv">Lv3</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>サソリ</td><td class="lv">Lv4</td><td>足音に反応</td></tr>
+<tr><td>カエル</td><td class="lv">Lv4</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>マッシュ</td><td class="lv">Lv5</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>ゴブリンガード</td><td class="lv">Lv6</td><td>見つかると襲う</td></tr>
+<tr><td>カクタス</td><td class="lv">Lv7</td><td>見つかると襲う</td></tr></tbody></table></div></details><details class="zone" ><summary><b>ロックヒル南部</b> <span class="lv">Lv6〜17</span></summary>
+<p>北部の東。オークやワーグが街道に出る。南の端にぬし「ガラ・ヘイ」。サポートジョブの「炎の証」はここ。</p><figure><img src="img/林.jpg" alt="ロックヒル南部" loading="lazy" width="1120" height="630"><figcaption>ロックヒル南部</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>スライム</td><td class="lv">Lv6</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>バーブ</td><td class="lv">Lv7</td><td>見つかると襲う</td></tr>
+<tr><td>トゲスライム</td><td class="lv">Lv8</td><td>見つかると襲う</td></tr>
+<tr><td>アルマビー</td><td class="lv">Lv9</td><td>足音に反応</td></tr>
+<tr><td>ゴブリンディガー</td><td class="lv">Lv9</td><td>見つかると襲う</td></tr>
+<tr><td>フィッシュ</td><td class="lv">Lv9</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>オーク</td><td class="lv">Lv11</td><td>見つかると襲う</td></tr>
+<tr><td>ワーグ</td><td class="lv">Lv12</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>ゴブリンメイジ</td><td class="lv">Lv13</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>アルパキング</td><td class="lv">Lv16</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr class="nm"><td>★ ガラ・ヘイ</td><td class="lv">Lv17</td><td>見つかると襲う</td></tr></tbody></table></div></details><details class="zone" ><summary><b>ミストヴェイル密林</b> <span class="lv">Lv8〜20</span></summary>
+<p>北部の南。密林で視界が悪い。サーベルキャットやナーガの司祭は魔法に反応する。奥にぬし「ソルジャークロウラー」「蛇司祭シェザル」。南にヴェイル村。</p><figure><img src="img/密林の泉.jpg" alt="ミストヴェイル密林" loading="lazy" width="1120" height="630"><figcaption>ミストヴェイル密林</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>カクタス</td><td class="lv">Lv8</td><td>見つかると襲う</td></tr>
+<tr><td>ピンクゼリー</td><td class="lv">Lv10</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>サーベルキャット</td><td class="lv">Lv12</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>モンクルース</td><td class="lv">Lv13</td><td>見つかると襲う</td></tr>
+<tr><td>グラブ</td><td class="lv">Lv14</td><td>足音に反応</td></tr>
+<tr><td>コルヴ</td><td class="lv">Lv15</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>ディノ</td><td class="lv">Lv18</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ ソルジャークロウラー</td><td class="lv">Lv18</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>ナーガの司祭</td><td class="lv">Lv18</td><td>見つかると襲う・魔法を使う</td></tr>
+<tr class="nm"><td>★ 蛇司祭シェザル</td><td class="lv">Lv20</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr></tbody></table></div></details><details class="zone" ><summary><b>ヴェルダン高原</b> <span class="lv">Lv14〜30</span></summary>
+<p>南部の南。ラビットから始まり、奥はイエティやドラゴン。地下霊廟の入口があり、ぬし「プリンセストード」「奈落王グァルドス」が出る。</p><figure><img src="img/水辺.jpg" alt="ヴェルダン高原" loading="lazy" width="1120" height="630"><figcaption>ヴェルダン高原</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>ラビット</td><td class="lv">Lv14</td><td>こちらから殴らなければ襲わない</td></tr>
+<tr><td>スクイドル</td><td class="lv">Lv16</td><td>足音に反応</td></tr>
+<tr><td>ハイワール</td><td class="lv">Lv17</td><td>足音に反応</td></tr>
+<tr><td>サーベルキャット</td><td class="lv">Lv18</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>ゴースト</td><td class="lv">Lv19</td><td>見つかると襲う・足音に反応・詠唱に反応・魔法を使う</td></tr>
+<tr><td>ディノ</td><td class="lv">Lv20</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ プリンセストード</td><td class="lv">Lv20</td><td>足音に反応</td></tr>
+<tr><td>オークスカル</td><td class="lv">Lv22</td><td>見つかると襲う</td></tr>
+<tr><td>コーカス</td><td class="lv">Lv22</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>イエティ</td><td class="lv">Lv25</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ ドラゴン</td><td class="lv">Lv28</td><td>見つかると襲う・足音に反応・詠唱に反応・魔法を使う</td></tr>
+<tr class="nm"><td>★ 奈落王グァルドス</td><td class="lv">Lv30</td><td>見つかると襲う・足音に反応</td></tr></tbody></table></div></details><details class="zone" ><summary><b>万魔の谷</b> <span class="lv">Lv20〜46</span></summary>
+<p>高原の東。デーモン・ブルーデーモン・竜の谷。最奥に「ドラゴンロード」「悪夢竜ヴァルガナ」など竜のぬしが並ぶ。</p>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>ディノ</td><td class="lv">Lv20</td><td>見つかると襲う</td></tr>
+<tr><td>ゴーレリング</td><td class="lv">Lv21</td><td>見つかると襲う</td></tr>
+<tr><td>コルヴ</td><td class="lv">Lv24</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>オークスカル</td><td class="lv">Lv26</td><td>見つかると襲う</td></tr>
+<tr><td>イエティ</td><td class="lv">Lv28</td><td>見つかると襲う</td></tr>
+<tr><td>エイリアン</td><td class="lv">Lv30</td><td>見つかると襲う</td></tr>
+<tr><td>スカルゴースト</td><td class="lv">Lv30</td><td>見つかると襲う・足音に反応・詠唱に反応・魔法を使う</td></tr>
+<tr><td>デーモン</td><td class="lv">Lv32</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr class="nm"><td>★ キノコ王</td><td class="lv">Lv33</td><td>見つかると襲う</td></tr>
+<tr><td>ブルーデーモン</td><td class="lv">Lv35</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr class="nm"><td>★ ドラゴン</td><td class="lv">Lv38</td><td>見つかると襲う・足音に反応・詠唱に反応・魔法を使う</td></tr>
+<tr class="nm"><td>★ 悪夢竜ヴァルガナ</td><td class="lv">Lv40</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>戦慄竜</td><td class="lv">Lv44</td><td>見つかると襲う・足音に反応</td></tr>
+<tr class="nm"><td>★ ドラゴンロード</td><td class="lv">Lv45</td><td>見つかると襲う・足音に反応・詠唱に反応・魔法を使う</td></tr>
+<tr><td>魂喰竜</td><td class="lv">Lv46</td><td>見つかると襲う・足音に反応</td></tr></tbody></table></div></details><details class="zone" ><summary><b>モルガ胞子林</b> <span class="lv">Lv24〜35</span></summary>
+<p>南部の東。胞子の魔物は音に反応するものが多い。ぬし「胞子母王モルガ」は勇者の資格の1つ目。</p>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>胞子歩き</td><td class="lv">Lv24〜31</td><td>足音に反応</td></tr>
+<tr><td>森ミミズ</td><td class="lv">Lv26〜31</td><td>足音に反応</td></tr>
+<tr><td>胞子眼</td><td class="lv">Lv27〜32</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>菌蜜蜂</td><td class="lv">Lv28</td><td>見つかると襲う</td></tr>
+<tr><td>胞子霊</td><td class="lv">Lv30〜33</td><td>詠唱に反応・魔法を使う</td></tr>
+<tr class="nm"><td>★ 胞子母王モルガ</td><td class="lv">Lv35</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr></tbody></table></div></details><details class="zone" ><summary><b>サルタ塩湖跡</b> <span class="lv">Lv32〜44</span></summary>
+<p>密林の西。塩の魔物。地底塩窟の入口があり、ぬし「塩冠王サルタ」は勇者の資格の2つ目。</p>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>塩殻ガニ</td><td class="lv">Lv32〜39</td><td>見つかると襲う</td></tr>
+<tr><td>干潟エイ</td><td class="lv">Lv34〜40</td><td>足音に反応</td></tr>
+<tr><td>塩晶ゴーレム</td><td class="lv">Lv37〜41</td><td>見つかると襲う・詠唱に反応</td></tr>
+<tr><td>塩湖サラマンダー</td><td class="lv">Lv37</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>白骨番兵</td><td class="lv">Lv38〜42</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ 塩冠王サルタ</td><td class="lv">Lv44</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr></tbody></table></div></details><details class="zone" ><summary><b>エメル海岸</b> <span class="lv">Lv40〜52</span></summary>
+<p>高原の南の浜。Lv40代の狩り場。ぬし「海嘯王ガルマーレ」は勇者の資格の3つ目。東にヴェルミア岬。</p><figure><img src="img/エメル海岸の砂浜.jpg" alt="エメル海岸" loading="lazy" width="1120" height="630"><figcaption>エメル海岸</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>潮騒の大蟹</td><td class="lv">Lv40</td><td>見つかると襲う</td></tr>
+<tr><td>砂浜の徘徊蜥蜴</td><td class="lv">Lv41</td><td>見つかると襲う</td></tr>
+<tr><td>碧羽の浜鳥</td><td class="lv">Lv42</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>漂着樽の粘体</td><td class="lv">Lv43</td><td>見つかると襲う</td></tr>
+<tr><td>難破船の亡霊</td><td class="lv">Lv44</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr>
+<tr><td>珊瑚角の獣</td><td class="lv">Lv46</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>浜風の砂喰い</td><td class="lv">Lv47</td><td>見つかると襲う</td></tr>
+<tr><td>潮煙の骸兵</td><td class="lv">Lv48</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>波磨きの岩鬼</td><td class="lv">Lv50</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ 海嘯王ガルマーレ</td><td class="lv">Lv52</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr></tbody></table></div></details><details class="zone" ><summary><b>鈍色の塩底</b> <span class="lv">Lv48〜62</span></summary>
+<p>塩湖跡の南。Lv50を過ぎてからの狩り場。ギルドの湖の依頼、絆ルカ・ヴァルの証、最奥にぬし「湖底王ネルガル」。</p>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>枯塩の徘徊者</td><td class="lv">Lv48</td><td>見つかると襲う</td></tr>
+<tr><td>塩喰らいの蜥蜴</td><td class="lv">Lv51</td><td>見つかると襲う</td></tr>
+<tr><td>湖底の影</td><td class="lv">Lv54</td><td>見つかると襲う</td></tr>
+<tr><td>鹹湖の黒騎士</td><td class="lv">Lv57</td><td>見つかると襲う</td></tr>
+<tr><td>白晶の巨躯</td><td class="lv">Lv60</td><td>見つかると襲う</td></tr>
+<tr class="nm"><td>★ 湖底王ネルガル</td><td class="lv">Lv62</td><td>見つかると襲う</td></tr></tbody></table></div></details><details class="zone" ><summary><b>ヴェルミア岬</b> <span class="lv">Lv58〜72</span></summary>
+<p>最果ての岬。港から北東の廃城、西の古森。剣聖シグルドが港に立つ。ぬし「古森の主エルダリス」「廃城の主ガルデリク」。</p><figure><img src="img/廃城の丘.jpg" alt="ヴェルミア岬" loading="lazy" width="1120" height="630"><figcaption>ヴェルミア岬</figcaption></figure>
+<div class="tw"><table><thead><tr><th>魔物</th><th>レベル</th><th>性質</th></tr></thead><tbody><tr><td>岬の大蟹</td><td class="lv">Lv58</td><td>見つかると襲う</td></tr>
+<tr><td>潮溜まりの大蟹</td><td class="lv">Lv59</td><td>見つかると襲う</td></tr>
+<tr><td>潮風のハイワール</td><td class="lv">Lv60</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>古森の狼人</td><td class="lv">Lv63</td><td>見つかると襲う・足音に反応</td></tr>
+<tr><td>古森の妖樹</td><td class="lv">Lv64</td><td>見つかると襲う</td></tr>
+<tr><td>古森の守り手</td><td class="lv">Lv65</td><td>見つかると襲う</td></tr>
+<tr><td>廃城の骸騎士</td><td class="lv">Lv66</td><td>見つかると襲う</td></tr>
+<tr><td>廃城の亡霊</td><td class="lv">Lv68</td><td>見つかると襲う・詠唱に反応</td></tr>
+<tr class="nm"><td>★ 古森の主エルダリス</td><td class="lv">Lv68</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr>
+<tr><td>城壁の魔道士</td><td class="lv">Lv69</td><td>見つかると襲う・詠唱に反応・魔法を使う</td></tr>
+<tr><td>廃城の黒騎士</td><td class="lv">Lv70</td><td>見つかると襲う・足音に反応</td></tr>
+<tr class="nm"><td>★ 廃城の主ガルデリク</td><td class="lv">Lv72</td><td>見つかると襲う・足音に反応・詠唱に反応</td></tr></tbody></table></div></details>
+<h3>ダンジョンと特別な場所</h3>
+<figure><img src="img/大坑道の門.jpg" alt="ロックヒル大坑道の門" loading="lazy" width="1120" height="630"><figcaption>ロックヒル北部にある大坑道の門。ENTERで中へ入る</figcaption></figure>
+<div class="tw"><table><thead><tr><th>場所</th><th>入口</th><th>レベル</th><th>中身</th></tr></thead><tbody>
+<tr><td>ロックヒル大坑道</td><td>ロックヒル北部</td><td class="lv">Lv5〜9</td><td>コウモリ・スカルゴースト・ゴブリンディガー・アルマビー。奥に主「ドルガン」(Lv9)。鉱夫の依頼「坑道の主を鎮めよ」</td></tr>
+<tr><td>地下霊廟</td><td>ヴェルダン高原</td><td class="lv">Lv24〜36</td><td>墓所の骸兵・さまよう霊・黒鉄の墓守。番人「環守ヴォルク」(Lv34)と主「地下霊廟の主ヴェルガ」(Lv36)</td></tr>
+<tr><td>地底塩窟</td><td>サルタ塩湖跡</td><td class="lv">Lv40〜52</td><td>塩殻ガニ・塩湖サラマンダー・塩晶ゴーレム。主「地底塩窟の主サルディス」(Lv52)</td></tr>
+<tr><td>影ロックヒル</td><td>町の西・城の北の鏡の祠</td><td class="lv">Lv50〜</td><td>人間の影の一行と戦う11階の試練。<a href="#high">高レベルの遊び</a>を参照</td></tr>
+<tr><td>円月闘技場</td><td>町の西側の入口</td><td class="lv">誰でも</td><td>プレイヤー同士で戦う場所。パーティ以外は敵同士。倒れても経験値は減らない。絆は連れて入れない</td></tr>
+<tr><td>天空回廊</td><td>町の「回廊の案内人」に話す</td><td class="lv">誰でも</td><td>戦わず跳んで登る塔。落ちても死なない。タイムアタックでグリム</td></tr>
+<tr><td>ヴェイル村</td><td>ミストヴェイル密林の南</td><td class="lv">－</td><td>調理・錬金・鍛冶の合成ができる村。素材屋・料理人・倉庫番が依頼を出す。宿と帰還の印あり</td></tr>
+<tr><td>ヴェルミアの港</td><td>ヴェルミア岬の入口</td><td class="lv">－</td><td>岬の拠点。道具屋・宿・帰還の印・郵便ポスト。剣聖シグルドが立つ</td></tr>
+</tbody></table></div>
+<figure><img src="img/ヴェルミアの港.jpg" alt="ヴェルミアの港" loading="lazy" width="1120" height="630"><figcaption>最果ての拠点、ヴェルミアの港</figcaption></figure>
+</section>
+
+<section id="job"><h2>ジョブ紹介</h2>
+<p>最初に選べるのは基本の6つ（戦士・モンク・白導士・黒導士・紅導士・シーフ）。上級ジョブ5つはLv30前後の依頼で解放されます。ジョブは町の「ジョブ指南役」でいつでも変えられ、ジョブごとに別のレベルで育ちます。<b>迷ったら「戦士」か「白導士」</b>。戦士はHPが高く一人でも狩りやすく、白導士は絆を呼べば安定します。</p>
+<div class="grid2"><article class="card">
+<h4>戦士 <small>WAR</small></h4>
+<p>あらゆる武器を操る戦闘のプロ。高いHPとSTRで前衛として活躍する。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>片手剣・斧・両手剣・棍など何でも</dd>
+<dt>アビリティ</dt><dd>剛力乱撃(Lv1)、挑発(Lv5)、プル(Lv10)、猛り(Lv15)、守りの型(Lv25)、鬨の声(Lv35)…</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article><article class="card">
+<h4>モンク <small>MNK</small></h4>
+<p>己の肉体を武器とする格闘家。全ジョブ中で最も高いHPを誇る。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>格闘(拳)</dd>
+<dt>アビリティ</dt><dd>ためる(Lv1)、無双連拳(Lv1)、足さばき(Lv8)、回避(Lv15)、受け身(Lv22)、集中(Lv25)…</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article><article class="card">
+<h4>白導士 <small>WHM</small></h4>
+<p>回復・支援魔法のスペシャリスト。パーティに不可欠な存在。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>棍・盾</dd>
+<dt>アビリティ</dt><dd>聖女の祈り(Lv1)</dd>
+<dt>魔法</dt><dd>ヒール(Lv1)、ホーリーレイ(Lv3)、ライトブラスト(Lv5)、プロテクト(Lv7)、解毒(Lv7)、ヒールII(Lv11)…</dd>
+</dl></article><article class="card">
+<h4>黒導士 <small>BLM</small></h4>
+<p>攻撃魔法のスペシャリスト。最高のINTとMPで強力な魔法を放つ。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>杖</dd>
+<dt>アビリティ</dt><dd>魔力解放(Lv1)</dd>
+<dt>魔法</dt><dd>ロック(Lv1)、ポイズン(Lv5)、アクア(Lv9)、ヴェノム(Lv10)、ドレイン(Lv12)、ゲイル(Lv13)…</dd>
+</dl></article><article class="card">
+<h4>紅導士 <small>RDM</small></h4>
+<p>何でもこなす万能職。黒・白の両魔法を扱い、前衛戦闘もこなす。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>片手剣・盾</dd>
+<dt>アビリティ</dt><dd>連鎖詠唱(Lv1)、魔力転換(Lv40)、剣魔の構え(Lv58)</dd>
+<dt>魔法</dt><dd>ヒール(Lv3)、ロック(Lv4)、アクア(Lv5)、プロテクト(Lv7)、ゲイル(Lv9)、ホーリーレイ(Lv10)…</dd>
+</dl></article><article class="card">
+<h4>シーフ <small>THF</small></h4>
+<p>俊敏な戦士。盗む・敵対心の操作・不意打ちの一撃を得意とする。</p>
+<dl>
+<dt>なり方</dt><dd>最初から</dd>
+<dt>武器</dt><dd>短剣</dd>
+<dt>アビリティ</dt><dd>幻歩(Lv1)、ぬすむ(Lv5)、不意打ち(Lv15)、逃げ足(Lv25)、急所狙い(Lv32)、忍び足(Lv36)…</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article><article class="card">
+<h4>ナイト <small>PLD</small></h4>
+<p>盾と片手剣で前線を守る重装の騎士。白魔法も少し扱える。</p>
+<dl>
+<dt>なり方</dt><dd>Lv30 領主の依頼「誉れの砦」→「聖騎士の紋章」</dd>
+<dt>武器</dt><dd>片手剣・盾</dd>
+<dt>アビリティ</dt><dd>不動の構え(Lv1)、盾打ち(Lv1)、鉄壁(Lv15)、威光(Lv30)、癒しの手(Lv50)、聖盾(Lv60)</dd>
+<dt>魔法</dt><dd>ヒール(Lv5)、プロテクト(Lv10)、ライトブラスト(Lv10)、ホーリーレイ(Lv15)、ヒールII(Lv20)、マナバリア(Lv25)…</dd>
+</dl></article><article class="card">
+<h4>暗黒騎士 <small>DRK</small></h4>
+<p>両手武器で大ダメージを狙う攻撃特化の騎士。黒魔法も少し扱える。</p>
+<dl>
+<dt>なり方</dt><dd>Lv20 墓守「墓守の依頼」→Lv30「骸の行進」→「奈落王の黒角」</dd>
+<dt>武器</dt><dd>両手剣・両手鎌</dd>
+<dt>アビリティ</dt><dd>背水の陣(Lv1)、柄打ち(Lv1)、暗黒の構え(Lv10)、血の渇き(Lv25)、重圧の刃(Lv30)、怨嗟の叫び(Lv35)…</dd>
+<dt>魔法</dt><dd>ドレイン(Lv1)、ロック(Lv5)、ヴェノム(Lv5)、ファイア(Lv10)、ポイズン(Lv15)、マナドレイン(Lv20)…</dd>
+</dl></article><article class="card">
+<h4>獣使い <small>BST</small></h4>
+<p>獣を心で従える野の狩人。斧を振るい、獣を眠らせて戦況を操る。</p>
+<dl>
+<dt>なり方</dt><dd>Lv28 毛皮商「雪男の毛皮」→Lv30「群れを退ける」→「森王の胞子」</dd>
+<dt>武器</dt><dd>斧</dd>
+<dt>アビリティ</dt><dd>手なずける(Lv1)、獣威し(Lv5)、猛獣の勢い(Lv10)、嗅ぎ分け(Lv14)、野駆け(Lv18)、群れの勢い(Lv30)…</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article><article class="card">
+<h4>忍者 <small>NIN</small></h4>
+<p>影を纏う暗殺者。短剣と体術で敵を翻弄し、分身で刃をかわす。</p>
+<dl>
+<dt>なり方</dt><dd>Lv13 傭兵団長「オークの脅威」→Lv30「影を追う者」→「悪夢竜の逆鱗」</dd>
+<dt>武器</dt><dd>短剣(片手刀)</dd>
+<dt>アビリティ</dt><dd>影分身(Lv1)、刃の構え(Lv8)、隠形の術(Lv12)、見切り(Lv24)、残像(Lv38)、気脈(Lv52)…</dd>
+<dt>魔法</dt><dd>火走り(Lv5)、痺れ針(Lv12)、墨霞(Lv20)、氷礫(Lv29)、風足(Lv39)、火走りII(Lv42)…</dd>
+</dl></article><article class="card">
+<h4>吟遊詩人 <small>BRD</small></h4>
+<p>楽器を携え、歌でパーティを動かす後衛。奏でている間だけ攻撃力・回避・HPとMPの回復が味方に効き続ける。殴れない。</p>
+<dl>
+<dt>なり方</dt><dd>Lv22 牙細工師「牙の交易品」→Lv30「森の音」→「竜の鳴き骨」</dd>
+<dt>武器</dt><dd>楽器(殴れない)</dd>
+<dt>アビリティ</dt><dd>天籟(Lv1)、独奏(Lv20)、二重奏(Lv32)、アンコール(Lv45)、連奏(Lv50)、魂の独唱(Lv58)</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article><article class="card">
+<h4>剣聖 <small>KSG</small></h4>
+<p>大剣ひとつで道を切り開く剣の達人。魔法は使わず、強烈な剣技で敵をなぎ払う。絆の者だけのジョブ。</p>
+<dl>
+<dt>なり方</dt><dd>絆だけ。人は就けない(剣聖シグルドを仲間にする)</dd>
+<dt>武器</dt><dd>大剣</dd>
+<dt>アビリティ</dt><dd>一閃(Lv56)、大旋風(Lv57)、見切り・極(Lv58)、剣気解放(Lv59)、奥義・天断(Lv60)</dd>
+<dt>魔法</dt><dd>なし</dd>
+</dl></article></div>
+<h3>サポートジョブ（Lv18〜）</h3>
+<p>町の「ポムリー」の依頼「炎の証」（ガラ・ヘイ）「土の証」（ソルジャークロウラー）「水の証」（プリンセストード）→「ポムリーの試練」（蛇司祭シェザル）を終えると、メインとは別に<b>サポートジョブ</b>を付けられます。サポートのレベルはメインの半分まで効き、その範囲の魔法・アビリティが使えます。</p>
+<h3>武技（ウェポンスキル）</h3>
+<p>攻撃していると溜まるTPが100%以上で、<kbd>1</kbd>から武技を撃てます。武器の種類とレベルで覚える技が変わります。仲間と続けて撃つと「連携」になり、追加のダメージが出ます（連携にさらに魔法を合わせるとマジックバースト）。</p>
+<div class="tw"><table><thead><tr><th>武器</th><th>武技(覚えるレベル)</th></tr></thead><tbody><tr><td>片手剣</td><td>ソニックスラッシュ(Lv1)、フレイムスラッシュ(Lv9)、焔返し(Lv15)、閃光刃(Lv30)、蒼天斬(Lv40)、煌刃(Lv50)、天劫剣(Lv60)</td></tr>
+<tr><td>格闘</td><td>ラッシュ(Lv1)、ボディチャージ(Lv5)、羅刹掌(Lv15)、炎舞脚(Lv30)、崩拳(Lv40)、天衝脚(Lv50)、百花繚乱(Lv60)</td></tr>
+<tr><td>斧</td><td>クラッシュアクス(Lv7)、スマッシュアクス(Lv18)、断岩斧(Lv30)、旋風斧(Lv40)、大地割り(Lv50)、覇王斧(Lv60)</td></tr>
+<tr><td>短剣</td><td>蛇牙突き(Lv8)、刃風(Lv24)、燕返し(Lv32)、影刺し(Lv40)、紅蜂(Lv50)、幻月(Lv60)</td></tr>
+<tr><td>両手剣</td><td>大断ち(Lv10)、月輪斬(Lv20)、剛断(Lv30)、烈火斬(Lv40)、山崩し(Lv50)、覇斬(Lv60)</td></tr>
+<tr><td>杖</td><td>星砕き(Lv1)、地脈撃(Lv20)、流水(Lv30)、天杖(Lv40)、星辰撃(Lv50)、神威(Lv60)</td></tr>
+<tr><td>両手鎌</td><td>刈り風(Lv10)、冥月(Lv20)、影刈り(Lv30)、死神の鎌(Lv40)、魂狩り(Lv50)、冥府送り(Lv60)</td></tr>
+<tr><td>棍</td><td>岩割り(Lv1)、鐘打ち(Lv20)、雷槌(Lv30)、聖打(Lv40)、砕星(Lv50)、天鳴撃(Lv60)</td></tr>
+<tr><td>楽器</td><td>フィナーレ(Lv20)、レクイエム(Lv40)、夜想の調べ(Lv50)、終焉の和音(Lv60)</td></tr></tbody></table></div>
+</section>
+
+<section id="kizuna"><h2>絆（きずな）── 一緒に戦う仲間</h2>
+<p>「絆の者」は、呼ぶといつでも一緒に戦ってくれる仲間です。<b>5人まで</b>呼べて、自分のレベルに合わせて強さが揃います。回復役・盾役・攻撃役をそろえると、格上の魔物やぬしにも挑めます。呼ぶ相手を解放するには、町の「訓練官ドルグ」（前衛の絆）と「導師エルナ」（魔法職の絆）の依頼「絆の証」を終えます。</p>
+<ul>
+<li><b>呼ぶ:</b> 自分を<kbd>Z</kbd>で選んで<kbd>ENTER</kbd>→「絆の者を呼ぶ」。または<kbd>Ctrl+Q</kbd>で欠けている絆を順に呼び足します（戦闘中・クルルに乗っている間・闘技場・天空回廊では呼べません）。</li>
+<li><b>帰す:</b> 同じコマンド窓の「絆の者を帰す」。ダンジョンには連れて入れますが、影ロックヒルの中では補充できません。</li>
+<li>絆はそれぞれの頭で動きます。盾役は挑発で敵を引き受け、白導士はHPの減り方を見て回復し、黒導士は敵が2体いれば片方を眠らせます。</li>
+</ul>
+<div class="tw"><table><thead><tr><th>Lv</th><th>絆</th><th>依頼(受ける相手)</th><th>やること</th><th>戦い方</th></tr></thead><tbody><tr><td class="lv">Lv10</td><td><b>白導士セラ</b><div class="dim">白導士</div></td><td>絆の証・癒<div class="dim">導師エルナ</div></td><td>アルマビー ×8</td><td>傷ついた仲間を見極め、必要な強さの回復を使う白導士。</td></tr><tr><td class="lv">Lv15</td><td><b>戦士リオ</b><div class="dim">戦士</div></td><td>絆の証・剣<div class="dim">訓練官ドルグ</div></td><td>スクイドル ×8</td><td>敵の注意を引き受け、主人と回復役を守る戦士。</td></tr><tr><td class="lv">Lv20</td><td><b>黒導士ノア</b><div class="dim">黒導士</div></td><td>絆の証・炎<div class="dim">導師エルナ</div></td><td>ディノ ×8</td><td>距離を保ち、状況に応じて強力な属性魔法と睡眠を使い分ける黒導士。</td></tr><tr><td class="lv">Lv25</td><td><b>モンクガイ</b><div class="dim">モンク</div></td><td>絆の証・拳<div class="dim">訓練官ドルグ</div></td><td>イエティ ×8</td><td>敵の背後から拳を重ね、傷つけば自ら立て直すモンク。</td></tr><tr><td class="lv">Lv32</td><td><b>シーフミナ</b><div class="dim">シーフ</div></td><td>絆の証・影<div class="dim">訓練官ドルグ</div></td><td>胞子眼 ×8</td><td>敵の背後を取り、一度だけ盗みを試みて隙を突くシーフ。</td></tr><tr><td class="lv">Lv35</td><td><b>紅導士リラ</b><div class="dim">紅導士</div></td><td>絆の証・理<div class="dim">導師エルナ</div></td><td>ブルーデーモン ×8</td><td>回復役の有無を見て、回復・弱体・攻撃を切り替える紅導士。</td></tr><tr><td class="lv">Lv36</td><td><b>吟遊詩人リュカ</b><div class="dim">吟遊詩人</div></td><td>絆の証・音<div class="dim">導師エルナ</div></td><td>スカルゴースト ×14</td><td>竪琴を抱えて歌う旅の楽師。殴らず、戦の歌と癒しの歌で仲間を支える。</td></tr><tr><td class="lv">Lv41</td><td><b>ナイトアルド</b><div class="dim">ナイト</div></td><td>絆の証・盾<div class="dim">訓練官ドルグ</div></td><td>塩晶ゴーレム ×8</td><td>敵の正面に立ち、盾技と守りの構えで仲間を守るナイト。</td></tr><tr><td class="lv">Lv51</td><td><b>忍者カゲロウ</b><div class="dim">忍者</div></td><td>絆の証・霞<div class="dim">訓練官ドルグ</div></td><td>ゴーレリング ×8</td><td>敵の正面を影で受け、忍術で攻防を組み立てる忍者。</td></tr><tr><td class="lv">Lv52</td><td><b>獣使いルカ</b><div class="dim">獣使い</div></td><td>絆の証・牙<div class="dim">訓練官ドルグ</div></td><td>塩喰らいの蜥蜴 ×8</td><td>格上の獣を弱らせ、勢いと息吹で長く戦う獣使い。</td></tr><tr><td class="lv">Lv57</td><td><b>暗黒騎士ヴァル</b><div class="dim">暗黒騎士</div></td><td>絆の証・闇<div class="dim">訓練官ドルグ</div></td><td>鹹湖の黒騎士 ×8</td><td>敵の背後から命を削って攻め、吸収魔法で踏みとどまる暗黒騎士。</td></tr><tr><td class="lv">Lv60</td><td><b>剣聖シグルド</b><div class="dim">剣聖</div></td><td>剣聖の道・試し<div class="dim">剣聖シグルド(ヴェルミアの港)</div></td><td>廃城の黒騎士 ×10</td><td>白と黒の鎧に大剣を背負う剣聖。魔法は使わず、一閃と大旋風で敵をなぎ払う。</td></tr></tbody></table></div>
+<div class="note"><b>剣聖シグルド</b>だけは特別で、影ロックヒルB10を突破して暗黒騎士ヴァルを解放した後、ヴェルミアの港で3つの依頼（Lv58〜60）を終えると仲間になります。大剣の技「一閃」「大旋風」「奥義・天断」で敵をなぎ払います。</div>
+</section>
+
+<section id="battle"><h2>戦いの基礎</h2>
+<h3>魔物の「性質」を読む</h3>
+<ul>
+<li><b>見つかると襲う</b>: 視界に入ると向かってくる。後ろから回り込む。</li>
+<li><b>足音に反応</b>: 走って近づくと気付かれる。歩けば通り抜けられる（クルルに乗ったままは気付かれやすい）。</li>
+<li><b>詠唱に反応</b>: 近くで魔法を唱えると襲ってくる。回復は離れてから。</li>
+<li><b>何もしない</b>: こちらから殴らなければ襲ってこない。安心して1体ずつ。</li>
+</ul>
+<p>他の人が戦っている魔物は名前が灰色になり、横取りできません（「他の冒険者が戦っている」）。ぬしは金橙の名前と★で目立ちます。</p>
+<h3>パーティ</h3>
+<p>人と組むと最大6人。<kbd>TAB</kbd>で人を選び<kbd>ENTER</kbd>→「パーティに誘う」。経験値は<b>パーティで一番レベルの高い人</b>を基準に配られるので、レベル差が大きいとほとんど入りません。そのときはリーダーが<b>レベルシンク</b>（誰か1人のレベルに全員を合わせる。Lv10以上）を張ります。<kbd>F1</kbd>〜<kbd>F6</kbd>で仲間を選んで回復や強化ができ、<kbd>E</kbd>のアシストで同じ相手を狙えます。</p>
+<h3>回復と補給</h3>
+<ul>
+<li><kbd>H</kbd>で座るとHP・MPが回復します。動くと止まります。</li>
+<li>ポーション・マナポーション・毒消し・声戻しの薬は道具屋で。薬はコマンド窓の「アイテム」か<code>/item 品名</code>。</li>
+<li>料理（グリルマトン、塩焼きの魚など）は食べると一定時間の強化。ヴェイル村の合成や魚問屋で。</li>
+</ul>
+<h3>自動狩り（AIモード）</h3>
+<p>どれかのジョブがLv30になると、<kbd>Ctrl+Shift+Q</kbd>（または<code>/ai</code>）で自動狩りが使えます。自分のレベルに合う狩り場へ歩き、絆を呼び、魔物を狩り、危なくなれば逃げます。メインメニューの「AIの薬」で薬を使うかも決められます。試練（影ロックヒル）や天空回廊では使えません。</p>
+</section>
+
+<section id="derby"><h2>競クルル（クルルのレース）</h2>
+<figure><img src="img/競クルル発走正面.jpg" alt="競クルルの発走地点" loading="lazy" width="1120" height="630"><figcaption>ロックヒル北部を走る競クルル。6頭のクルルが出走する</figcaption></figure>
+<p>「クルル」は乗り物の鳥。ゲームの中では定期的に<b>競クルル</b>（クルルのレース）が開かれ、券を買って当てるとグリムが増えます。当てた人で山分けするパリミュチュエル方式（控除20%）です。</p>
+<h3>ゲームの中で</h3>
+<ol class="steps">
+<li>町の<b>クルル券売り場</b>に話しかけると、次のレースの出走表とオッズが出ます。</li>
+<li>賭け方を選びます。<b>単勝</b>（1着を当てる）・<b>複勝</b>（3着以内に入れば当たり）・<b>クルル連</b>（2つの枠を選び、1・2着を順不同で当てる）。100グリム単位。</li>
+<li>締切までに買います。レースは町の<b>大型画面</b>で中継され、結果が出ると的中した分が自動で入ります。</li>
+</ol>
+<figure><img src="img/券売り場.jpg" alt="クルル券売り場の窓" loading="lazy" width="1120" height="630"><figcaption>券売り場の窓。出走表・オッズ・賭け方・金額を選ぶ</figcaption></figure>
+<figure><img src="img/クルル競走の大型画面.jpg" alt="競クルルの大型画面" loading="lazy" width="1120" height="630"><figcaption>レースを映す大型画面。予想屋ポポの一言も流れる</figcaption></figure>
+<h3>自分でクルルに乗って走る</h3>
+<p>クルル舎の親方の依頼（Lv12〜16）で「クルルの笛」を手に入れると、<kbd>V</kbd>でクルルに乗れます。乗ったまま町の<b>クルル競走受付</b>に話すと、ロックヒル北部を一周するタイムアタックに挑めます（賞品はなし、記録だけ）。</p>
+<div class="tip">競クルルで3・5・10連勝すると称号「勝負師」「クルルの申し子」「伝説の目利き」がもらえます。</div>
+</section>
+
+<section id="web"><h2>Webポータル（スマホ・PCのブラウザで遊ぶ）</h2>
+<p><a href="https://grimoire-online.org" target="_blank" rel="noopener">https://grimoire-online.org</a> をブラウザで開くと、ゲームを起動しなくても遊べる4つの遊びがあります。<b>ゲームと同じログイン名・パスワード</b>で入り、遊ぶキャラクターを選びます（持ち物とグリムはゲームと共通）。ポータルだけで新しいアカウントとキャラを作ることもできます。初めて開くときはメールに届く番号で本人確認をします。</p>
+<div class="tw"><table><thead><tr><th>遊び</th><th>何ができる</th><th>値段</th></tr></thead><tbody>
+<tr><td><b>競クルル</b></td><td>出走表とオッズを見て券を買い、レースをライブで観戦。過去の開催・的中者発表も見られる</td><td>券は100グリムから</td></tr>
+<tr><td><b>クレーンゲーム</b></td><td>アームでカプセルや立体グリカをつかむ。景品はグリモカード</td><td>1回50グリム</td></tr>
+<tr><td><b>グリカ大戦</b></td><td>集めたグリモカードから5枚のデッキを組み、人と対戦。「対戦相手を待つ」で募集</td><td>無料</td></tr>
+<tr><td><b>魔導採取帖（裏口）</b></td><td>伐採・採掘・採草・釣りの手作業ミニゲーム。採れた素材はゲームの持ち物へ入る。曜日の属性が合う系統はよく採れ、月光草は夜だけ</td><td>採取券が1日12枚無料、追加は1枚50グリム</td></tr>
+</tbody></table></div>
+<ul>
+<li>ログインボーナス200グリムはゲームとポータルで共通（1日1回）。ポータルでキャラを作った人には作成ボーナスもあります。</li>
+<li>画面の上に流れる帯（お知らせ）は右上の×で消せます。</li>
+<li>スマホでゲーム本体を遊びたいときは、スタートメニューの「スマホで遊ぶ」（PCと同じWi-Fiにつないだスマホのブラウザで、PCの画面をそのまま操作）。</li>
+</ul>
+</section>
+
+<section id="play"><h2>釣り・採取・合成・グリカ</h2>
+<h3>釣り</h3>
+<figure><img src="img/水辺.jpg" alt="ロックヒル北部の水辺" loading="lazy" width="1120" height="630"><figcaption>水辺なら池でも川でも釣れる</figcaption></figure>
+<p>道具屋で<b>木の釣り竿</b>（メインに装備）と<b>餌</b>（ミミズなど。サブに装備）を買い、水辺で<kbd>N</kbd>（または<code>/fish</code>）。魚が掛かったらバーが合う瞬間に<kbd>ENTER</kbd>。餌によって釣れる魚が変わり（ミミズ=小魚、川エビ=中型、光る羽虫=大物・珍魚、幻のすり身=伝説の魚）、竿は木→匠→伝説の「竜鬚」と強くなります。町の「釣り師ヴェッド」の依頼（Lv10、魚20匹）で匠の竿がもらえます。釣った魚は「魚問屋の主人」が山（10匹）単位で買い取り、今日の目玉は日替わりで高値。買取の上限は約1週間で戻ります。</p>
+<h3>採取（伐採・採掘・採草）</h3>
+<p>野に立つ木・岩・草の採取地に<kbd>ENTER</kbd>で作業が始まり、バーが満ちると素材（丸太・銅の原石・薬草など）が手に入ります。等級が上がるほど太い木や珍しい鉱石が採れます。Webポータルの「魔導採取帖」でも同じ素材が採れます。</p>
+<h3>合成（ヴェイル村）</h3>
+<p>ミストヴェイル密林の南のヴェイル村で、素材とクリスタル（火・氷・風・土・雷・水）を組み合わせて<code>/craft</code>。<b>調理</b>（料理人）・<b>錬金</b>（素材屋。ポーション類）・<b>鍛冶</b>（倉庫番。武器・防具）の3系統で、村の依頼を順に終えると腕（スキル）の目標が分かります。スキルは<kbd>U</kbd>で確認。</p>
+<h3>グリモカード（グリカ）</h3>
+<figure><img src="img/カード帳.jpg" alt="カード帳" loading="lazy" width="1120" height="630"><figcaption>Bキーのカード帳。集めた絵札とデッキ</figcaption></figure>
+<p>魔物の絵札を集めて5枚のデッキを組み、人やNPCと対戦するカード遊びです。カードは魔物の落とし物やクレーンゲームで手に入ります。ゲームの中では相手を選んで<kbd>X</kbd>で勝負を挑み、町の卓ではNPCが相手をしてくれます（<kbd>B</kbd>でカード帳）。Webの「グリカ大戦」でも同じデッキで戦えます。10人に勝つと称号「絵札の覇者」。</p>
+<figure><img src="img/グリカの卓.jpg" alt="グリカの卓" loading="lazy" width="1120" height="630"><figcaption>町の外れにあるグリカの卓。NPCと対局できる</figcaption></figure>
+</section>
+
+<section id="high"><h2>高レベルでできるようになること</h2>
+<h3>天空回廊（誰でも）</h3>
+<p>町の「回廊の案内人」に話すと、戦わずに跳んで登る塔へ送られます。落ちても死なず、通り過ぎた一番上の「かがり火」へ戻されるだけ。入ると10分のタイムアタックが始まり、途中のかがり火4か所で各80グリム、頂上で200グリム、速く登るほどボーナス（3分未満+600、5分未満+700、8分未満+350、10分未満+100）。報酬は1日3回まで、1日の合計は1500グリムまで（それを超えても登ることはできます）。踏破で称号「空駆ける者」、3分未満で「天翔ける者」。回廊の中だけジャンプが高くなります。絆とクルルは連れて入れません。</p>
+<h3>影ロックヒル（Lv50〜）── 【勇者】への試練</h3>
+<p>町の西、城の北にある<b>鏡の祠</b>の番人「影守りのセイラ」が「勇者の資格」の依頼を出します（どれかのジョブがLv50から）。3つの王のぬし──<b>胞子母王モルガ</b>（モルガ胞子林・Lv35）・<b>塩冠王サルタ</b>（サルタ塩湖跡・Lv44）・<b>海嘯王ガルマーレ</b>（エメル海岸・Lv52）──を倒して紋章を集めると、祠が開きます。</p>
+<ul>
+<li>中は11階。各階に<b>人間の「影の冒険者」の一行</b>が待ち、決闘の扉が閉じてから<b>10分以内</b>に全員倒すと突破。倒れたら負け（祠の前へ戻される）。</li>
+<li>入る前に絆を呼んでおきます（自分と合わせて6人まで、中では補充できません）。階の入口には1階に1回だけHP・MPが全快する「祈りの泉」。</li>
+<li>突破すると<b>試練の証</b>（初回は10×(階+1)枚、2回目以降は2×(階+1)枚）。祠の番人で<b>影銅→影銀→影金→勇者</b>の装備と交換（1部位30／80／180／350枚。銀はB3、金はB6、勇者はB9突破で解放。金と勇者は湖底王ネルガルの「湖底の結晶」も要ります）。</li>
+<li>B3で「挑戦者」、B5で「英傑」、B8で「勇者候補」、B10で<b>【勇者】</b>の称号と、絆全員で最強の武技を順に放つ「絆の総攻撃」を覚えます。</li>
+</ul>
+<div class="tw"><table><thead><tr><th>階</th><th>場所</th><th>この階のヒント</th><th>影の一行</th></tr></thead><tbody><tr><td class="lv">1F</td><td>石牢</td><td><b>癒し手を先に倒せ</b><div class="dim">傷を癒す者がいる限り、剣は折れない</div></td><td>剣闘士ガロ(戦)・白の祈り手ミラ(白)</td></tr>
+<tr><td class="lv">B1</td><td>地下水路</td><td><b>盾に惑わされるな</b><div class="dim">挑発に乗らず、後ろの魔導士を狙え</div></td><td>盾士ロウ(ナ)・黒の術士ネネ(黒)・白の癒し手ユラ(白)</td></tr>
+<tr><td class="lv">B2</td><td>書庫</td><td><b>影を捉える目を持て</b><div class="dim">空蝉と回避を破るには、命中が要る</div></td><td>盗賊カイ(シ)・忍びシノ(忍)・紅の剣士リゼ(紅)</td></tr>
+<tr><td class="lv">B3</td><td>聖堂</td><td><b>歌を止めよ</b><div class="dim">詩人の歌が、前衛を鬼に変える</div></td><td>暗刃グレン(暗)・拳士バン(モ)・吟遊詩人フィオ(吟)・白の司祭ソラ(白)</td></tr>
+<tr><td class="lv">B4</td><td>獣舎</td><td><b>数を見誤るな</b><div class="dim">獣使いの傍らには、もう一体いる</div></td><td>獣使いラナ(獣)・戦士ゴウ(戦)・黒の賢者クロ(黒)・紅の守り手エマ(紅)</td></tr>
+<tr><td class="lv">B5</td><td>鏡の間</td><td><b>己を知れ</b><div class="dim">鏡に映るのは、お前たち自身だ</div></td><td>写し身(こちらの編成と同じジョブ)</td></tr>
+<tr><td class="lv">B6</td><td>魔導炉</td><td><b>魔法を封じよ</b><div class="dim">沈黙を。魔法への守りを</div></td><td>双星の黒×2・紅の導師・白の導師・詩人…</td></tr>
+<tr><td class="lv">B7</td><td>闘技の坑</td><td><b>一撃に耐えよ</b><div class="dim">盾が倒れれば、すべてが崩れる</div></td><td>戦士ザン・暗黒騎士ヴァル・拳聖メイ・忍頭レン・詩人…</td></tr>
+<tr><td class="lv">B8</td><td>氷の回廊</td><td><b>連携を断て</b><div class="dim">重なる技こそ、最も恐ろしい</div></td><td>聖騎士アル・白賢者ティア・黒賢者ベル・紅賢者ミナ・詩人…</td></tr>
+<tr><td class="lv">B9</td><td>溶岩の祭壇</td><td><b>切り札を読め</b><div class="dim">彼らは最後の力を順に解き放つ</div></td><td>精鋭の盾・刃・拳・忍・紅…</td></tr>
+<tr><td class="lv">B10</td><td>王の間</td><td><b>勇者の座を継げ</b><div class="dim">先代勇者一行、最後の試練</div></td><td>先代勇者レオン・先代の戦士ディン・先代の拳士マオ…</td></tr></tbody></table></div>
+<div class="warn">影の黒導士や紅導士はこちらを<b>眠らせて</b>きます（最長20秒。頭の上に zZz が出ます）。眠っている間は攻撃もコマンドも効きません。殴られると目が覚めるので、慌てず待ちましょう。影の白導士を先に倒すと戦いが早く終わります。</div>
+<h3>称号</h3>
+<p>手に入れた称号は<kbd>C</kbd>のステータスの窓で付け替えられ、名前の前に【称号】と出ます。付けている称号の分だけ能力が上がります。</p>
+<div class="tw"><table><thead><tr><th>称号</th><th>条件</th><th>効き目</th></tr></thead><tbody><tr><td><b>【勝負師】</b></td><td>競クルルで3連勝</td><td>命中+5</td></tr>
+<tr><td><b>【クルルの申し子】</b></td><td>競クルルで5連勝</td><td>命中+8 回避+5</td></tr>
+<tr><td><b>【伝説の目利き】</b></td><td>競クルルで10連勝</td><td>命中+12 回避+8</td></tr>
+<tr><td><b>【空駆ける者】</b></td><td>天空回廊を踏破する</td><td>回避+8</td></tr>
+<tr><td><b>【天翔ける者】</b></td><td>天空回廊を3分未満で踏破する</td><td>命中+5 回避+12</td></tr>
+<tr><td><b>【絵札の覇者】</b></td><td>グリカで10人に勝つ</td><td>MP+30 防御+5</td></tr>
+<tr><td><b>【熟練の冒険者】</b></td><td>どれかのジョブをLv60にする</td><td>HP+60 MP+20</td></tr>
+<tr><td><b>【挑戦者】</b></td><td>影ロックヒルのB3を突破する</td><td>攻撃+6 防御+6</td></tr>
+<tr><td><b>【英傑】</b></td><td>影ロックヒルのB5を突破する</td><td>攻撃+10 防御+10</td></tr>
+<tr><td><b>【勇者候補】</b></td><td>影ロックヒルのB8を突破する</td><td>HP+50 攻撃+12 防御+12</td></tr>
+<tr><td><b>【勇者】</b></td><td>影ロックヒルのB10を突破する</td><td>HP+100 MP+50 攻撃+15 防御+15 命中+10</td></tr></tbody></table></div>
+</section>
+
+<section id="item"><h2>アイテム</h2>
+<figure><img src="img/そうび窓.jpg" alt="装備・持ち物の窓" loading="lazy" width="1120" height="630"><figcaption>Pキーの装備・持ち物の窓。上が装備、下がバッグ</figcaption></figure>
+<h3>装備の目安</h3>
+<p>装備には必要レベルと、着けられるジョブがあります。新しい町や村に着いたら店をのぞき、依頼の褒美とぬしの落とし物で埋めていくのが基本です。</p>
+<div class="tw"><table><thead><tr><th>Lv</th><th>防具</th><th>武器</th><th>手に入れ方</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td>レザーバンダナ・布の胴着・レザーグローブ・レザートラウザ・レザーハイブーツ</td><td>ブロンズ系(剣・短剣・斧・棍・ナックル)・見習いの杖</td><td>町の防具屋・武器屋</td></tr>
+<tr><td class="lv">Lv10</td><td>ブラスキャップ・チェーンメイル・ブラスフィンガー・チェーンホーズ・グリーブ</td><td>アイアン系・オークスタッフ・グレートソード・ウォーサイズ</td><td>町の店。指輪・ピアスもLv10から</td></tr>
+<tr><td class="lv">Lv20</td><td>ミスリルメイル(前衛)／疾風の胴着(軽装)／呪紋のコイフ(魔法職)</td><td>ミスリルソード・ミスリルアクス</td><td>町の店と依頼の報酬</td></tr>
+<tr><td class="lv">Lv30</td><td>ミスリルヘルム・隠形の頭巾・星詠みの法衣・香草の外套</td><td>ダマスカスソード・ダマスカスクロー</td><td>村の合成・魔物の落とし物・競売</td></tr>
+<tr><td class="lv">Lv40</td><td>アダマンガントレ・韋駄天の籠手・清唱の靴・月光の脚甲</td><td>アダマンソード・アダマンクロー・闇祓いの大剣</td><td>ギルドのアダマン依頼・店(Lv40〜)</td></tr>
+<tr><td class="lv">Lv50</td><td>影銅→影銀→影金→勇者の装備(頭・胴・手・脚・足)</td><td>影銅〜勇者の各武器</td><td>影ロックヒルの証と交換(鏡の祠)</td></tr>
+<tr><td class="lv">Lv60</td><td>大賢者のローブ・天羽の道着・竜鱗の大鎧・星屑の法衣</td><td>勇者の聖剣・覇王の拳・賢者の杖・星鉄の槌</td><td>町の店(Lv60)・ヴェルミア岬の落とし物・合成</td></tr></tbody></table></div>
+<h3>薬と料理</h3>
+<div class="tw"><table><thead><tr><th>品</th><th>効き目</th></tr></thead><tbody><tr><td>ポーション</td><td>HPを60回復する薬。</td></tr>
+<tr><td>ハイポーション</td><td>HPを150回復する高品質な薬。</td></tr>
+<tr><td>マナポーション</td><td>MPを30回復する薬。</td></tr>
+<tr><td>ハイマナポーション</td><td>MPを150回復する高品質な薬。</td></tr>
+<tr><td>毒消し</td><td>毒の状態異常を治す薬。</td></tr>
+<tr><td>声戻しの薬</td><td>静寂の状態異常を治す薬。</td></tr>
+<tr><td>グリルマトン</td><td>羊肉の串焼き。一定時間、攻撃力と防御力が上がる。</td></tr>
+<tr><td>魚</td><td>釣りで獲れた魚。食べるとHPが少し回復する。合成素材にも。</td></tr>
+<tr><td>塩焼きの魚</td><td>川魚を塩で焼いた素朴な一皿。しばらく体力の減りが和らぐ。</td></tr>
+<tr><td>月光魚の香草焼き</td><td>香草を敷いて焼いた月光魚。じんわりと力が湧く。</td></tr>
+<tr><td>星屑のスープ</td><td>星屑草を煮出した淡く光るスープ。深い休息をもたらす。</td></tr>
+<tr><td>ニジマスの香草蒸し</td><td>香草で蒸したニジマス。穏やかに力が続く。</td></tr>
+<tr><td>木の実のパン</td><td>若木の枝で焼いた素朴なパン。腹持ちがよい。</td></tr>
+<tr><td>なまず鍋</td><td>オオナマズを丸ごと煮た力自慢の鍋。体が芯から温まる。</td></tr>
+<tr><td>霜降り燻製</td><td>霜降り材で燻した魚。日持ちがして味が濃い。</td></tr>
+<tr><td>淵の王の姿煮</td><td>ヌシを丸ごと煮付けた村一番のごちそう。</td></tr></tbody></table></div>
+<h3>そのほかの品</h3>
+<ul>
+<li><b>だいじなもの</b>: 依頼で預かる品（証・地図・通行証など）。バッグを使わず、売れません。</li>
+<li><b>クリスタル</b>: 魔物が落とす合成の素。火=金属、氷=研ぎ、風=布と革、土=鉱石と木材、雷=高位の武具、水=薬と料理。</li>
+<li><b>宝箱の鍵</b>: ゾーンにある宝箱（コファー）を開ける。魔物がまれに落とします。学者の依頼「女王の宝珠を求めて」（Lv25）は町はずれの古い宝箱を開ける依頼。</li>
+<li><b>レア／エクス</b>: 〈レア〉は1つしか持てない、〈エクス〉は人に渡せない品です。</li>
+</ul>
+<figure><img src="img/倉庫窓.jpg" alt="倉庫の窓" loading="lazy" width="1120" height="630"><figcaption>倉庫番に預けた品の窓</figcaption></figure>
+</section>
+
+<section id="tips"><h2>便利な機能と設定</h2>
+<h3>設定（メインメニュー → 設定）</h3>
+<ul>
+<li><b>画面サイズ・表示モード</b>: ウィンドウか全画面か。</li>
+<li><b>音を出す／全体音量／BGM／効果音／声（技名の読み上げ）</b>: 「声」を0にすると、技や魔法の名前の読み上げが消えます。</li>
+<li><b>初心者ガイドを画面下へ流す</b>: 画面の下に流れる操作のヒント（Tips）。慣れたらチェックを外すと消えます。</li>
+</ul>
+<h3>知っておくと便利</h3>
+<ul>
+<li><kbd>K</kbd>の<b>広域探知</b>で周りの魔物とレベルの一覧が見えます。ぬしは金橙で出ます。</li>
+<li>相手の名前の横の色で強さが分かります（自分より弱い〜とても強い）。</li>
+<li><kbd>G</kbd>のマーカーで、パーティに「この敵を狙う」と伝えられます。</li>
+<li>クルルに乗ると移動が速くなります。乗ったまま戦闘は始められません（自動で降ります）。</li>
+<li>フレンド（<kbd>Y</kbd>）に登録した人がログインすると知らせが出ます。</li>
+<li>依頼の「！」が出ているのに受けられないときは、レベルが足りないか、前の依頼が終わっていません（「！Lv30」のように必要レベルが出ます）。</li>
+<li>Webの「魔導採取帖」で採った素材は、ゲームにログインしている間はそのまま持ち物へ入ります。</li>
+</ul>
+<h3>チャットとコマンド（<kbd>/</kbd>で入力）</h3>
+<div class="tw"><table class="keys"><tbody><tr><th><code>/help</code></th><td>コマンドの一覧を出す</td></tr>
+<tr><th><code>/invite 名前</code></th><td>パーティに誘う(コマンド窓の「パーティに誘う」でも)</td></tr>
+<tr><th><code>/join</code></th><td>誘いを受ける</td></tr>
+<tr><th><code>/decline</code></th><td>誘いを断る</td></tr>
+<tr><th><code>/leave</code></th><td>パーティを抜ける</td></tr>
+<tr><th><code>/p 文</code></th><td>パーティに話す</td></tr>
+<tr><th><code>/friend 名前</code></th><td>フレンドを申し込む</td></tr>
+<tr><th><code>/attack</code></th><td>選んだ相手を攻撃</td></tr>
+<tr><th><code>/assist</code></th><td>アシスト</td></tr>
+<tr><th><code>/ws 技名</code></th><td>武技</td></tr>
+<tr><th><code>/ma 魔法名</code></th><td>魔法</td></tr>
+<tr><th><code>/ja 技名</code></th><td>アビリティ</td></tr>
+<tr><th><code>/item 品名</code></th><td>品を使う</td></tr>
+<tr><th><code>/fish</code></th><td>釣り</td></tr>
+<tr><th><code>/craft・/synth</code></th><td>合成(ヴェイル村)</td></tr>
+<tr><th><code>/kururu</code></th><td>クルルに乗る・降りる</td></tr>
+<tr><th><code>/ah</code></th><td>競売の窓を開く(係員の近くで)</td></tr>
+<tr><th><code>/homepoint</code></th><td>帰還の印に触れた場所へ戻る</td></tr>
+<tr><th><code>/job</code></th><td>ジョブを見る</td></tr>
+<tr><th><code>/subjob</code></th><td>サポートジョブ</td></tr>
+<tr><th><code>/quest</code></th><td>クエストの窓</td></tr>
+<tr><th><code>/loc</code></th><td>今いる場所の座標</td></tr>
+<tr><th><code>/ai</code></th><td>自動狩り(AI)の入切(Lv30〜)</td></tr></tbody></table></div>
+</section>
+
+<section id="faq"><h2>困った時</h2>
+<ul>
+<li><b>つながらない</b>: スタートメニューの「Grimoire Online」→「つながらない時はこちら」。それでも駄目ならPCを再起動。</li>
+<li><b>ゲームがすぐ閉じる</b>: グラフィックドライバを最新にしてください。</li>
+<li><b>キーもマウスも効かない</b>: 一度<kbd>ESC</kbd>を何回か押して窓を全部閉じてください。チャット入力中（<kbd>/</kbd>の後）はキーが文字になります。</li>
+<li><b>攻撃ボタンが効かない</b>: 眠り・気絶・おびえの状態異常の間は動けません。画面に理由が出ます。</li>
+<li><b>「他の冒険者が戦っている」</b>: その魔物は別の人の獲物です。別の魔物を選ぶか、パーティを組んでください。</li>
+<li><b>魔法が使えない</b>: 楽器を持っている（吟遊詩人）、静寂の状態、MP不足、サポートジョブのレベル不足のどれかです。</li>
+<li><b>絆を呼べない</b>: 戦闘中・騎乗中・闘技場・天空回廊・影ロックヒルの中では呼べません。同じ絆が近くにいる時も断られます。</li>
+<li><b>更新に失敗した</b>: 元の版は残っています。もう一度起動すると取り直します。</li>
+</ul>
+</section>
+
+</main></div>
+<footer>グリオン攻略ガイド ─ 対応版 1.5.74（2026年09月17日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。</footer>
