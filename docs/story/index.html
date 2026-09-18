@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>グリオン物語</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="グリオン物語 ─ 七つ目の冠と、空に消えた都">
+<meta property="og:description" content="空に浮かぶ魔導書グリモワール、七つの冠、そしてLv60の先に続く白紙の頁。無料の3DMMORPG「グリモワールオンライン」の物語。">
+<meta property="og:url" content="https://towa219.github.io/GrimoireOnline/story/">
+<meta property="og:image" content="https://towa219.github.io/GrimoireOnline/story/img/hero.jpg">
+<meta property="og:image:width" content="1344">
+<meta property="og:image:height" content="768">
+<meta property="og:site_name" content="グリモワールオンライン">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@GrimoireOnline">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<meta name="description" content="グリモワールオンラインの物語。空に消えた都と、七つ目の冠をめぐる冒険譚。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Shippori+Mincho:wght@500;700;800&family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+/* 夜空と金の墨。物語は「魔導書の頁」として読ませるので、あえて夜の一色に決める */
+:root{
+  --night:#0d1022; --night-2:#141833; --ink:#ebe3cf; --ink-dim:#b3ab98; --muted:#8a87a3;
+  --gold:#e3b862; --gold-soft:rgba(227,184,98,.16); --ember:#e0784b; --shade:#71c6c0;
+  --rule:rgba(227,184,98,.28);
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --display:"Zen Antique","Shippori Mincho","Yu Mincho",serif;
+  --ui:"BIZ UDPGothic","Hiragino Sans","Yu Gothic UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:2.05;font-weight:500;padding-inline:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{max-width:62rem;margin:0 auto}
+.col{max-width:36em;margin:0 auto}
+
+/* 表紙 */
+.cover{position:relative;margin-inline:-16px;min-height:min(78vh,720px);display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,16,34,.05) 30%,rgba(13,16,34,.7) 68%,var(--night) 100%)}
+#motes{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.cover .inner{padding:0 16px 3.2rem;max-width:62rem;margin:0 auto;width:100%}
+.kicker{font-family:var(--ui);font-size:.78rem;letter-spacing:.32em;color:var(--gold);margin:0 0 .6rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,8vw,5.2rem);line-height:1.1;margin:0;letter-spacing:.06em;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+h1 small{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(1rem,2.6vw,1.35rem);letter-spacing:.2em;color:var(--gold);margin-top:.9rem}
+.cover p.lead{max-width:34em;margin:1.4rem 0 0;color:var(--ink);font-size:1.02rem;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+
+/* 頁の目盛り(Lv1〜60 と、その先) */
+.gauge{margin:3.5rem auto 1rem;max-width:62rem}
+.gauge h2{font-family:var(--ui);font-size:.78rem;letter-spacing:.3em;color:var(--gold);font-weight:700;margin:0 0 1rem}
+.gauge-scroll{overflow-x:auto;padding-bottom:.4rem}
+.gauge svg{display:block;min-width:640px;width:100%;height:auto}
+.gauge .t{font-family:var(--ui);font-size:12px;fill:var(--ink-dim)}
+.gauge .cap{font-family:var(--ui);font-size:12px;fill:var(--gold);font-weight:700}
+.gauge .ch{font-family:var(--serif);font-size:13px;fill:var(--ink);font-weight:700}
+.gauge .next{font-family:var(--serif);font-size:13px;fill:var(--muted)}
+.gauge p{font-family:var(--ui);font-size:.85rem;color:var(--ink-dim);margin:.6rem 0 0;line-height:1.8}
+
+/* 伝承 */
+.legend{margin:4rem auto 0;border-block:1px solid var(--rule);padding-block:2.6rem}
+.legend h2,.section-title{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,4.6vw,2.4rem);letter-spacing:.08em;margin:0 0 1.4rem;text-align:center;color:var(--gold)}
+.legend p:first-of-type::first-letter{font-family:var(--display);font-size:3.2em;float:left;line-height:1;margin:.12em .12em 0 0;color:var(--gold)}
+p{margin:0 0 1.2em}
+.say{border-left:2px solid var(--gold);padding-left:1em;color:var(--ink);font-weight:700}
+
+/* 章 */
+.chapter{margin-top:5.5rem}
+.plate{position:relative;margin-inline:-16px}
+.plate img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.plate::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,transparent,var(--night))}
+.chead{max-width:36em;margin:-3.2rem auto 1.6rem;position:relative;z-index:1}
+.chead .no{font-family:var(--display);font-size:1rem;letter-spacing:.3em;color:var(--gold)}
+.chead h3{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,5.5vw,2.8rem);line-height:1.25;margin:.2rem 0 .6rem;letter-spacing:.06em;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem .6rem;font-family:var(--ui);font-size:.78rem;line-height:1.5}
+.meta span{border:1px solid var(--rule);color:var(--ink-dim);padding:.15rem .6rem;border-radius:2px}
+.meta span.lv{color:var(--night);background:var(--gold);border-color:var(--gold);font-weight:700}
+.crown{color:var(--ember);font-weight:700}
+.shadow{color:var(--shade);font-weight:700}
+.inset{margin:2rem auto;max-width:44em}
+.inset img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule)}
+.inset figcaption{font-family:var(--ui);font-size:.78rem;color:var(--muted);margin-top:.4rem;text-align:right}
+
+/* 冠の一覧 */
+.crowns{margin:4.5rem auto 0;max-width:44em}
+.crowns ol{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:c;border-top:1px solid var(--rule)}
+.crowns li{counter-increment:c;display:grid;grid-template-columns:3.2em 1fr auto;gap:1rem;align-items:baseline;padding:.8rem .2rem;border-bottom:1px solid var(--rule)}
+.crowns li::before{content:counter(c,cjk-ideographic);font-family:var(--display);color:var(--ember);font-size:1.3rem}
+.crowns .nm{font-weight:700}
+.crowns .wh{font-family:var(--ui);font-size:.8rem;color:var(--ink-dim);text-align:right}
+.crowns li.seventh{border-bottom:1px dashed var(--ember)}
+.crowns li.seventh .nm{color:var(--ember)}
+
+/* 人物 */
+.people{margin:5rem auto 0}
+.people .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.4rem 1.6rem}
+.person h4{font-family:var(--serif);font-weight:800;font-size:1.08rem;margin:0 0 .2rem}
+.person .role{font-family:var(--ui);font-size:.75rem;color:var(--gold);letter-spacing:.08em;margin:0 0 .4rem}
+.person p{font-size:.92rem;line-height:1.9;color:var(--ink-dim);margin:0}
+
+/* 余白の頁 = その先 */
+.beyond{margin-top:6rem;border-top:1px solid var(--rule);padding-top:1rem}
+.beyond .stamp{font-family:var(--ui);font-size:.78rem;letter-spacing:.3em;color:var(--ember);text-align:center;margin:2rem 0 0}
+.next-part{margin-top:4rem}
+.next-part .chead .no{color:var(--ember)}
+.tag-plan{font-family:var(--ui);font-size:.72rem;letter-spacing:.14em;color:var(--night);background:var(--ember);padding:.1rem .5rem;border-radius:2px;margin-left:.4rem;vertical-align:.2em}
+.mysteries{max-width:36em;margin:4rem auto 0}
+.mysteries ul{padding-left:1.2em;margin:0}
+.mysteries li{margin:.5em 0;color:var(--ink-dim)}
+.mysteries li b{color:var(--ink)}
+
+.cta{max-width:36em;margin:5rem auto 0;text-align:center;border:1px solid var(--rule);padding:2rem 1.2rem;background:var(--gold-soft)}
+.cta h2{font-family:var(--display);font-weight:400;font-size:1.6rem;margin:0 0 .6rem;letter-spacing:.08em}
+.cta p{font-family:var(--ui);font-size:.9rem;line-height:1.9;color:var(--ink-dim);margin:0 0 1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.btns a{font-family:var(--ui);font-weight:700;font-size:.92rem;text-decoration:none;padding:.65rem 1.2rem;border:1px solid var(--gold);color:var(--gold)}
+.btns a.main{background:var(--gold);color:var(--night)}
+footer{max-width:36em;margin:4rem auto 0;padding-block:2rem 3rem;border-top:1px solid var(--rule);font-family:var(--ui);font-size:.75rem;line-height:1.9;color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:16px;line-height:1.95}
+  .chead{margin-top:-1.6rem}
+  .crowns li{grid-template-columns:2.4em 1fr;}
+  .crowns .wh{grid-column:2;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){#motes{display:none}}
+</style>
+</head>
+<body>
+
+
+<header class="cover">
+  <img src="img/hero.jpg" alt="夕焼けの空に浮かぶ巨大な魔導書と、崖の上からそれを見上げる冒険者">
+  <canvas id="motes" aria-hidden="true"></canvas>
+  <div class="inner">
+    <p class="kicker">GRIMOIRE ONLINE ─ THE STORY</p>
+    <h1>グリオン物語<small>七つ目の冠と、空に消えた都</small></h1>
+    <p class="lead">この世界は、一冊の魔導書に綴られている。<br>あなたが剣を振るうたび、仲間と笑うたび、その頁に新しい一行が書き足されていく。<br>──そして書の終わりには、まだ誰も読んだことのない白紙が続いている。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="gauge" aria-labelledby="g-title">
+  <h2 id="g-title">冒険の頁 ─ いまはLv60まで。その先は、まだ白紙</h2>
+  <div class="gauge-scroll">
+  <svg viewBox="0 0 980 150" role="img" aria-label="Lv1からLv60までが第一部、その先のLv70以降は続編として予定されている">
+    <defs>
+      <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#e0784b"/><stop offset="1" stop-color="#e0784b" stop-opacity="0"/></linearGradient>
+    </defs>
+    <line x1="30" y1="70" x2="740" y2="70" stroke="#e3b862" stroke-width="4"/>
+    <line x1="740" y1="70" x2="960" y2="70" stroke="url(#fade)" stroke-width="4" stroke-dasharray="10 8"/>
+    <g class="t" text-anchor="middle">
+      <line x1="30" y1="62" x2="30" y2="78" stroke="#e3b862"/><text x="30" y="98">Lv1</text>
+      <line x1="138" y1="64" x2="138" y2="76" stroke="#e3b862"/><text x="138" y="98">10</text>
+      <line x1="259" y1="64" x2="259" y2="76" stroke="#e3b862"/><text x="259" y="98">20</text>
+      <line x1="379" y1="64" x2="379" y2="76" stroke="#e3b862"/><text x="379" y="98">30</text>
+      <line x1="499" y1="64" x2="499" y2="76" stroke="#e3b862"/><text x="499" y="98">40</text>
+      <line x1="620" y1="64" x2="620" y2="76" stroke="#e3b862"/><text x="620" y="98">50</text>
+      <line x1="860" y1="64" x2="860" y2="76" stroke="#e0784b" stroke-dasharray="3 3"/><text x="860" y="98" fill="#e0784b">70?</text>
+    </g>
+    <circle cx="740" cy="70" r="9" fill="#0d1022" stroke="#e3b862" stroke-width="3"/>
+    <text class="cap" x="740" y="98" text-anchor="middle">Lv60 ─ いま</text>
+    <g class="ch" text-anchor="middle">
+      <text x="84" y="44">序章</text><text x="200" y="44">一</text><text x="349" y="44">二</text><text x="469" y="44">三</text><text x="547" y="44">四</text><text x="680" y="44">五・六</text>
+    </g>
+    <text class="next" x="860" y="44" text-anchor="middle">第二部 空都篇</text>
+    <text class="next" x="860" y="128" text-anchor="middle">第三部 南海篇</text>
+  </svg>
+  </div>
+  <p>今のグリオンで遊べるのは、序章から第六章まで(Lv1〜60)です。第二部・第三部は、これから書かれる頁として構想しています。</p>
+</section>
+
+<section class="legend col" aria-labelledby="legend-title">
+  <h2 id="legend-title">はじまりの伝承</h2>
+  <p>むかし、空に一冊の書が浮かんでいた。人々はそれを<b>グリモワール</b>と呼んだ。</p>
+  <p>書に綴られたものは形を持つ。山も、町も、魔物も、そこに生きる人々も。冒険者が名を上げると、その名は頁の片隅に刻まれ、刻まれた者どうしは遠く離れていても呼び合える──人はそれを<b>「絆」</b>と呼ぶようになった。ロックヒルの導師エルナが教える「遠く離れた者を呼ぶ術」は、この頁の上の縁を手繰る業である。</p>
+  <p>書を守っていたのは、雲の上の都<b>「空都エアシップ」</b>と、そこに住まう女王だった。</p>
+  <p>ある夜、一頭の竜が書の<b>筆</b>を奪おうとした。自らの手で世界を書き換えるために。のちに<b class="crown">簒奪竜</b>と呼ばれるその竜との戦いで、空都は雲の彼方へ消え、書の頁は嵐のように地上へ散った。</p>
+  <p>竜は倒れなかった。封じられもしなかった。ただ、深く眠った。そして眠りの中から、地上の魔物たちに<b class="crown">冠</b>を投げ与えた。冠を戴いた魔物は「王」を名乗り、散った頁を喰らって力を増していく。</p>
+  <p class="say">冠は七つ。六つは地に、七つ目は空に。<br>六つの冠がすべて落ちたとき、七つ目の主が目を覚ます。</p>
+  <p>──ロックヒルの誰もが忘れていたこの言い伝えを、あなたはこれから、自分の剣で確かめることになる。</p>
+</section>
+
+<!-- 序章 -->
+<article class="chapter" aria-labelledby="c0">
+  <figure class="plate"><img src="img/c0_rockhill.jpg" alt="朝もやのロックヒルの町。宿屋の灯りと、丘の上の城" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">序章</div>
+    <h3 id="c0">眠り猫亭の朝</h3>
+    <div class="meta"><span class="lv">Lv1〜10</span><span>ロックヒルの町</span><span>ロックヒル北部</span><span>ロックヒル大坑道</span></div>
+  </div>
+  <div class="col">
+    <p>山あいの町ロックヒル。宿屋「眠り猫亭」の藁の匂いで、あなたは目を覚ます。ポケットには少しのグリムと、どこで手に入れたのかも思い出せない一枚の紙切れ──それが、空から散った魔導書の頁の一枚だとは、まだ知らない。</p>
+    <p>東門の衛兵は言う。「外に出るなら魔物に気をつけろ」。北部の野でゴブリンを追い、ラビットを狩り、町の人の困りごとを片付けるうちに、あなたの名前は少しずつ町に知られていく。</p>
+    <p>やがて鉱夫がこぼす。「坑道の奥に主が居着いてしまった」。大坑道の闇の底で待つのは、<b>大坑道の主ドルガン</b>。そして最初の戦いを越えた夜、導師エルナがあなたに告げる。</p>
+    <p class="say">「あなたの名が、頁に刻まれました。もう、ひとりではありません」</p>
+    <p>癒やし手の<b>白導士セラ</b>が、最初の「絆」としてあなたの隣に立つ。</p>
+  </div>
+</article>
+
+<!-- 第一章 -->
+<article class="chapter" aria-labelledby="c1">
+  <figure class="plate"><img src="img/c1_jungle.jpg" alt="霧の密林の泉。苔むした石の顔と、儀式を行う蛇身の司祭" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第一章</div>
+    <h3 id="c1">霧の祈祷</h3>
+    <div class="meta"><span class="lv">Lv8〜20</span><span>ミストヴェイル密林</span><span>ヴェイル村</span><span>ロックヒル南部</span></div>
+  </div>
+  <div class="col">
+    <p>南部の街道にはオークとワーグが出る。守る者を求めて、戦士リオが盾を掲げる。仲間が一人、また一人と頁に並んでいく。</p>
+    <p>霧に閉ざされたミストヴェイル密林。木漏れ日の泉のほとりには、誰が彫ったとも知れない<b>巨大な石の顔</b>が、じっと南を向いて眠っている。</p>
+    <p>その泉で、蛇身の司祭が祈っていた。<b>蛇司祭シェザル</b>。ナーガたちの祈りの言葉は、耳を澄ませばこう聞こえる──「眠れる冠の主よ、頁を喰らいて目を覚ましたまえ」。</p>
+    <p>祈祷を断った夜、ギルドの受付は杯を置いて呟いた。</p>
+    <p class="say">「祈祷は止んだ。……だが、あれは前触れだったのかもしれん」</p>
+  </div>
+</article>
+
+<!-- 第二章 -->
+<article class="chapter" aria-labelledby="c2">
+  <figure class="plate"><img src="img/c2_mausoleum.jpg" alt="地下霊廟。銀の鎖で縛られた黒い棺と、ひざまずく骸骨の兵" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第二章</div>
+    <h3 id="c2">霊廟の銀鎖</h3>
+    <div class="meta"><span class="lv">Lv20〜36</span><span>ヴェルダン高原</span><span>地下霊廟</span><span>上級ジョブの道</span></div>
+  </div>
+  <div class="col">
+    <p>ヴェルダン高原の地下には、古い王国の霊廟が眠っている。石の柱、崩れた旗、そして中央に据えられた棺──棺を縛る<b>銀の鎖</b>は、ところどころが内側から千切れていた。</p>
+    <p>霊廟の主<b>ヴェルガ</b>を鎮めても、墓守の顔は晴れない。</p>
+    <p class="say">「静かになったよ……だが、もっと暗いものが目を覚ました」</p>
+    <p>高原の闇に、ひとつめの冠が光る。<b class="crown">奈落王グァルドス</b>。頁を喰らって膨れた奈落の魔王は、倒れる間際に笑った。「冠は我のものではない。我らは預かっているだけよ」。</p>
+    <p>Lv30。あなたの前に「二つ目の生き方」が開く。城の領主が騎士の盾を、墓守が闇の剣を、傭兵団長が影の技を、牙細工師が竜の骨の竪琴を──それぞれの師が、あなたを試す。</p>
+  </div>
+</article>
+
+<!-- 第三章 -->
+<article class="chapter" aria-labelledby="c3">
+  <figure class="plate"><img src="img/c3_dragons.jpg" alt="溶岩の光る谷。崖の上に並ぶ竜たちと、黒い角を戴く竜王" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第三章</div>
+    <h3 id="c3">万魔の谷の竜王</h3>
+    <div class="meta"><span class="lv">Lv30〜46</span><span>万魔の谷</span><span>竜の谷</span><span>冒険者ギルド最後の依頼</span></div>
+  </div>
+  <div class="col">
+    <p>デーモンがうろつく万魔の谷の最奥には、竜が並ぶ谷がある。悪夢竜ヴァルガナ、戦慄竜、魂喰竜──そしてそのすべてを従える<b class="crown">竜王</b>。</p>
+    <p class="say">「ギルド最後の依頼だ。……生きて戻れば、君の名は記録に残る」</p>
+    <p>黒い角の冠を戴いた竜王は、あなたの剣を受けながら、古い言葉で唸った。「小さき者よ、冠を砕いても無駄だ。我らが主は空にいる。<b class="crown">簒奪竜</b>は、筆を握る日を待っている」。</p>
+    <p>竜を殺した者の名は、確かに記録に残った。そして、ふたつめの冠が谷底に転がった。</p>
+  </div>
+</article>
+
+<!-- 第四章 -->
+<article class="chapter" aria-labelledby="c4">
+  <figure class="plate"><img src="img/c4_crests.jpg" alt="夜空に浮かぶ、茸・塩の結晶・波の三つの紋章" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第四章</div>
+    <h3 id="c4">三つの紋章</h3>
+    <div class="meta"><span class="lv">Lv35〜52</span><span>モルガ胞子林</span><span>サルタ塩湖跡</span><span>エメル海岸</span></div>
+  </div>
+  <div class="col">
+    <p>町の西、城の北。鏡の祠の番人<b>影守りのセイラ</b>は、あなたをじっと見て言った。</p>
+    <p class="say">「鏡の祠は、王を討った者にしか開かない」</p>
+    <p>三つの紋章を集めよ、と。胞子の森を支配する<b class="crown">胞子母王モルガ</b>。干上がった塩湖に君臨する<b class="crown">塩冠王サルタ</b>。そして難破船の残骸が打ち上がるエメル海岸の沖から現れる<b class="crown">海嘯王ガルマーレ</b>。</p>
+    <p>エメル海岸の砂浜には、南の海だけを見つめ続ける<b>石像</b>が一体、立っている。密林の石の顔も、同じ南を向いていた。……偶然だろうか。</p>
+    <p>(ちなみに、森で「森の主」を名乗っているキノコ王の冠は、よく見ると自分で編んだ茸の傘だった。)</p>
+    <p class="say">「三つの紋章が揃った。鏡の祠へ行きなさい。影の冒険者たちが、お前たちを待っている」</p>
+  </div>
+</article>
+
+<!-- 第五章 -->
+<article class="chapter" aria-labelledby="c5">
+  <figure class="plate"><img src="img/c5_mirror.jpg" alt="月夜の祠。光の鏡の門の前に立つ一行と、ランタンを持つ番人" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第五章</div>
+    <h3 id="c5">鏡の向こうの影</h3>
+    <div class="meta"><span class="lv">Lv50〜</span><span>鏡の祠</span><span>影ロックヒル 1F〜B10</span><span>称号【勇者】</span></div>
+  </div>
+  <div class="col">
+    <p>鏡をくぐると、そこはもう一つのロックヒルだった。同じ石畳、同じ城──ただし、すべてが裏返しの。魔導書の<b>裏の頁</b>。</p>
+    <p>そこにいるのは魔物ではない。自分たちと同じようにジョブを持ち、互いを支え合う冒険者たち。<b class="shadow">影の冒険者</b>。頁の途中で物語が途切れた者──勇者になれなかった者たちの影が、今も「勇者の座」を守っている。</p>
+    <p>石牢、地下水路、書庫、聖堂。「癒し手を先に倒せ」。鏡の間では、あなた自身の姿が剣を抜く。「己を知れ。鏡に映るのは、お前たち自身だ」。</p>
+  </div>
+  <figure class="inset"><img src="img/c5_hero.jpg" alt="玉座の前に立つ白銀の騎士と、半透明の仲間たち" loading="lazy"><figcaption>B10 王の間 ─ 先代勇者一行</figcaption></figure>
+  <div class="col">
+    <p>そして最下層、王の間。玉座の前に立つのは、白銀の盾を掲げた騎士──<b class="shadow">先代勇者レオン</b>と、その五人の仲間。二十年前、空都へ続く階を登ろうとして、頁ごと墜ちた一行だ。</p>
+    <p class="say">「まだ終わらない……！」</p>
+    <p>倒れた仲間が何度でも立ち上がる。勇者は倒れない。──あなたが、その座を継ぐまでは。</p>
+    <p>最後の一太刀のあと、レオンの影は穏やかに笑った。「続きを、書いてくれ」。あなたとすべての絆が放つ最強の連携<b>「絆の総攻撃(ユナイト・ブレイブ)」</b>は、この日、あなたのものになった。</p>
+  </div>
+</article>
+
+<!-- 第六章 -->
+<article class="chapter" aria-labelledby="c6">
+  <figure class="plate"><img src="img/c6_cape.jpg" alt="月夜の岬の廃城。窓に一つだけ灯る光と、桟橋に立つ大剣の剣士" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">第六章</div>
+    <h3 id="c6">最果ての岬と、湖底の王</h3>
+    <div class="meta"><span class="lv">Lv54〜60</span><span>ヴェルミア岬</span><span>鈍色の塩底</span><span>剣聖の道</span></div>
+  </div>
+  <div class="col">
+    <p>地図の最果て、ヴェルミア岬。港の漁師長は北東の丘を指さす。「あの城は捨てられて久しい。夜には灯りが見えるという者もいる」。</p>
+    <p>港の東の外れに、白と黒の鎧に大剣を背負った男が立っていた。<b>剣聖シグルド</b>。</p>
+    <p class="say">「廃城の主ガルデリク。俺の師を斬った男だ。奴を討て。俺は手を出さん」</p>
+    <p>仇が土に還っても、シグルドは剣を置かなかった。「まだ一つ、確かめたいことがある」。──彼の師は、先代勇者の一行にいた戦士<b>ディン</b>。影ロックヒルの王の間で、あなたが剣を交えた、あの影だ。師の物語が、あなたの手で終わりを迎えたことを知った剣聖は、はじめて大剣をあなたのために抜く。</p>
+  </div>
+  <figure class="inset"><img src="img/c6_lakeking.jpg" alt="干上がった塩の湖の底で玉座に座る巨大な王" loading="lazy"><figcaption>鈍色の塩底 ─ 湖底王ネルガル</figcaption></figure>
+  <div class="col">
+    <p>乾いた湖の底に、王を名乗る者が座っている。六つめの冠の主、<b class="crown">湖底王ネルガル</b>。湖の記憶を一滴残らず飲み干した王は、崩れ落ちながら空を仰いだ。</p>
+    <p class="say">「冠は……六つ、落ちた。聞こえるか、小さき者。空で、翼の音がする」</p>
+    <p>湖が静かになった夜、ロックヒルの空で、魔導書が一瞬だけ強く光るのを、何人もの町人が見たという。</p>
+  </div>
+</article>
+
+<section class="crowns" aria-labelledby="crowns-title">
+  <h2 class="section-title" id="crowns-title">七つの冠</h2>
+  <ol>
+    <li><span class="nm">奈落王グァルドス</span><span class="wh">ヴェルダン高原 ─ 第二章</span></li>
+    <li><span class="nm">竜王</span><span class="wh">万魔の谷 ─ 第三章</span></li>
+    <li><span class="nm">胞子母王モルガ</span><span class="wh">モルガ胞子林 ─ 第四章</span></li>
+    <li><span class="nm">塩冠王サルタ</span><span class="wh">サルタ塩湖跡 ─ 第四章</span></li>
+    <li><span class="nm">海嘯王ガルマーレ</span><span class="wh">エメル海岸 ─ 第四章</span></li>
+    <li><span class="nm">湖底王ネルガル</span><span class="wh">鈍色の塩底 ─ 第六章</span></li>
+    <li class="seventh"><span class="nm">簒奪竜 ──</span><span class="wh">空都エアシップ ─ 第二部</span></li>
+  </ol>
+</section>
+
+<section class="people" aria-labelledby="people-title">
+  <h2 class="section-title" id="people-title">頁に名を刻む者たち</h2>
+  <div class="grid">
+    <div class="person"><p class="role">絆 ─ 白導士</p><h4>セラ</h4><p>最初にあなたの隣に立つ癒やし手。倒すべき時と、手を差し伸べる時を見分ける。</p></div>
+    <div class="person"><p class="role">絆 ─ 戦士</p><h4>リオ</h4><p>敵の注意を一身に引き受け、主人と癒やし手を守る盾。</p></div>
+    <div class="person"><p class="role">絆 ─ 吟遊詩人</p><h4>リュカ</h4><p>竪琴を抱えた旅の楽師。殴らない。そのかわり、戦の歌で一行の心を燃やす。</p></div>
+    <div class="person"><p class="role">絆 ─ 暗黒騎士</p><h4>ヴァル</h4><p>命を削る闇に呑まれない意志の持ち主。影ロックヒルには、同じ名の影がいる──。</p></div>
+    <div class="person"><p class="role">絆 ─ 剣聖</p><h4>シグルド</h4><p>白と黒の鎧に大剣。師の仇を追って最果ての岬へ来た。魔法は使わず、一閃で道を拓く。</p></div>
+    <div class="person"><p class="role">鏡の祠の番人</p><h4>影守りのセイラ</h4><p>勇者の資格を問う魔女。先代勇者の一行と、何か関わりがあったらしい。</p></div>
+    <div class="person"><p class="role">影ロックヒル B10</p><h4>先代勇者レオン</h4><p>二十年前、空都への階を登ろうとした勇者。影となって、今も勇者の座を守る。</p></div>
+    <div class="person"><p class="role">七つ目の冠</p><h4>簒奪竜</h4><p>魔導書の筆を奪おうとした竜。空の彼方で眠り、六つの冠が落ちるのを待っていた。</p></div>
+  </div>
+</section>
+
+<section class="beyond" aria-labelledby="beyond-title">
+  <figure class="plate"><img src="img/end_blank.jpg" alt="光る白紙の頁と、その上に浮かぶ光の羽根ペン" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">終章にして、序章</div>
+    <h3 id="beyond-title">頁の余白</h3>
+  </div>
+  <div class="col">
+    <p>Lv60。熟練の冒険者。六つの冠はすべて落ちた。</p>
+    <p>だが、魔導書をめくったあなたは気づく。書き込まれた頁は、ここで終わっている。その先には、どこまでも続く<b>白紙</b>と──頁の上を漂う、一本の<b>光の羽根ペン</b>。</p>
+    <p class="say">レベル60は、この書の最後の一行ではない。<br>まだ誰にも書かれていない、次の頁の一行目だ。</p>
+  </div>
+  <p class="stamp">── ここから先は、これから書かれる物語(構想) ──</p>
+
+  <article class="next-part" aria-labelledby="p2">
+    <figure class="plate"><img src="img/p2_skycity.jpg" alt="雲海に浮かぶ白い都と、塔に巻きつく巨大な竜" loading="lazy"></figure>
+    <div class="chead">
+      <div class="no">第二部<span class="tag-plan">構想中</span></div>
+      <h3 id="p2">空都篇 ─ 雲の上の玉座</h3>
+      <div class="meta"><span class="lv">Lv60〜70</span><span>天空回廊の頂</span><span>空都エアシップ</span></div>
+    </div>
+    <div class="col">
+      <p>町はずれで跳んで遊ぶだけの塔だと思われていた<b>天空回廊</b>。花の螺旋、揺れる吊り橋、風車の櫓──その頂上の先に、雲に隠れた石の階が現れる。あれは遊び場ではない。かつて地上と空都を結んでいた<b>「空への階(きざはし)」</b>の、残された一部だった。</p>
+      <p>鍵は、学者が探していた<b>「女王の宝珠」</b>。ロックヒル城の玉座の間に、題のない絵が二枚掛かっているのを覚えているだろうか。一枚は雲の上の都。もう一枚は、宝珠を胸に抱く女王。</p>
+      <p>雲を抜けた先、白い大理石の都の最も高い塔に、七つ目の冠を戴く<b class="crown">簒奪竜</b>が巻きついている。竜は筆を握り、魔導書を書き換え始めていた──勇者の座が空になったことで、地上には<b class="shadow">影</b>が溢れ出す。</p>
+      <p>剣聖シグルドは、あなたに一つの型を託す。「剣聖」の道が、絆だけのものではなくなる日が来る。</p>
+    </div>
+  </article>
+
+  <article class="next-part" aria-labelledby="p3">
+    <figure class="plate"><img src="img/p3_southsea.jpg" alt="南の海を見つめる石像と、水平線の向こうの塔" loading="lazy"></figure>
+    <div class="chead">
+      <div class="no">第三部<span class="tag-plan">構想中</span></div>
+      <h3 id="p3">南海篇 ─ 石の番人が見つめるもの</h3>
+      <div class="meta"><span class="lv">Lv70〜</span><span>エメル海岸の南</span><span>未踏の大陸</span></div>
+    </div>
+    <div class="col">
+      <p>密林の石の顔。古森に眠る石の守り手。エメル海岸で南の海だけを見つめる石像。三体の石の番人は、みな同じ方角を向いていた。</p>
+      <p>嵐の夜に空から散った魔導書の頁は、すべてが地上に落ちたわけではない。その多くは南の海を越え、誰も知らない大陸に降り積もったという。砂浜に打ち上がる難破船は、そこを目指して帰らなかった者たちの舟だ。</p>
+      <p>墓守が一つずつ憶えている「帰らなかった冒険者の名」。その中に、あなたの知っている名前が、ひとつだけ混じっている。</p>
+    </div>
+  </article>
+</section>
+
+<section class="mysteries" aria-labelledby="mys-title">
+  <h2 class="section-title" id="mys-title">まだ解かれていない謎</h2>
+  <ul>
+    <li><b>古びた地図</b> ─ 旅の商人がくれた「近隣を記した古い地図」。近隣とは、どこのことだろう。</li>
+    <li><b>聖印のかけら</b> ─ ゴブリンが持っていた古い聖印。どこの神殿の物か、誰も知らない。</li>
+    <li><b>星鉄と星屑草</b> ─ 空から落ちた鉄。星の落ちた跡にだけ生える草。落ちてきたのは、本当に星だったのか。</li>
+    <li><b>名も知れぬ黒騎士</b> ─ 鈍色の塩底をさまよう古い兵。その耳環には、絶えない嘆きがこもっている。</li>
+    <li><b>ふたりの名</b> ─ 獣使いルカと、吟遊詩人リュカ。影守りのセイラと、白導士セラ。似た名前は、偶然だろうか。</li>
+  </ul>
+</section>
+
+<section class="cta" aria-labelledby="cta-title">
+  <h2 id="cta-title">この頁の続きを、あなたの手で</h2>
+  <p>グリモワールオンラインは、個人で開発している無料の3DMMORPGです。<br>Windows版を配っています(開発中・無料)。</p>
+  <div class="btns">
+    <a class="main" href="https://freegame-mugen.jp/onlinegame/game_15450.html">無料でダウンロード(フリーゲーム夢現)</a>
+    <a href="https://towa219.github.io/GrimoireOnline/">初心者向け攻略ガイド</a>
+    <a href="https://x.com/GrimoireOnline">X @GrimoireOnline</a>
+  </div>
+</section>
+
+<footer>
+  <p>この物語は、ゲームの中の地名・人物・依頼・ぬしを元に書いた、グリモワールオンラインの公式の読み物です。第二部・第三部は構想中で、内容は変わることがあります。</p>
+  <p>挿絵は画像生成AIで作りました。ゲームの実際の画面とは異なります。</p>
+</footer>
+</main>
+
+<script>
+// 表紙に漂う金の粒(頁からこぼれる光)。動きを減らす設定の時は描かない
+(function(){
+  const c=document.getElementById('motes');
+  if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const x=c.getContext('2d');let w,h,ps=[];
+  function size(){const r=c.getBoundingClientRect();w=c.width=r.width*devicePixelRatio;h=c.height=r.height*devicePixelRatio}
+  function make(){ps=Array.from({length:70},()=>({x:Math.random()*w,y:Math.random()*h,r:(Math.random()*1.6+.4)*devicePixelRatio,s:(Math.random()*.25+.08)*devicePixelRatio,a:Math.random()*Math.PI*2}))}
+  function tick(){x.clearRect(0,0,w,h);for(const p of ps){p.y-=p.s;p.a+=.01;p.x+=Math.sin(p.a)*.3;if(p.y<-5){p.y=h+5;p.x=Math.random()*w}
+    x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle='rgba(227,184,98,'+(.35+Math.sin(p.a)*.25)+')';x.fill()}requestAnimationFrame(tick)}
+  size();make();tick();addEventListener('resize',()=>{size();make()});
+})();
+</script>
+
+</body>
+</html>
