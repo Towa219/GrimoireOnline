@@ -39,6 +39,12 @@ figcaption{font-size:12.5px;color:var(--dim);margin-top:4px}
 .card dl{margin:8px 0 0;font-size:13.5px}.card dt{float:left;clear:left;width:74px;color:var(--dim)}.card dd{margin:0 0 3px 74px}
 .note{background:var(--gold2);border-left:5px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
 .warn{background:var(--red2);border-left:5px solid var(--red);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.story{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:14px;align-items:center;margin:16px 0;padding:12px;border-radius:10px;background:#11152b;color:#ebe3cf;text-decoration:none;border:1px solid #e3b86255}
+.story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.story b{display:block;font-family:"Shippori Mincho B1","Yu Mincho",serif;font-size:19px;color:#e3b862;margin-bottom:2px}
+.story span{font-size:14px;line-height:1.7}
+.story:hover,.story:focus-visible{border-color:#e3b862;outline:none}
+@media (max-width:560px){.story{grid-template-columns:1fr}}
 .tip{background:var(--green2);border-left:5px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
 details.zone{border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 14px;margin-bottom:10px}
 details.zone summary{cursor:pointer;padding:12px 0;font-size:16px}
@@ -57,7 +63,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <header class="hero"><div class="in">
 <h1>グリオン攻略ガイド</h1>
 <p>Grimoire Online（グリオン）を初めて遊ぶ人のための手引き。操作・最初の一歩・レベル別の進め方・ゾーン・ジョブ・仲間・競クルル・Webポータルまで。</p>
-<span class="tag">対応版 1.5.83　更新 2026年09月18日</span>
+<span class="tag">対応版 1.5.86　更新 2026年09月18日</span> <a class="tag" href="https://towa219.github.io/GrimoireOnline/story/" style="text-decoration:none">📖 グリオン物語を読む</a>
 </div></header>
 <div class="wrap">
 <nav class="toc"><b>もくじ</b><a href="#start">はじめに</a><a href="#ctrl">操作のまとめ</a><a href="#first">最初にやること</a><a href="#road">レベル別の進め方</a><a href="#quest">クエスト一覧</a><a href="#zone">ゾーン紹介</a><a href="#job">ジョブ紹介</a><a href="#kizuna">絆(仲間)</a><a href="#battle">戦いの基礎</a><a href="#derby">競クルル</a><a href="#web">Webポータル(スマホ)</a><a href="#play">釣り・採取・合成・グリカ</a><a href="#high">高レベルの遊び</a><a href="#item">アイテム</a><a href="#tips">便利な機能と設定</a><a href="#faq">困った時</a></nav>
@@ -66,6 +72,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <section id="start"><h2>はじめに</h2>
 <p>グリオンは、剣と魔法の世界で仲間と一緒に魔物を狩り、依頼をこなして強くなるオンラインRPGです。無料で遊べます（Windows 11／10）。町の外の魔物を倒すと経験値と「グリム」（お金）が手に入り、レベルは最大60まで上がります。</p>
 <figure><img src="img/王城大通り.jpg" alt="ロックヒルの町の王城大通り" loading="lazy" width="1120" height="630"><figcaption>はじまりの町「ロックヒル」。奥に見えるのが領主の城</figcaption></figure>
+<a class="story" href="https://towa219.github.io/GrimoireOnline/story/"><img src="https://towa219.github.io/GrimoireOnline/story/img/hero.jpg" alt="空に浮かぶ魔導書を見上げる冒険者" loading="lazy"><span><b>グリオン物語</b>この世界は、空に浮かぶ一冊の魔導書に綴られている──。七つの冠と、空に消えた都をめぐる物語。Lv60の先に続く続編の構想も。遊ぶ前に読むと、町や魔物の見え方が変わります。</span></a>
 <h3>始めるまで</h3>
 <ol class="steps">
 <li>インストーラー <code>GrimoireOnline_Setup.exe</code> を開いて「次へ」。「WindowsによってPCが保護されました」と出たら「詳細情報」→「実行」を押します（個人で作ったアプリのため出ます）。</li>
@@ -673,4 +680,4 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 </section>
 
 </main></div>
-<footer>グリオン攻略ガイド ─ 対応版 1.5.83（2026年09月18日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
+<footer>グリオン攻略ガイド ─ 対応版 1.5.86（2026年09月18日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
