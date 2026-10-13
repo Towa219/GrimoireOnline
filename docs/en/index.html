@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grimoire Online">
+<meta property="og:title" content="Grion Guide">
+<meta property="og:description" content="A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.">
+<meta property="og:url" content="https://towa219.github.io/GrimoireOnline/en/">
+<meta property="og:image" content="https://towa219.github.io/GrimoireOnline/img/%E5%9F%8E%E3%81%AE%E5%A4%96%E8%A6%B3.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ja" href="https://towa219.github.io/GrimoireOnline/">
+<link rel="alternate" hreflang="en" href="https://towa219.github.io/GrimoireOnline/en/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<title>Grion Guide</title>
+<link rel="alternate" hreflang="ja" href="https://towa219.github.io/GrimoireOnline/"><link rel="alternate" hreflang="en" href="https://towa219.github.io/GrimoireOnline/en/">
+<style>
+:root{--paper:#f7f2e8;--paper2:#efe7d6;--ink:#252633;--dim:#6b6a75;--line:#d9cfb8;--green:#2f6b4f;--green2:#e3efe6;--gold:#b0801f;--gold2:#fbf1d8;--red:#a8382c;--red2:#fbe4e0;--blue:#2c5a8a;--blue2:#e2ecf7;--max:1100px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.75}
+a{color:var(--blue)}img{max-width:100%;height:auto;display:block}
+.hero{max-width:100%;background:linear-gradient(135deg,#1d3b2f,#2f6b4f 55%,#5a8a3a);color:#fff;padding-block:40px 34px;padding-inline:16px;position:relative;overflow:hidden}
+.hero .in{max-width:var(--max);margin:0 auto}
+.hero h1{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:.04em;text-wrap:balance}
+.hero p{margin:0;color:#dfeee2;font-size:15px}
+.hero .tag{display:inline-block;margin-top:14px;padding:3px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:12px;letter-spacing:.12em;color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:16px;display:grid;grid-template-columns:230px 1fr;gap:28px;padding-block:20px 60px}
+nav.toc{position:sticky;top:12px;align-self:start;font-size:13px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;max-height:calc(100vh - 24px);overflow:auto}
+nav.toc b{display:block;margin-bottom:6px;color:var(--green);letter-spacing:.1em;font-size:11px}
+nav.toc a{display:block;color:var(--ink);text-decoration:none;padding:3px 0;border-bottom:1px dotted var(--line)}
+nav.toc a:hover{color:var(--green)}
+main{min-width:0}
+section{margin-block:0 42px;scroll-margin-top:12px}
+h2{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:26px;margin:0 0 14px;padding-bottom:8px;border-bottom:3px double var(--gold);color:#1d3b2f;text-wrap:balance}
+h3{font-size:19px;margin:26px 0 8px;color:var(--green);border-left:5px solid var(--green);padding-left:10px}
+h4{font-size:16px;margin:18px 0 6px;color:#333}
+p{margin:0 0 10px;max-width:70ch}
+ul,ol{margin:0 0 10px;padding-left:1.4em}li{margin-bottom:4px}
+.tw{overflow-x:auto;margin:8px 0 14px;border:1px solid var(--line);border-radius:8px;background:#fff}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+thead th{background:var(--paper2);font-weight:700;white-space:nowrap}
+tr.nm td{background:var(--gold2)}
+td.lv{white-space:nowrap;font-weight:700;color:var(--green)}
+.dim{color:var(--dim);font-size:12.5px;line-height:1.5}
+table.keys th{width:230px;background:var(--paper2);font-weight:500}
+kbd{display:inline-block;padding:1px 7px;border:1px solid #bbb;border-bottom-width:3px;border-radius:5px;background:#fff;font-family:inherit;font-size:13px;white-space:nowrap}
+code{background:#fff;border:1px solid var(--line);padding:1px 5px;border-radius:4px;font-size:13px}
+figure{margin:12px 0 16px}figure img{border-radius:10px;border:1px solid var(--line)}
+figcaption{font-size:12.5px;color:var(--dim);margin-top:4px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h4{margin:0 0 6px;font-size:17px}.card h4 small{color:var(--dim);font-weight:400;font-size:12px;margin-left:6px}
+.card dl{margin:8px 0 0;font-size:13.5px}.card dt{float:left;clear:left;width:104px;color:var(--dim)}.card dd{margin:0 0 3px 104px}
+.note{background:var(--gold2);border-left:5px solid var(--gold);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.warn{background:var(--red2);border-left:5px solid var(--red);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.story{display:grid;grid-template-columns:minmax(0,220px) 1fr;gap:14px;align-items:center;margin:16px 0;padding:12px;border-radius:10px;background:#11152b;color:#ebe3cf;text-decoration:none;border:1px solid #e3b86255}
+.story img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+.story b{display:block;font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:19px;color:#e3b862;margin-bottom:2px}
+.story span{font-size:14px;line-height:1.7}
+.story:hover,.story:focus-visible{border-color:#e3b862;outline:none}
+@media (max-width:560px){.story{grid-template-columns:1fr}}
+.tip{background:var(--green2);border-left:5px solid var(--green);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+details.zone{border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 14px;margin-bottom:10px}
+details.zone summary{cursor:pointer;padding:12px 0;font-size:16px}
+details.zone summary .lv{color:var(--green);margin-left:8px;font-size:13px}
+details.zone[open] summary{border-bottom:1px solid var(--line);margin-bottom:8px}
+.map{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-width:720px;margin:10px 0 16px;font-size:12.5px}
+.map div{border:1px solid var(--line);border-radius:8px;padding:8px 4px;background:#fff;text-align:center;min-height:56px;min-width:0;overflow-wrap:break-word;hyphens:auto}
+.map .town{background:var(--blue2);border-color:#9ab7d6}.map .low{background:var(--green2)}.map .mid{background:var(--gold2)}.map .high{background:var(--red2)}
+.map small{display:block;color:var(--dim)}
+.steps{counter-reset:s;padding-left:0;list-style:none}.steps li{counter-increment:s;position:relative;padding-left:40px;margin-bottom:10px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;text-align:center;line-height:28px;font-weight:700}
+footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--line)}
+@media (max-width:820px){.wrap{grid-template-columns:1fr}nav.toc{position:static;max-height:none;columns:2}.map{grid-template-columns:repeat(5,1fr);font-size:10.5px}table.keys th{width:140px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* English version */
+h1,h2,.story b{font-weight:700;letter-spacing:.01em}
+h2{font-size:29px}
+.hero .lang{margin-left:4px}
+table.keys th kbd{white-space:normal;max-width:100%}
+kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (max-width:560px){table.keys th{width:auto}.card dt{width:auto;float:none}.card dd{margin:0 0 6px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+<h1>Grion Guide</h1>
+<p>A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.</p>
+<span class="tag">For version 1.5.503 · Updated October 14, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+</div></header>
+<div class="wrap">
+<nav class="toc"><b>Contents</b><a href="#start">Introduction</a><a href="#ctrl">Controls at a Glance</a><a href="#first">First Steps</a><a href="#road">Progression by Level</a><a href="#quest">Quest List</a><a href="#zone">Zones</a><a href="#job">Jobs</a><a href="#kizuna">Bonds (Companions)</a><a href="#battle">Combat Basics</a><a href="#derby">Kururu Derby</a><a href="#web">Web Portal (Phone)</a><a href="#play">Fishing, Gathering, Crafting & Grica</a><a href="#high">High-Level Content</a><a href="#item">Items</a><a href="#tips">Handy Features & Settings</a><a href="#faq">Troubleshooting</a></nav>
+<main>
+
+<section id="start"><h2>Introduction</h2>
+<p>Grion is an online RPG set in a world of swords and magic, where you hunt monsters with friends, complete quests, and grow stronger. It's free to play (Windows 11/10). Defeating monsters outside town earns you EXP and Grim (money), and you can reach up to level 60.</p>
+<figure><img src="../img/%E7%8E%8B%E5%9F%8E%E5%A4%A7%E9%80%9A%E3%82%8A.jpg" alt="The castle avenue in Rockhill Town" loading="lazy" width="1120" height="630"><figcaption>Rockhill, the town where your journey begins. In the distance stands the castle, home of the Lord of the Castle</figcaption></figure>
+<a class="story" href="story/"><img src="../story/img/hero.jpg" alt="An adventurer gazing up at the Grimoire floating in the sky" loading="lazy"><span><b>The Grion Story</b>This world is written in a single Grimoire floating in the sky. A tale of the Seven Crowns and a city that vanished into the sky, with plans for sequels beyond Lv60. Read it before you play, and towns and monsters will look different to you.</span></a>
+<h3>Before You Start</h3>
+<ol class="steps">
+<li>Open the installer <code>GrimoireOnline_Setup.exe</code> and click "Next". If you see "Windows protected your PC", click "More info" → "Run anyway" (this appears because the app was made by an individual developer).</li>
+<li>Open "Grimoire Online" on your desktop, choose a login name and password, and press "Create Account".</li>
+<li>Create your character. Choose from 5 races, each in either gender, and 6 jobs (you can change jobs in town as often as you like later).</li>
+</ol>
+<div class="tw"><table><thead><tr><th>Race</th><th>Traits</th></tr></thead><tbody>
+<tr><td>Alden</td><td>A well-balanced, versatile race. Easy to play with any job. Pick this one if you can't decide</td></tr>
+<tr><td>Selva</td><td>Tall, strong, and devout. Excels in strength and mind, but weak in intelligence and agility</td></tr>
+<tr><td>Myur</td><td>Small, but unmatched in magical power. Fragile, yet with outstanding intelligence</td></tr>
+<tr><td>Ferin</td><td>Nimble beastfolk. Excel in dexterity and agility, and fight on the front line with a flurry of attacks</td></tr>
+<tr><td>Graud</td><td>A race of mighty giants. Excel in vitality and strength, but poor at magic</td></tr>
+</tbody></table></div>
+<p class="dim">Race differences are just a little "seasoning" on your stats. Your character's playstyle is decided by job.</p>
+<div class="tip">From the second time on, just click the desktop icon. The game checks for a new version at launch and updates itself.</div>
+</section>
+
+<section id="ctrl"><h2>Controls at a Glance (All You Need to Get Moving)</h2>
+<div class="note"><b>The most important flow:</b> Get close → select the target with <kbd>Tab</kbd> → press <kbd>Enter</kbd> to talk or examine (for monsters, choose "Attack" in the Command Menu). When nothing is open to close, <kbd>Esc</kbd> opens the Main Menu, and <kbd>,</kbd> (comma) opens the Controls List. There is no mouse cursor.</div>
+<div class="tip"><b>First-time controls are explained at the top of the screen:</b> When the moment comes, an explanation of the controls appears at the top of the screen for the Main Menu, the Controls List, the map, switching where your chat message goes, Auto-Gathering, and Grica, as well as for Auto-Hunt Mode once it becomes available and for mounting and dismounting once you receive the Kururu Whistle.</div>
+<figure><img src="../img/%E6%93%8D%E4%BD%9C%E4%B8%80%E8%A6%A7.jpg" alt="The Controls List window" loading="lazy" width="1120" height="630"><figcaption>The Controls List, opened with the comma (,) key. You can check every key here</figcaption></figure>
+<h4>Moving</h4><table class="keys"><tbody><tr><th><kbd>W A S D</kbd></th><td>Walk forward, back, left, and right</td></tr><tr><th><kbd>Space</kbd></th><td>Jump (while riding a Kururu: Hover Run and glide; requires the Wind Harness)</td></tr><tr><th><kbd>Move the mouse while holding the right button</kbd></th><td>Rotate the camera</td></tr><tr><th><kbd>Hold both mouse buttons</kbd></th><td>Walk forward (move the mouse while holding to turn)</td></tr><tr><th><kbd>Mouse wheel</kbd></th><td>Camera distance</td></tr><tr><th><kbd>V</kbd></th><td>Mount or dismount a Kururu (requires a Kururu Whistle)</td></tr><tr><th><kbd>T</kbd></th><td>Walk behind the selected person (Follow)</td></tr></tbody></table>
+<h4>Selecting & Talking</h4><table class="keys"><tbody><tr><th><kbd>TAB</kbd></th><td>Cycle through nearby monsters, NPCs, and players</td></tr><tr><th><kbd>ENTER</kbd></th><td>"Talk" or "Examine" with your target / open the Command Menu / confirm</td></tr><tr><th><kbd>ESC</kbd></th><td>Close windows, cancel, stop attacking</td></tr><tr><th><kbd>Z</kbd></th><td>Select yourself</td></tr><tr><th><kbd>↑↓←→</kbd></th><td>Choose inside windows</td></tr><tr><th><kbd>F1–F6</kbd></th><td>Target for healing and buffs (party members 1–6)</td></tr></tbody></table>
+<h4>Fighting</h4><table class="keys"><tbody><tr><th><kbd>Enter → choose "Attack"</kbd></th><td>Select an enemy and press Enter to open the Command Menu. Choose "Attack" with ↑↓ and press Enter: even from a distance, you walk up to the enemy automatically and keep attacking once you arrive (recommended. You can also attack with the R key; press R again to stop)</td></tr><tr><th><kbd>Enter → choose "Weapon Technique"</kbd></th><td>Use a Weapon Technique from "Weapon Technique" in the same Command Menu (when TP is 100% or more. The 1 key also works)</td></tr><tr><th><kbd>Enter → choose "Magic"</kbd></th><td>Cast spells from "Magic" in the same Command Menu (the 2 key also works)</td></tr><tr><th><kbd>E</kbd></th><td>Target whatever your ally is attacking (Assist. Typing /assist in chat does the same)</td></tr><tr><th><kbd>H</kbd></th><td>Sit and rest (recovers HP and MP)</td></tr><tr><th><kbd>G</kbd></th><td>Place a marker on your target</td></tr></tbody></table>
+<h4>Opening Windows</h4><table class="keys"><tbody><tr><th><kbd>ESC</kbd></th><td>Main Menu when nothing is open to close (every feature starts here)</td></tr><tr><th><kbd>P</kbd></th><td>Equipment & Items</td></tr><tr><th><kbd>C</kbd></th><td>Status, Kururu & Titles (press Tab in the window to switch)</td></tr><tr><th><kbd>U</kbd></th><td>Skills</td></tr><tr><th><kbd>L</kbd></th><td>List of techniques you've learned</td></tr><tr><th><kbd>J</kbd></th><td>Quests</td></tr><tr><th><kbd>M</kbd></th><td>Map</td></tr><tr><th><kbd>K</kbd></th><td>Area Scan (list of nearby monsters and allies). Choose an enemy with ↑↓ and press Enter to target it and walk up to it automatically (when you arrive, Enter → "Attack"). Choose an ally to walk to where they are</td></tr><tr><th><kbd>Y</kbd></th><td>Friends</td></tr><tr><th><kbd>B</kbd></th><td>Card Album (Grica). Press B again to close</td></tr><tr><th><kbd>X</kbd></th><td>Challenge your target to a Grica "Magic Circle" match. At a table, challenge the person across from you</td></tr><tr><th><kbd>N</kbd></th><td>Fishing (equip a rod and bait, then stand by water)</td></tr><tr><th><kbd>, (comma)</kbd></th><td>Controls List</td></tr></tbody></table>
+<h4>Other</h4><table class="keys"><tbody><tr><th><kbd>/ (slash)</kbd></th><td>Chat and command input</td></tr><tr><th><kbd>Ctrl+Q</kbd></th><td>Call in missing Bonds (companions) one by one</td></tr><tr><th><kbd>Ctrl+Shift+Q</kbd></th><td>Toggle Auto-Hunt Mode. From Lv30</td></tr></tbody></table>
+<p><b>Target markers:</b> The first time you select a target, a speech bubble explains them. The gold "▶◀" marks your Main Target; press <kbd>Enter</kbd> to choose an action such as Talk or Attack. The green "《 》" is your Sub Target, the one your commands such as Heal and buffs are used on; your enemy Main Target stays the same. Choose the ally to support with <kbd>↑</kbd><kbd>↓</kbd> or <kbd>F1</kbd>–<kbd>F6</kbd>.</p>
+<figure><img src="../img/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%AA%93.jpg" alt="Command Menu" loading="lazy" width="1120" height="630"><figcaption>The Command Menu that appears when you select a target and press Enter: Attack, Magic, Weapon Technique, Abilities, Talk, Examine, Call Bond, and more</figcaption></figure>
+<h4>Talking to NPCs & Shopping</h4>
+<p class="dim">Close windows and prompts with <kbd>Esc</kbd>.</p>
+<p>Walk up to an NPC, select them with <kbd>Tab</kbd>, and press <kbd>Enter</kbd>. In shops, choose an item and press <kbd>Enter</kbd> to buy; to sell, move to your own bag column with <kbd>←→</kbd>. An NPC with a "!" over their head has a quest ("!!" means a Proof of Bond quest, and "?" means you can report back or the quest is in progress).</p>
+</section>
+
+<section id="first"><h2>First Steps (Lv1–10)</h2>
+<figure><img src="../img/%E8%A1%97.jpg" alt="The road east of Rockhill Town" loading="lazy" width="1120" height="630"><figcaption>Leave through the town's east gate and you're in North Rockhill, your first hunting ground</figcaption></figure>
+<ol class="steps">
+<li><b>Start with your first quest.</b> "Goblin Extermination" (5 Goblins in North Rockhill) is already accepted when you begin (check it in the Quest Log). It is given by the Townsperson in the residential quarter on the west side of town. The Guard, Miner, and Traveling Merchant in the same square, and the Shady Man lurking behind a house in the castle quarter to the west, also offer low-level quests.</li>
+<li><b>Buy 2–3 Potions at the item shop.</b> Potions (restore 60 HP) are your lifeline early on. The Novice's Blessing reduces the damage you take at Lv1–3, but getting jumped by two monsters at once is still dangerous.</li>
+<li><b>Head out the east gate and hunt Goblins (Lv1) and Chickens (Lv1) in North Rockhill.</b> Select with <kbd>Tab</kbd>, then <kbd>Enter</kbd> → "Attack". Fight one at a time, and when your HP drops below half, sit and rest with <kbd>H</kbd> or go back to town. Stay here until Lv4–5.</li>
+<li><b>At Lv3–5, move on to Bats, Slimes, and Scorpions.</b> Bats and Scorpions "react to footsteps", so approach at a walk instead of running and they're less likely to ambush you.</li>
+<li><b>Report your quest to earn Grim, gear, and your first companion.</b> Equip the "Goblin Extermination" reward, the Adventurer's Ring (HP/MP+10), right away (<kbd>P</kbd>). When you report it, a Bond joins you: if you started as a Warrior, Monk, Sorcerer, or Rogue, you get the healer "Cleric Sera"; if you started as a Cleric or Spellsword, you get the tank "Warrior Rio". Select yourself with <kbd>Z</kbd>, then <kbd>Enter</kbd> → "Call Bond" to call them. Things get much easier from here.</li>
+<li><b>At Lv6–9, take on Goblin Sentries and Cactuses, then head to the entrance of South Rockhill.</b> Finishing "Taking Down the Goblin Leaders" (Guild Receptionist) starts the Adventurers' Guild quest series.</li>
+<li><b>From Lv10, gain more companions with Proofs of Bond.</b> Mentor Elna's "Proof of Bond: Healing" (Lv10, 8 Armabees in South Rockhill) lets you call "Cleric Sera", and Drillmaster Dorg's "Proof of Bond: Blade" (Lv15) lets you call "Warrior Rio". The Proof for the Bond you got from your first quest counts as already done. Until you reach that Proof's level (Lv10 for Sera, Lv15 for Rio), you can't call your first Bond together with other Bonds.</li>
+</ol>
+<div class="warn"><b>If you fall:</b> From Lv9, you lose part of the EXP you've earned toward your current level (your level never goes down. Nothing is lost at Lv8 or below, or in the Full Moon Arena). Choose "Revive at Return Sigil" to return to the last Return Sigil you touched (the town at first). If a Cleric raises you with Resurrect (Lv25), you get part of the lost EXP back.</div>
+<h3>What's in Town</h3>
+<ul>
+<li><b>Return Sigil</b>: Select it with <kbd>Tab</kbd> and touch it with <kbd>Enter</kbd> to make it your revival point.</li>
+<li><b>Inn (Sleeping Cat Inn)</b>: Talk to the landlady to fully restore HP and MP.</li>
+<li><b>Item Shop, Weapon Shop, Armor Shop</b>: Gear for the early game up to Lv10, Potions, fishing rods, and bait.</li>
+<li><b>The Rockhill fountain</b>: At the top of every hour it shoots up for about 30 seconds, and at 6 a.m., noon, and 6 p.m. it becomes a grand fountain. At night it glows (one hour in the game is 144 seconds of real time).</li>
+<li><b>Warehouse Keeper</b>: Store items you aren't using. <b>Mailbox</b>: Send items and letters to other players. <b>Auction Clerk</b>: Buy and sell items with other players (<code>/ah</code>).</li>
+<li><b>Job Instructor</b>: Change your job. Each job levels up separately.</li>
+<li><b>Guild Receptionist / Drillmaster Dorg / Mentor Elna / Pomly / Kururu Stable Master / Corridor Guide</b>: Explained in their own sections.</li>
+</ul>
+<div class="tip">Log in every day to receive a <b>200 Grim Login Bonus</b> on your first entry of the day (once per day, shared with the Web Portal).</div>
+</section>
+
+<section id="road"><h2>Progression by Level</h2>
+<p>Hunting monsters "at your level to slightly above" is the most efficient. Stronger foes (5 or more levels above you) are dangerous even with your Bonds. Here's a rough guide for when to change hunting grounds.</p>
+<div class="tw"><table><thead><tr><th>Level</th><th>Hunting Ground</th><th>Monsters to Fight</th><th>Quests to Take</th><th>Tip</th></tr></thead><tbody><tr><td class="lv">Lv1–5</td><td>North Rockhill</td><td>Goblin (Lv1–2), Chicken (Lv1) → Bat (Lv2) → Slime (Lv3) → Scorpion, Frog (Lv4) → Mushling (Lv5)</td><td>"Goblin Extermination", "Recover the Stolen Medicine", "Bandit Gang Initiation", "Mine Access Permit", "Investigating the Worn Map"</td><td>At Lv1–3, the Novice's Blessing reduces damage taken (−30% at Lv1). Up to Lv8, falling costs no EXP. When you report "Goblin Extermination", a Bond joins you.</td></tr>
+<tr><td class="lv">Lv5–10</td><td>Deep North Rockhill, South Rockhill, Great Mine</td><td>Goblin Sentry (Lv6), Cactus (Lv7) → in South Rockhill: Slime, Birb, Spiked Slime (Lv6–8), Armabee (Lv9). Great Mine (Lv5–9)</td><td>"A Rare Delicacy", "Cactus Extermination", "Taking Down the Goblin Leaders" → Guild quests begin. Lv10: "Quell the Lord of the Mine", "The Angler's Path"</td><td>At Lv10, the Proof of Bond for Cleric Sera (Mentor Elna; already done if Sera joined you from your first quest). You can now wear rings, earrings, and brass gear.</td></tr>
+<tr><td class="lv">Lv10–15</td><td>South Rockhill, Mistveil Jungle</td><td>Orc (Lv11), Warg (Lv12), Goblin Shaman (Lv13) / in the jungle: Pink Jelly (Lv10), Sabercat (Lv12), Monkroose (Lv13)</td><td>Guild: "Sweeping Out the Orc Squads", "The Warg Pack", "Sabercat Hunting Grounds". Lv12–16: the Kururu Stable Master's 3 quests (lets you ride Kururu)</td><td>At Lv15, the Bond Warrior Rio (Drillmaster Dorg; already done if Rio joined you from your first quest). From here, hunting with your Bonds makes things easy.</td></tr>
+<tr><td class="lv">Lv15–20</td><td>Verdan Highlands, deep Mistveil Jungle</td><td>Rabbit (Lv14), Squidle (Lv16), Hywirl (Lv17), Sabercat (Lv18), Ghost (Lv19), Dino (Lv20)</td><td>Lv18: the Pomly's "Proof of Flame / Earth / Water" → Lv20: "The Pomly's Trial" unlocks your Sub Job. Lv17: "Find the Holy Sigil Shard"; Lv20: "The Gravekeeper's Request"</td><td>Take on Lords (Gara-Hei Lv17, Soldier Crawler Lv18, Princess Toad Lv20, Serpent Priest Shezal Lv20) with 3–4 Bonds called.</td></tr>
+<tr><td class="lv">Lv20–30</td><td>Deep Verdan Highlands, entrance to the Vale of Myriad Fiends, Morga Sporewood, Underground Mausoleum</td><td>Skull Orc (Lv22), Korkas (Lv22), Yeti (Lv25) / in the Vale: Golemling (Lv21), Corv (Lv24) / Sporewood (Lv24–30) / Underground Mausoleum (Lv24–36)</td><td>Guild: "The Skull Orc Fort"; Lv22: "Fangs for Trade"; Lv25: "In Search of the Queen's Orb"; Lv28: "The Yeti's Pelt"</td><td>Lv20: the Bond Sorcerer Noa; Lv25: Monk Gai. From Lv28, Expert Job quests begin.</td></tr>
+<tr><td class="lv">Lv30–40</td><td>Vale of Myriad Fiends, Salta Salt Flats</td><td>Alien, Skull Ghost (Lv30), Demon (Lv32), Blue Demon (Lv35) / in the Salt Flats: Saltshell Crab (Lv32) to Bone Sentry (Lv38)</td><td>Lv30: 5 Expert Job quests (Knight, Dread Knight, Beast Tamer, Ninja, Bard). Guild: "Demons of the Vale of Myriad Fiends"</td><td>At Lv30, Auto-Hunt Mode becomes available. Bonds: Mina (Lv32), Lira (Lv35), Luka (Lv36).</td></tr>
+<tr><td class="lv">Lv40–50</td><td>Emel Coast, deep Vale of Myriad Fiends, Deep Salt Cavern</td><td>Beach monsters (Lv40–50) / deep in the Vale: Terror Dragon (Lv44), Soul-Devourer Dragon (Lv46) / Deep Salt Cavern (Lv40–52)</td><td>Lv41: the Bond Knight Aldo. Lv45: Guild "Proof of the Dragonslayer" → Lv46–50: 3 "Adamant" quests</td><td>At Lv50, "Hero's Credentials" (Mirror Shrine). Defeat the 3 King Lords (Morga Lv35, Salta Lv44, Galmare Lv52).</td></tr>
+<tr><td class="lv">Lv50–60</td><td>Leaden Salt Basin, Cape Vermia, Shadow Rockhill</td><td>In the Salt Basin: Drysalt Prowler (Lv48) to White Crystal Colossus (Lv60) / on the Cape: Cape Giant Crab (Lv58) to Ruined Castle Black Knight (Lv70)</td><td>Guild: 4 "Lake" quests (Lv54–60). Lv58–60: 3 Path of the Sword Saint quests. Bonds: Kagerou (Lv51), Luca (Lv52), Val (Lv57)</td><td>The level cap is 60. Descend the 11 floors of Shadow Rockhill and aim for the [Hero] title.</td></tr></tbody></table></div>
+<h3>Milestones to Remember</h3>
+<ul>
+<li><b>Lv1</b>: Report your first quest, "Goblin Extermination", and a Bond (Sera or Rio) joins you.</li>
+<li><b>Lv10</b>: Rings and earrings. The Proof of Bond for Sera. The fishing quest. You can challenge Great Mine Lord Dorgan (Lv9).</li>
+<li><b>Lv12–16</b>: The Kururu Stable Master's 3 quests earn you the Kururu Whistle. Ride with <kbd>V</kbd> and travel faster than running.</li>
+<li><b>Lv18–20</b>: The Pomly's quests unlock your <b>Sub Job</b>. You can layer half the strength of a second job on top of your Main Job (e.g. Warrior/Cleric can cast Heal).</li>
+<li><b>Lv30</b>: Quests to unlock the 5 Expert Jobs. <b>Auto-Hunt Mode</b> becomes available (<kbd>Ctrl+Shift+Q</kbd> or <code>/ai</code>).</li>
+<li><b>Lv50</b>: The "Hero's Credentials" quest. The way to Shadow Rockhill opens. Shadowbronze through Hero gear.</li>
+<li><b>Lv60</b>: The cap. The title "Veteran Adventurer".</li>
+</ul>
+</section>
+
+<section id="quest"><h2>Quest List</h2>
+<p>Check your quests in the <kbd>J</kbd> window. For quests where "defeating it while the quest is active puts the item in your Important Items", the item won't drop unless you take the quest first. In a quest series, the next one appears once you finish the previous one.</p>
+<h3>Town Quests (for Beginners)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td><b>Goblin Extermination</b><div class="dim">Head out the east gate of town and defeat 5 Goblins in North Rockhill for me, would you? You'll find 'em just past the gate, on the north side of the road.</div></td><td>Townsperson</td><td>Goblin ×5</td><td>50 Grim, Adventurer's Ring</td></tr>
+<tr><td class="lv">Lv8</td><td><b>Cactus Extermination</b><div class="dim">I need 16 Cactuses cleared out of Mistveil Jungle. Those needles are a real pain.</div></td><td>Townsperson</td><td>Cactus ×16</td><td>80 Grim, Steadfast Mantle</td></tr>
+<tr><td class="lv">Lv2</td><td><b>Recover the Stolen Medicine</b><div class="dim">Goblins ran off with our medicine. Defeat them while you have this quest and get it back. (It goes into your Important Items.)</div></td><td>Guard</td><td>Gather and hand over items</td><td>40 Grim, Swiftfoot Boots</td></tr>
+<tr><td class="lv">Lv3</td><td><b>Bandit Gang Initiation</b><div class="dim">Let's see what you've got. Go finish off 8 Bats.</div></td><td>Shady Man</td><td>Bat ×8</td><td>70 Grim, Bandit Skull Badge</td></tr>
+<tr><td class="lv">Lv4</td><td><b>Mine Access Permit</b><div class="dim">Slimes are blocking the tunnels. Clear out 6 of 'em and I'll give you a pass.</div></td><td>Miner</td><td>Slime ×6</td><td>65 Grim, Mine Pass</td></tr>
+<tr><td class="lv">Lv10</td><td><b>Quell the Lord of the Mine</b><div class="dim">Some lord has made itself at home deep in the mine. Unless it's put down, we can't dig a single stone.</div></td><td>Miner</td><td>Great Mine Lord Dorgan ×1</td><td>110 Grim</td></tr>
+<tr><td class="lv">Lv5</td><td><b>Investigating the Worn Map</b><div class="dim">Take care of 6 Scorpions for me, and this Worn Map is yours.</div></td><td>Traveling Merchant</td><td>Scorpion ×6</td><td>60 Grim, Worn Map</td></tr>
+<tr><td class="lv">Lv6</td><td><b>A Rare Delicacy</b><div class="dim">I want a Scorpion Tail for my cooking. Defeat Scorpions while you have this quest, and one will go into your Important Items.</div></td><td>Cook</td><td>Gather and hand over items</td><td>35 Grim, Chanting Circlet</td></tr>
+<tr><td class="lv">Lv15</td><td><b>Rabbit Hunt</b><div class="dim">Go hunt 20 Rabbits in the Verdan Highlands for me, would you?</div></td><td>Hunter</td><td>Rabbit ×20</td><td>100 Grim, Hero's Sword</td></tr>
+<tr><td class="lv">Lv11</td><td><b>Deliver the Secret Letter</b><div class="dim">The informant has a secret letter. Collect it and bring it to me, the mayor.</div></td><td>Mayor</td><td>Gather and hand over items</td><td>90 Grim, Sage's Earring</td></tr>
+<tr><td class="lv">Lv17</td><td><b>Find the Holy Sigil Shard</b><div class="dim">A Goblin Sentry should be carrying the Holy Sigil Shard. Defeat it while you have this quest and bring the shard back.</div></td><td>Priest</td><td>Gather and hand over items</td><td>120 Grim, Warrior's Armlet</td></tr>
+<tr><td class="lv">Lv25</td><td><b>In Search of the Queen's Orb</b><div class="dim">They say the Queen's Orb lies in an old treasure chest at the edge of town. Open the chest while you have this quest and bring the Orb to me.</div></td><td>Scholar</td><td>Gather and hand over items</td><td>140 Grim, Thief's Dagger</td></tr>
+<tr><td class="lv">Lv10</td><td><b>The Angler's Path</b><div class="dim">Fishin' is a fine thing, it is. Equip a rod and bait, then by the water press the fishing key (N) or type /fish. Catch me 20 fish, and I'll hand over my Artisan Fishing Rod.</div></td><td>Angler Ved</td><td>Catch 20 fish</td><td>60 Grim, Artisan Fishing Rod</td></tr></tbody></table></div><h3>Adventurers' Guild Quests (Series)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv9</td><td><b>Taking Down the Goblin Leaders</b><div class="dim">Those pesky Goblin Sentries need dealing with. Take down 10 of them.</div></td><td>Guild Receptionist</td><td>Goblin Sentry ×10</td><td>70 Grim, Guard Helm</td></tr>
+<tr><td class="lv">Lv11</td><td><b>Sweeping Out the Orc Squads</b><div class="dim">Orcs are banding together in South Rockhill. Scatter about 12 of them for us.</div></td><td>Guild Receptionist</td><td>Orc ×12</td><td>75 Grim</td></tr>
+<tr><td class="lv">Lv12</td><td><b>The Warg Pack</b><div class="dim">Wargs have shown up on the road. Thin out about 10 of them. Travelers can't get through.</div></td><td>Guild Receptionist</td><td>Warg ×10</td><td>85 Grim</td></tr>
+<tr><td class="lv">Lv13</td><td><b>Sabercat Hunting Grounds</b><div class="dim">Take down 10 Sabercats in Mistveil Jungle. We want our hunting grounds back.</div></td><td>Guild Receptionist</td><td>Sabercat ×10</td><td>95 Grim</td></tr>
+<tr><td class="lv">Lv18</td><td><b>Stop the Naga Rites</b><div class="dim">Naga Priests keep performing strange rites in Mistveil Jungle. Go silence 6 of them.</div></td><td>Guild Receptionist</td><td>Naga Priest ×6</td><td>130 Grim</td></tr>
+<tr><td class="lv">Lv23</td><td><b>The Skull Orc Fort</b><div class="dim">Skull Orcs have taken over a fort in the Verdan Highlands. Drive 8 of them out of it.</div></td><td>Guild Receptionist</td><td>Skull Orc ×8</td><td>190 Grim</td></tr>
+<tr><td class="lv">Lv33</td><td><b>Demons of the Vale of Myriad Fiends</b><div class="dim">Demons are spawning in the Vale of Myriad Fiends. Defeat 5 of them. ...I'd tell you not to push yourself, but you're going anyway, aren't you?</div></td><td>Guild Receptionist</td><td>Demon ×5</td><td>320 Grim</td></tr>
+<tr><td class="lv">Lv45</td><td><b>Proof of the Dragonslayer</b><div class="dim">This is the Guild's final quest. Slay the Dragon Monarch. Come back alive, and your name will go down in the records.</div></td><td>Guild Receptionist</td><td>Dragon Monarch ×1</td><td>900 Grim, Adamant Sword</td></tr>
+<tr><td class="lv">Lv46</td><td><b>Light the Forge</b><div class="dim">I still need more of the ore that sword was forged from. Adamant Ore lies in the belly of the Terror Dragon, deep in the Vale of Myriad Fiends. Can you bring it back?</div></td><td>Guild Receptionist</td><td>Gather and hand over items</td><td>1200 Grim, Adamant Gauntlets</td></tr>
+<tr><td class="lv">Lv48</td><td><b>Steel for the Fist</b><div class="dim">Slay 3 Soul-Devourer Dragons deep in the Vale of Myriad Fiends. Steel gets tougher the more you hammer it. Same goes for you.</div></td><td>Guild Receptionist</td><td>Soul-Devourer Dragon ×3</td><td>1500 Grim, Adamant Claw</td></tr>
+<tr><td class="lv">Lv50</td><td><b>Legs That Never Retreat</b><div class="dim">This is the last one. Strip a single scale from the Dragon Monarch. Greaves hammered from that will see you never fall back for the rest of your life.</div></td><td>Guild Receptionist</td><td>Gather and hand over items</td><td>2000 Grim, Adamant Greaves</td></tr>
+<tr><td class="lv">Lv54</td><td><b>Banish the Lakebed Shades</b><div class="dim">Formless shadows are welling up deep in the Leaden Salt Basin. Banish 5 of them. Light does no good down there.</div></td><td>Guild Receptionist</td><td>Lakebed Shade ×5</td><td>2400 Grim, Torc of Silence</td></tr>
+<tr><td class="lv">Lv57</td><td><b>Remains of the Black Knight</b><div class="dim">A Black Knight wanders the Leaden Salt Basin. Bring back one shard of its helm. It was an old soldier, its name long forgotten.</div></td><td>Guild Receptionist</td><td>Gather and hand over items</td><td>2800 Grim, Requiem Earring</td></tr>
+<tr><td class="lv">Lv59</td><td><b>Shatter the White Crystal</b><div class="dim">In the deepest part of the lake, the salt colossi have grown to full size. Smash 3 of them. You have to get them before they grow, or there's no stopping them.</div></td><td>Guild Receptionist</td><td>White Crystal Colossus ×3</td><td>3400 Grim, White Crystal Ring</td></tr>
+<tr><td class="lv">Lv60</td><td><b>Lakebed King Nergal</b><div class="dim">At the bottom of the dried-up lake sits one who calls himself king. Nergal. ...I won't tell you to come back alive. But come back.</div></td><td>Guild Receptionist</td><td>Lakebed King Nergal ×1</td><td>6000 Grim, Lakebed King's Pendant</td></tr></tbody></table></div><h3>Sub Job (Pomly)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv18</td><td><b>Proof of Flame</b><div class="dim">First, defeat Gara-Hei in South Rockhill and bring back the Proof of Flame, pom! It's a tough enemy, so don't let your guard down, pom!</div></td><td>Pomly</td><td>Gather and hand over items</td><td>180 Grim</td></tr>
+<tr><td class="lv">Lv18</td><td><b>Proof of Earth</b><div class="dim">Next, defeat the Soldier Crawler and bring back the Proof of Earth, pom! Don't lose to its hard shell, pom!</div></td><td>Pomly</td><td>Gather and hand over items</td><td>220 Grim</td></tr>
+<tr><td class="lv">Lv18</td><td><b>Proof of Water</b><div class="dim">The last proof is the Proof of Water, held by the Princess Toad, pom! Go take down that bouncing menace, pom!</div></td><td>Pomly</td><td>Gather and hand over items</td><td>300 Grim</td></tr>
+<tr><td class="lv">Lv20</td><td><b>The Pomly's Trial</b><div class="dim">Three proofs aren't the end, pom! Defeat the Naga Priest known as Serpent Priest Shezal and show your true strength, pom!</div></td><td>Pomly</td><td>Serpent Priest Shezal ×1</td><td>500 Grim, Sub Job (talk to the Pomly)</td></tr></tbody></table></div><h3>Riding Kururu (Kururu Stable Master)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv12</td><td><b>Kururu's Favorite Food</b><div class="dim">If you want to get along with Kururu, the first thing is to fill their bellies. Go pick 3 bundles of Fragrant Herb.</div></td><td>Kururu Stable Master</td><td>Gather and hand over items</td><td>90 Grim</td></tr>
+<tr><td class="lv">Lv14</td><td><b>Wild Kururu</b><div class="dim">Wild Kururu can't stand the smell of Wargs. Drive off 7 of them in the southern fields and bring some quiet to the road.</div></td><td>Kururu Stable Master</td><td>Warg ×7</td><td>130 Grim</td></tr>
+<tr><td class="lv">Lv16</td><td><b>Proof of a Kururu Rider</b><div class="dim">Time for the final test. Drive off the Alpaking that rules the southern fields. If you don't flinch in front of that beast, a Kururu will trust you with its back.</div></td><td>Kururu Stable Master</td><td>Alpaking ×1</td><td>210 Grim, Kururu Whistle, Kururu Whistle (lets you ride)</td></tr></tbody></table></div><h3>Unlocking Expert Jobs</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv13</td><td><b>The Orc Threat</b><div class="dim">A band of Orcs has settled into South Rockhill. Drive off 8 of them.</div></td><td>Mercenary Captain</td><td>Orc ×8</td><td>90 Grim, Chainmail</td></tr>
+<tr><td class="lv">Lv30</td><td><b>Shadow Chaser</b><div class="dim">If you want to call yourself a shadow, don't run from the shadows in the sky. Knock down 14 Corvs!</div></td><td>Mercenary Captain</td><td>Corv ×14</td><td>550 Grim</td></tr>
+<tr><td class="lv">Lv38</td><td><b>The Nightmare Dragon Scale</b><div class="dim">Slip in close to Nightmare Dragon Valgana and steal its prized scale. Make it back alive, and I'll acknowledge your shadow arts!</div></td><td>Mercenary Captain</td><td>Gather and hand over items</td><td>900 Grim, Expert Job: Ninja</td></tr>
+<tr><td class="lv">Lv20</td><td><b>The Gravekeeper's Request</b><div class="dim">Ghosts are wandering the Verdan Highlands. Lay 6 of them to rest for me.</div></td><td>Gravekeeper</td><td>Ghost ×6</td><td>110 Grim, Exorcist's Ring</td></tr>
+<tr><td class="lv">Lv30</td><td><b>March of the Dead</b><div class="dim">Down at the bottom of the graves, the bones are walking... Put 14 Skull Ghosts back to sleep for me, dearie.</div></td><td>Gravekeeper</td><td>Skull Ghost ×14</td><td>500 Grim</td></tr>
+<tr><td class="lv">Lv34</td><td><b>The Abyss King's Horn</b><div class="dim">Go snap off the black horn of Abyss King Gualdos... No one who fears the dark could ever do it.</div></td><td>Gravekeeper</td><td>Gather and hand over items</td><td>700 Grim, Expert Job: Dread Knight</td></tr>
+<tr><td class="lv">Lv28</td><td><b>The Yeti's Pelt</b><div class="dim">I want a Yeti Pelt from deep in the Verdan Highlands. Defeat a Yeti while you have this quest and skin it. (It goes into your Important Items.)</div></td><td>Fur Trader</td><td>Gather and hand over items</td><td>140 Grim, Greatsword</td></tr>
+<tr><td class="lv">Lv30</td><td><b>Driving Off the Pack</b><div class="dim">A pack of 16 Wargs is tearing up the game trails. Chase 'em off and let the forest breathe again.</div></td><td>Fur Trader</td><td>Warg ×16</td><td>480 Grim</td></tr>
+<tr><td class="lv">Lv33</td><td><b>The Forest King's Spores</b><div class="dim">There's a Mushroom King that calls itself lord of the forest. Go get some Forest King's Spores from it. If you have to get rough, so be it.</div></td><td>Fur Trader</td><td>Gather and hand over items</td><td>680 Grim, Expert Job: Beast Tamer</td></tr>
+<tr><td class="lv">Lv22</td><td><b>Fangs for Trade</b><div class="dim">Sabercat Fangs from Mistveil Jungle make for fine craftwork. Defeat a Sabercat while you have this quest and bring one back. (It goes into your Important Items.)</div></td><td>Fang Carver</td><td>Gather and hand over items</td><td>100 Grim, Ranger's Mantle</td></tr>
+<tr><td class="lv">Lv30</td><td><b>Sounds of the Forest</b><div class="dim">Songs enter through the ears. Quiet 12 Aliens in the Vale of Myriad Fiends, and learn their cries.</div></td><td>Fang Carver</td><td>Alien ×12</td><td>450 Grim</td></tr>
+<tr><td class="lv">Lv34</td><td><b>The Dragon Songbone</b><div class="dim">In a dragon's throat lies a songbone. Bring one back from a Dragon in the Verdan Highlands. It will become your first instrument.</div></td><td>Fang Carver</td><td>Gather and hand over items</td><td>700 Grim, Wooden Lyre, Expert Job: Bard</td></tr>
+<tr><td class="lv">Lv30</td><td><b>Fortress of Honor</b><div class="dim">If honor is what you seek, first slay 14 Skull Orcs in the fort. Prove yourself not with words, but with your sword.</div></td><td>Lord of the Castle</td><td>Skull Orc ×14</td><td>450 Grim</td></tr>
+<tr><td class="lv">Lv32</td><td><b>The Holy Knight's Crest</b><div class="dim">Defeat the dragon and bring back the Holy Knight's Crest. Accomplish this, and you shall bear the name of Knight.</div></td><td>Lord of the Castle</td><td>Gather and hand over items</td><td>650 Grim, Expert Job: Knight</td></tr></tbody></table></div><h3>Proof of Bond (Lets You Call Companions)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv10</td><td><b>Proof of Bond: Healing</b><div class="dim">Please calm 8 Armabees in South Rockhill. A healer needs a heart that knows when to strike and when to offer a hand.</div></td><td>Mentor Elna</td><td>Armabee ×8</td><td>120 Grim</td></tr>
+<tr><td class="lv">Lv15</td><td><b>Proof of Bond: Blade</b><div class="dim">Drive off 8 Squidles in the Verdan Highlands. A warrior who protects others needs eyes that can read the enemy's moves. When you return, I'll hand the proof to Rio.</div></td><td>Drillmaster Dorg</td><td>Squidle ×8</td><td>160 Grim</td></tr>
+<tr><td class="lv">Lv20</td><td><b>Proof of Bond: Flame</b><div class="dim">Please quell 8 Dinos in the Verdan Highlands. Show me a mind that doesn't fear fire, and that chooses its spells by reading the situation.</div></td><td>Mentor Elna</td><td>Dino ×8</td><td>180 Grim</td></tr>
+<tr><td class="lv">Lv25</td><td><b>Proof of Bond: Fist</b><div class="dim">Go defeat 8 Yetis in the Verdan Highlands. Show me fists that won't back down, even against big foes.</div></td><td>Drillmaster Dorg</td><td>Yeti ×8</td><td>280 Grim</td></tr>
+<tr><td class="lv">Lv32</td><td><b>Proof of Bond: Shadow</b><div class="dim">Take down 8 Spore Eyes in the Morga Sporewood. It's a test of your knack for slipping into blind spots before you're seen.</div></td><td>Drillmaster Dorg</td><td>Spore Eye ×8</td><td>420 Grim</td></tr>
+<tr><td class="lv">Lv35</td><td><b>Proof of Bond: Reason</b><div class="dim">Please drive off 8 Blue Demons in the Vale of Myriad Fiends. Show me the reasoning that chooses between attack and support.</div></td><td>Mentor Elna</td><td>Blue Demon ×8</td><td>720 Grim</td></tr>
+<tr><td class="lv">Lv36</td><td><b>Proof of Bond: Sound</b><div class="dim">Quiet 14 Skull Ghosts in the Vale of Myriad Fiends. Show me ears that can hear the song of the bones through to the end.</div></td><td>Mentor Elna</td><td>Skull Ghost ×14</td><td>950 Grim</td></tr>
+<tr><td class="lv">Lv41</td><td><b>Proof of Bond: Shield</b><div class="dim">Smash 8 Salt Crystal Golems in the Salta Salt Flats. Show me you're ready to take a heavy blow head-on.</div></td><td>Drillmaster Dorg</td><td>Salt Crystal Golem ×8</td><td>1050 Grim</td></tr>
+<tr><td class="lv">Lv51</td><td><b>Proof of Bond: Mist</b><div class="dim">Defeat 8 Golemlings on the Emel Coast. Show me the skill to let attacks slip past you like mist.</div></td><td>Drillmaster Dorg</td><td>Golemling ×8</td><td>1350 Grim</td></tr>
+<tr><td class="lv">Lv52</td><td><b>Proof of Bond: Fang</b><div class="dim">Quell 8 Salt-Eating Lizards in the Leaden Salt Basin. This tests whether you can read a beast's presence and power.</div></td><td>Drillmaster Dorg</td><td>Salt-Eating Lizard ×8</td><td>3000 Grim</td></tr>
+<tr><td class="lv">Lv57</td><td><b>Proof of Bond: Darkness</b><div class="dim">Defeat 8 Brinelake Black Knights in the Leaden Salt Basin. Show me the will not to be swallowed by a darkness that eats away at your life.</div></td><td>Drillmaster Dorg</td><td>Brinelake Black Knight ×8</td><td>4200 Grim</td></tr></tbody></table></div><h3>Veil Village Crafting (Cooking, Alchemy, Smithing)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td><b>Village Salt-Grilling Lessons</b><div class="dim">First, show me how you handle a fire. Cook up 2 plates of Salt-Grilled Fish and bring them here, dear.</div></td><td>Village Cook (Veil Village)</td><td>Gather and hand over items</td><td>80 Grim, Fragrant Herb</td></tr>
+<tr><td class="lv">Lv2</td><td><b>Steaming with Herbs, Just Right</b><div class="dim">Once your Cooking reaches 16, finish one plate of Herb-Steamed Trout and bring it over.</div></td><td>Village Cook (Veil Village)</td><td>Gather and hand over items</td><td>180 Grim, Frostgrain Wood</td></tr>
+<tr><td class="lv">Lv3</td><td><b>Frost-Scented Smoked Fish</b><div class="dim">With the fire control of Cooking 32, make one plate of Frostgrain Smoked Fish and bring it to me.</div></td><td>Village Cook (Veil Village)</td><td>Gather and hand over items</td><td>360 Grim, Dragonblood Heartwood</td></tr>
+<tr><td class="lv">Lv4</td><td><b>Simmering the Pool King</b><div class="dim">With skills that have reached Cooking 56, finish one plate of Simmered Pool King. Don't you take your eyes off that pot.</div></td><td>Village Cook (Veil Village)</td><td>Gather and hand over items</td><td>900 Grim, Stardust Herb</td></tr>
+<tr><td class="lv">Lv1</td><td><b>Hands That Brew Healing Herbs</b><div class="dim">This is the first step in Alchemy. Make 3 Potions and bring them to me, would you?</div></td><td>Village Materials Dealer (Veil Village)</td><td>Gather and hand over items</td><td>70 Grim, Fragrant Herb</td></tr>
+<tr><td class="lv">Lv2</td><td><b>Clearing the Mana</b><div class="dim">Once you've honed your Alchemy to 12, brew 2 Mana Potions and bring them here, would you?</div></td><td>Village Materials Dealer (Veil Village)</td><td>Gather and hand over items</td><td>160 Grim, Mana Potion</td></tr>
+<tr><td class="lv">Lv3</td><td><b>Two Drops into One</b><div class="dim">With Alchemy 24, combine Mana Potions into one Greater Mana Potion and bring it to me.</div></td><td>Village Materials Dealer (Veil Village)</td><td>Gather and hand over items</td><td>340 Grim, Moonglow Herb</td></tr>
+<tr><td class="lv">Lv4</td><td><b>Elixir of Moonlight</b><div class="dim">Once you've reached Alchemy 45, deliver 2 Greater Mana Potions made with Moonglow Herb.</div></td><td>Village Materials Dealer (Veil Village)</td><td>Gather and hand over items</td><td>820 Grim, Healing Herb</td></tr>
+<tr><td class="lv">Lv1</td><td><b>Your First Blade</b><div class="dim">If you're taking up Smithing, start by forging one Bronze Sword for me.</div></td><td>Village Warehouse Keeper (Veil Village)</td><td>Gather and hand over items</td><td>90 Grim, Hardwood Log</td></tr>
+<tr><td class="lv">Lv2</td><td><b>Layering Copper Plates</b><div class="dim">With Smithing 18, finish one Copper Breastplate for me.</div></td><td>Village Warehouse Keeper (Veil Village)</td><td>Gather and hand over items</td><td>210 Grim, Fragrant Herb</td></tr>
+<tr><td class="lv">Lv3</td><td><b>Armor Woven from Fragrant Herbs</b><div class="dim">Once you've grown to Smithing 34, make one Herbal Cloak and bring it to me.</div></td><td>Village Warehouse Keeper (Veil Village)</td><td>Gather and hand over items</td><td>430 Grim, Azure Iron Ore</td></tr>
+<tr><td class="lv">Lv4</td><td><b>The Great Azure Iron Job</b><div class="dim">Show me what Smithing 58 can do. Forge one Azure Iron Greatsword, all the way to the end.</div></td><td>Village Warehouse Keeper (Veil Village)</td><td>Gather and hand over items</td><td>980 Grim, Star Iron Ore</td></tr></tbody></table></div><h3>Hero's Credentials & Path of the Sword Saint (High Level)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv50</td><td><b>Hero's Credentials I: The Spore Crest</b><div class="dim">The Mirror Shrine opens only for those who have slain a king. First, slay Spore Queen Morga in the Morga Sporewood and bring me the Spore Crest.</div></td><td>Shadowwarden Seira (Mirror Shrine)</td><td>Gather and hand over items</td><td>—</td></tr>
+<tr><td class="lv">Lv50</td><td><b>Hero's Credentials II: The Salt Crest</b><div class="dim">Slay Salt-Crown King Salta in the Salta Salt Flats and bring me the Salt Crest.</div></td><td>Shadowwarden Seira (Mirror Shrine)</td><td>Gather and hand over items</td><td>—</td></tr>
+<tr><td class="lv">Lv50</td><td><b>Hero's Credentials III: The Tide Crest</b><div class="dim">Slay Tidal King Galmare on the Emel Coast and bring me the Tide Crest. Once all three are gathered, the Mirror Shrine will open to you.</div></td><td>Shadowwarden Seira (Mirror Shrine)</td><td>Gather and hand over items</td><td>Opens the Mirror Shrine (Shadow Rockhill)</td></tr>
+<tr><td class="lv">Lv58</td><td><b>Path of the Sword Saint: Rumors</b><div class="dim">...I tracked the lord of the Ruined Castle all the way here. But the approach to the castle is swarming with Bone Knights. Clear the way: 50 of them. Show me what your sword is worth.</div></td><td>Sword Saint Sigurd (Port Vermia)</td><td>Ruined Castle Bone Knight ×50</td><td>4000 Grim</td></tr>
+<tr><td class="lv">Lv59</td><td><b>Path of the Sword Saint: Lord of the Ruined Castle</b><div class="dim">Ruined Castle Lord Galderic. The man who cut down my master. Slay him. I won't lift a hand. I'll be watching how you fight.</div></td><td>Sword Saint Sigurd (Port Vermia)</td><td>Ruined Castle Lord Galderic ×1</td><td>6000 Grim</td></tr>
+<tr><td class="lv">Lv60</td><td><b>Path of the Sword Saint: The Test</b><div class="dim">The Black Knights guarding outside the castle walls won't lay down their swords, even with their lord fallen. Defeat 10 of them. This is the final test.</div></td><td>Sword Saint Sigurd (Port Vermia)</td><td>Ruined Castle Black Knight ×10</td><td>8000 Grim</td></tr></tbody></table></div>
+</section>
+
+<section id="zone"><h2>Zones</h2>
+<p>The world is divided into "zones"; walk through an exit at the edge of a zone to move to the next one. The <kbd>M</kbd> map shows where you are and where the exits are. ★ marks a <b>Lord</b> (an especially strong monster that is the target of quests and drops good items).</p>
+<figure><img src="../img/%E3%83%9E%E3%83%83%E3%83%97%E7%AA%93.jpg" alt="The map window" loading="lazy" width="1120" height="630"><figcaption>The map (M key). Left: the zone you're in. Right: how the world connects</figcaption></figure>
+<div class="map">
+<div class="town">Rockhill Town<small>Safe zone · Castle</small></div><div class="low">North Rockhill<small>Lv1–7</small></div><div class="low">South Rockhill<small>Lv6–17</small></div><div class="mid">Morga Sporewood<small>Lv24–35</small></div><div></div>
+<div class="mid">Salta Salt Flats<small>Lv32–44</small></div><div class="low">Mistveil Jungle<small>Lv8–20</small></div><div class="mid">Verdan Highlands<small>Lv14–30</small></div><div class="high">Vale of Myriad Fiends<small>Lv20–46</small></div><div></div>
+<div class="high">Leaden Salt Basin<small>Lv48–62</small></div><div class="town">Veil Village<small>Crafting village</small></div><div class="high">Emel Coast<small>Lv40–52</small></div><div class="high">Cape Vermia<small>Lv58–72</small></div><div></div>
+</div>
+<p class="dim">The layout above matches the world map: east of town is North Rockhill, east of North Rockhill is South Rockhill, south of North Rockhill is the jungle, and so on.</p>
+<details class="zone" open><summary><b>North Rockhill</b> <span class="lv">Lv1–7</span></summary>
+<p>Right outside the town's east gate. Your first hunting ground. Start with Goblins and Chickens and work up to Goblin Sentries and Cactuses. The entrance to the Great Mine is nearby, too.</p><figure><img src="../img/%E8%8D%89%E5%8E%9F.jpg" alt="North Rockhill" loading="lazy" width="1120" height="630"><figcaption>North Rockhill</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Goblin</td><td class="lv">Lv1</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Chicken</td><td class="lv">Lv1</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Goblin</td><td class="lv">Lv2</td><td>Attacks on sight</td></tr>
+<tr><td>Bat</td><td class="lv">Lv2</td><td>Reacts to footsteps</td></tr>
+<tr><td>Slime</td><td class="lv">Lv3</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Scorpion</td><td class="lv">Lv4</td><td>Reacts to footsteps</td></tr>
+<tr><td>Frog</td><td class="lv">Lv4</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Mushling</td><td class="lv">Lv5</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Goblin Sentry</td><td class="lv">Lv6</td><td>Attacks on sight</td></tr>
+<tr><td>Cactus</td><td class="lv">Lv7</td><td>Attacks on sight</td></tr></tbody></table></div></details><details class="zone" ><summary><b>South Rockhill</b> <span class="lv">Lv6–17</span></summary>
+<p>East of North Rockhill. Orcs and Wargs roam the highway. The Lord Gara-Hei waits at the southern edge. The Sub Job quest "Proof of Flame" takes place here.</p><figure><img src="../img/%E6%9E%97.jpg" alt="South Rockhill" loading="lazy" width="1120" height="630"><figcaption>South Rockhill</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Slime</td><td class="lv">Lv6</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Birb</td><td class="lv">Lv7</td><td>Attacks on sight</td></tr>
+<tr><td>Spiked Slime</td><td class="lv">Lv8</td><td>Attacks on sight</td></tr>
+<tr><td>Armabee</td><td class="lv">Lv9</td><td>Reacts to footsteps</td></tr>
+<tr><td>Goblin Miner</td><td class="lv">Lv9</td><td>Attacks on sight</td></tr>
+<tr><td>Fish</td><td class="lv">Lv9</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Orc</td><td class="lv">Lv11</td><td>Attacks on sight</td></tr>
+<tr><td>Warg</td><td class="lv">Lv12</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Goblin Shaman</td><td class="lv">Lv13</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Alpaking</td><td class="lv">Lv16</td><td>Won't attack unless you strike first</td></tr>
+<tr class="nm"><td>★ Gara-Hei</td><td class="lv">Lv17</td><td>Attacks on sight</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Mistveil Jungle</b> <span class="lv">Lv8–20</span></summary>
+<p>South of North Rockhill. A dense jungle with poor visibility. Sabercats and Naga Priests react to magic. Deep inside are the Lords Soldier Crawler and Serpent Priest Shezal. Veil Village lies to the south.</p><figure><img src="../img/%E5%AF%86%E6%9E%97%E3%81%AE%E6%B3%89.jpg" alt="Mistveil Jungle" loading="lazy" width="1120" height="630"><figcaption>Mistveil Jungle</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Cactus</td><td class="lv">Lv8</td><td>Attacks on sight</td></tr>
+<tr><td>Pink Jelly</td><td class="lv">Lv10</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Sabercat</td><td class="lv">Lv12</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Monkroose</td><td class="lv">Lv13</td><td>Attacks on sight</td></tr>
+<tr><td>Glub</td><td class="lv">Lv14</td><td>Reacts to footsteps</td></tr>
+<tr><td>Corv</td><td class="lv">Lv15</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Dino</td><td class="lv">Lv18</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Soldier Crawler</td><td class="lv">Lv18</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Naga Priest</td><td class="lv">Lv18</td><td>Attacks on sight · Uses magic</td></tr>
+<tr class="nm"><td>★ Serpent Priest Shezal</td><td class="lv">Lv20</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Verdan Highlands</b> <span class="lv">Lv14–30</span></summary>
+<p>South of South Rockhill. Starts with Rabbits; deeper in are Yetis and Dragons. Home to the entrance of the Underground Mausoleum and the Lords Princess Toad and Abyss King Gualdos.</p><figure><img src="../img/%E6%B0%B4%E8%BE%BA.jpg" alt="Verdan Highlands" loading="lazy" width="1120" height="630"><figcaption>Verdan Highlands</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Rabbit</td><td class="lv">Lv14</td><td>Won't attack unless you strike first</td></tr>
+<tr><td>Squidle</td><td class="lv">Lv16</td><td>Reacts to footsteps</td></tr>
+<tr><td>Hywirl</td><td class="lv">Lv17</td><td>Reacts to footsteps</td></tr>
+<tr><td>Sabercat</td><td class="lv">Lv18</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Ghost</td><td class="lv">Lv19</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Dino</td><td class="lv">Lv20</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Princess Toad</td><td class="lv">Lv20</td><td>Reacts to footsteps</td></tr>
+<tr><td>Skull Orc</td><td class="lv">Lv22</td><td>Attacks on sight</td></tr>
+<tr><td>Korkas</td><td class="lv">Lv22</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Yeti</td><td class="lv">Lv25</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Dragon</td><td class="lv">Lv28</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting · Uses magic</td></tr>
+<tr class="nm"><td>★ Abyss King Gualdos</td><td class="lv">Lv30</td><td>Attacks on sight · Reacts to footsteps</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Vale of Myriad Fiends</b> <span class="lv">Lv20–46</span></summary>
+<p>East of the Highlands. Demons, Blue Demons, and Dragon Valley. At the very end, dragon Lords such as Dragon Monarch and Nightmare Dragon Valgana await.</p>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Dino</td><td class="lv">Lv20</td><td>Attacks on sight</td></tr>
+<tr><td>Golemling</td><td class="lv">Lv21</td><td>Attacks on sight</td></tr>
+<tr><td>Corv</td><td class="lv">Lv24</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Skull Orc</td><td class="lv">Lv26</td><td>Attacks on sight</td></tr>
+<tr><td>Yeti</td><td class="lv">Lv28</td><td>Attacks on sight</td></tr>
+<tr><td>Alien</td><td class="lv">Lv30</td><td>Attacks on sight</td></tr>
+<tr><td>Skull Ghost</td><td class="lv">Lv30</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Demon</td><td class="lv">Lv32</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr class="nm"><td>★ Mushroom King</td><td class="lv">Lv33</td><td>Attacks on sight</td></tr>
+<tr><td>Blue Demon</td><td class="lv">Lv35</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr class="nm"><td>★ Dragon</td><td class="lv">Lv38</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting · Uses magic</td></tr>
+<tr class="nm"><td>★ Nightmare Dragon Valgana</td><td class="lv">Lv40</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Terror Dragon</td><td class="lv">Lv44</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr class="nm"><td>★ Dragon Monarch</td><td class="lv">Lv45</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Soul-Devourer Dragon</td><td class="lv">Lv46</td><td>Attacks on sight · Reacts to footsteps</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Morga Sporewood</b> <span class="lv">Lv24–35</span></summary>
+<p>East of South Rockhill. Many of the spore monsters react to sound. The Lord Spore Queen Morga is the first target for the Hero's Credentials.</p>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Sporewalker</td><td class="lv">Lv24–31</td><td>Reacts to footsteps</td></tr>
+<tr><td>Forest Worm</td><td class="lv">Lv26–31</td><td>Reacts to footsteps</td></tr>
+<tr><td>Spore Eye</td><td class="lv">Lv27–32</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Fungal Bee</td><td class="lv">Lv28</td><td>Attacks on sight</td></tr>
+<tr><td>Spore Wraith</td><td class="lv">Lv30–33</td><td>Reacts to spellcasting · Uses magic</td></tr>
+<tr class="nm"><td>★ Spore Queen Morga</td><td class="lv">Lv35</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Salta Salt Flats</b> <span class="lv">Lv32–44</span></summary>
+<p>West of the jungle. Salt monsters. Home to the entrance of the Deep Salt Cavern; the Lord Salt-Crown King Salta is the second target for the Hero's Credentials.</p>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Saltshell Crab</td><td class="lv">Lv32–39</td><td>Attacks on sight</td></tr>
+<tr><td>Mudflat Ray</td><td class="lv">Lv34–40</td><td>Reacts to footsteps</td></tr>
+<tr><td>Salt Crystal Golem</td><td class="lv">Lv37–41</td><td>Attacks on sight · Reacts to spellcasting</td></tr>
+<tr><td>Salt Lake Salamander</td><td class="lv">Lv37</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Bone Sentry</td><td class="lv">Lv38–42</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Salt-Crown King Salta</td><td class="lv">Lv44</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Emel Coast</b> <span class="lv">Lv40–52</span></summary>
+<p>A beach south of the Highlands. A hunting ground for your Lv40s. The Lord Tidal King Galmare is the third target for the Hero's Credentials. Cape Vermia lies to the east.</p><figure><img src="../img/%E3%82%A8%E3%83%A1%E3%83%AB%E6%B5%B7%E5%B2%B8%E3%81%AE%E7%A0%82%E6%B5%9C.jpg" alt="Emel Coast" loading="lazy" width="1120" height="630"><figcaption>Emel Coast</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Surfroar Giant Crab</td><td class="lv">Lv40</td><td>Attacks on sight</td></tr>
+<tr><td>Beach Prowler Lizard</td><td class="lv">Lv41</td><td>Attacks on sight</td></tr>
+<tr><td>Azurewing Shorebird</td><td class="lv">Lv42</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Driftbarrel Ooze</td><td class="lv">Lv43</td><td>Attacks on sight</td></tr>
+<tr><td>Shipwreck Phantom</td><td class="lv">Lv44</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr>
+<tr><td>Coralhorn Beast</td><td class="lv">Lv46</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Shorewind Sandeater</td><td class="lv">Lv47</td><td>Attacks on sight</td></tr>
+<tr><td>Seaspray Bonesoldier</td><td class="lv">Lv48</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Wave-Worn Rock Ogre</td><td class="lv">Lv50</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Tidal King Galmare</td><td class="lv">Lv52</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Leaden Salt Basin</b> <span class="lv">Lv48–62</span></summary>
+<p>South of the Salt Flats. A hunting ground for after Lv50. The Guild's Lake quests, the Proofs of Bond for Luca and Val, and the Lord Lakebed King Nergal at the very end.</p>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Drysalt Prowler</td><td class="lv">Lv48</td><td>Attacks on sight</td></tr>
+<tr><td>Salt-Eating Lizard</td><td class="lv">Lv51</td><td>Attacks on sight</td></tr>
+<tr><td>Lakebed Shade</td><td class="lv">Lv54</td><td>Attacks on sight</td></tr>
+<tr><td>Brinelake Black Knight</td><td class="lv">Lv57</td><td>Attacks on sight</td></tr>
+<tr><td>White Crystal Colossus</td><td class="lv">Lv60</td><td>Attacks on sight</td></tr>
+<tr class="nm"><td>★ Lakebed King Nergal</td><td class="lv">Lv62</td><td>Attacks on sight</td></tr></tbody></table></div></details><details class="zone" ><summary><b>Cape Vermia</b> <span class="lv">Lv58–72</span></summary>
+<p>The cape at the edge of the world. The Ruined Castle lies northeast of the port, the Ancient Wood to the west. Sword Saint Sigurd stands at the port. Lords: Ancient Wood Lord Eldaris and Ruined Castle Lord Galderic.</p><figure><img src="../img/%E5%BB%83%E5%9F%8E%E3%81%AE%E4%B8%98.jpg" alt="Cape Vermia" loading="lazy" width="1120" height="630"><figcaption>Cape Vermia</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Monster</th><th>Level</th><th>Behavior</th></tr></thead><tbody><tr><td>Cape Giant Crab</td><td class="lv">Lv58</td><td>Attacks on sight</td></tr>
+<tr><td>Tidepool Giant Crab</td><td class="lv">Lv59</td><td>Attacks on sight</td></tr>
+<tr><td>Seabreeze Hywirl</td><td class="lv">Lv60</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Ancient Wood Wolfman</td><td class="lv">Lv63</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr><td>Ancient Wood Witchtree</td><td class="lv">Lv64</td><td>Attacks on sight</td></tr>
+<tr><td>Ancient Wood Guardian</td><td class="lv">Lv65</td><td>Attacks on sight</td></tr>
+<tr><td>Ruined Castle Bone Knight</td><td class="lv">Lv66</td><td>Attacks on sight</td></tr>
+<tr><td>Ruined Castle Phantom</td><td class="lv">Lv68</td><td>Attacks on sight · Reacts to spellcasting</td></tr>
+<tr class="nm"><td>★ Ancient Wood Lord Eldaris</td><td class="lv">Lv68</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr>
+<tr><td>Rampart Mage</td><td class="lv">Lv69</td><td>Attacks on sight · Reacts to spellcasting · Uses magic</td></tr>
+<tr><td>Ruined Castle Black Knight</td><td class="lv">Lv70</td><td>Attacks on sight · Reacts to footsteps</td></tr>
+<tr class="nm"><td>★ Ruined Castle Lord Galderic</td><td class="lv">Lv72</td><td>Attacks on sight · Reacts to footsteps · Reacts to spellcasting</td></tr></tbody></table></div></details>
+<h3>Dungeons & Special Places</h3>
+<figure><img src="../img/%E5%A4%A7%E5%9D%91%E9%81%93%E3%81%AE%E9%96%80.jpg" alt="The gate of the Rockhill Great Mine" loading="lazy" width="1120" height="630"><figcaption>The Great Mine Gate in North Rockhill. Press Enter to go inside</figcaption></figure>
+<div class="tw"><table><thead><tr><th>Location</th><th>Entrance</th><th>Level</th><th>What's Inside</th></tr></thead><tbody>
+<tr><td>Rockhill Great Mine</td><td>North Rockhill</td><td class="lv">Lv5–9</td><td>Bats, Skull Ghosts, Goblin Miners, Armabees. Its lord, Dorgan (Lv9), waits deep inside. The Miner's quest "Quell the Lord of the Mine"</td></tr>
+<tr><td>Underground Mausoleum</td><td>Verdan Highlands</td><td class="lv">Lv24–36</td><td>Crypt Bonesoldiers, Wandering Spirits, Black Iron Gravekeepers. Guarded by Ringwarden Volk (Lv34) and ruled by Mausoleum Lord Velga (Lv36)</td></tr>
+<tr><td>Deep Salt Cavern</td><td>Salta Salt Flats</td><td class="lv">Lv40–52</td><td>Saltshell Crabs, Salt Lake Salamanders, Salt Crystal Golems. Ruled by Salt Cavern Lord Saldis (Lv52)</td></tr>
+<tr><td>Shadow Rockhill</td><td>The Mirror Shrine, west of town and north of the castle</td><td class="lv">Lv50+</td><td>An 11-floor trial where you fight parties of human shadows. See <a href="#high">High-Level Content</a></td></tr>
+<tr><td>Full Moon Arena</td><td>Entrance on the west side of town</td><td class="lv">Anyone</td><td>A place where players fight each other. Everyone outside your party is an enemy. Falling costs no EXP. Bonds can't come in</td></tr>
+<tr><td>Sky Corridor</td><td>Talk to the Corridor Guide in town</td><td class="lv">Anyone</td><td>A tower you climb by jumping, with no fighting. Three courses rotate daily. Falling won't kill you. Earn Grim in time trials</td></tr>
+<tr><td>Veil Village</td><td>South of Mistveil Jungle</td><td class="lv">—</td><td>A village where you can craft with Cooking, Alchemy, and Smithing. The Materials Dealer, Cook, and Warehouse Keeper give quests. Has an inn and a Return Sigil</td></tr>
+<tr><td>Port Vermia</td><td>Entrance to Cape Vermia</td><td class="lv">—</td><td>The cape's base camp. Item shop, inn, Return Sigil, Mailbox. Sword Saint Sigurd stands here</td></tr>
+</tbody></table></div>
+<figure><img src="../img/%E3%83%B4%E3%82%A7%E3%83%AB%E3%83%9F%E3%82%A2%E3%81%AE%E6%B8%AF.jpg" alt="Port Vermia" loading="lazy" width="1120" height="630"><figcaption>Port Vermia, the outpost at the edge of the world</figcaption></figure>
+</section>
+
+<section id="job"><h2>Jobs</h2>
+<p>At the start you can choose from the 6 basic jobs (Warrior, Monk, Cleric, Sorcerer, Spellsword, Rogue). The 5 Expert Jobs unlock through quests around Lv30. You can change jobs anytime with the Job Instructor in town, and each job levels up separately. <b>If you can't decide, pick Warrior or Cleric</b>. Warriors have high HP and hunt easily solo; Clerics are steady once you call your Bonds.</p>
+<div class="grid2"><article class="card">
+<h4>Warrior <small>WRR</small></h4>
+<p>A combat pro who handles every kind of weapon. Excels on the front line with high HP and STR.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>Anything: one-handed swords, axes, two-handed swords, clubs, and more</dd>
+<dt>Abilities</dt><dd>Brute Onslaught (Lv1), Taunt (Lv5), Pull (Lv10), Fury (Lv15), Guard Form (Lv25), Battle Cry (Lv35)...</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article><article class="card">
+<h4>Monk <small>MON</small></h4>
+<p>A martial artist whose own body is the weapon. Boasts the highest HP of any job.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>Hand-to-hand (fists)</dd>
+<dt>Abilities</dt><dd>Charge Up (Lv1), Peerless Barrage (Lv1), Nimble Steps (Lv8), Evade (Lv15), Breakfall (Lv22), Concentration (Lv25)...</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article><article class="card">
+<h4>Cleric <small>CLR</small></h4>
+<p>A specialist in healing and support magic. Indispensable to any party.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>Club, shield</dd>
+<dt>Abilities</dt><dd>Saint's Prayer (Lv1)</dd>
+<dt>Magic</dt><dd>Heal (Lv1), Holy Ray (Lv3), Light Blast (Lv5), Guardwall (Lv7), Cleanse Poison (Lv7), Heal II (Lv11)...</dd>
+</dl></article><article class="card">
+<h4>Sorcerer <small>SOR</small></h4>
+<p>A specialist in offensive magic. Unleashes powerful spells with the highest INT and MP.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>Staff</dd>
+<dt>Abilities</dt><dd>Unleash Mana (Lv1)</dd>
+<dt>Magic</dt><dd>Rock (Lv1), Poison (Lv5), Aqua (Lv9), Venom (Lv10), Life Drain (Lv12), Gale (Lv13)...</dd>
+</dl></article><article class="card">
+<h4>Spellsword <small>SPS</small></h4>
+<p>A versatile do-it-all job. Wields both Sorcery and Divine Magic and fights up front too.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>One-handed sword, shield</dd>
+<dt>Abilities</dt><dd>Spell Cascade (Lv1), Mana Exchange (Lv40), Spellsword Stance (Lv58)</dd>
+<dt>Magic</dt><dd>Heal (Lv3), Rock (Lv4), Aqua (Lv5), Guardwall (Lv7), Gale (Lv9), Holy Ray (Lv10)...</dd>
+</dl></article><article class="card">
+<h4>Rogue <small>ROG</small></h4>
+<p>A nimble fighter. The Main Job trait "Dagger Vitals" boosts dagger critical hits, and Surprise Strike is available from Lv5. Also skilled at stealing and managing aggro.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Available from the start</dd>
+<dt>Weapons</dt><dd>Dagger</dd>
+<dt>Trait</dt><dd>Dagger Vitals: when Rogue is your Main Job and you use a dagger, adds DEX × 0.5% to your critical hit rate (capped at 40% including songs), and critical hits deal 1.5× damage.</dd>
+<dt>Abilities</dt><dd>Phantom Step (Lv1), Surprise Strike (Lv5), Pilfer (Lv5), Getaway (Lv25), Vital Aim (Lv32), Tiptoe (Lv36)...</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article><article class="card">
+<h4>Knight <small>KNT</small></h4>
+<p>A heavy knight guarding the front with shield and sword. Uses some Divine Magic.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Lv30: the Lord of the Castle's quest "Fortress of Honor" → "The Holy Knight's Crest"</dd>
+<dt>Weapons</dt><dd>One-handed sword, shield</dd>
+<dt>Abilities</dt><dd>Immovable Stance (Lv1), Shield Strike (Lv1), Iron Wall (Lv15), Majesty (Lv30), Healing Hand (Lv50), Sacred Aegis (Lv60)</dd>
+<dt>Magic</dt><dd>Heal (Lv5), Guardwall (Lv10), Light Blast (Lv10), Holy Ray (Lv15), Heal II (Lv20), Mana Barrier (Lv25)...</dd>
+</dl></article><article class="card">
+<h4>Dread Knight <small>DRD</small></h4>
+<p>An offense-focused knight dealing big damage with two-handed weapons. Uses some Sorcery.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Lv20: Gravekeeper, "The Gravekeeper's Request" → Lv30: "March of the Dead" → "The Abyss King's Horn"</dd>
+<dt>Weapons</dt><dd>Two-handed sword, scythe</dd>
+<dt>Abilities</dt><dd>Last Stand (Lv1), Pommel Strike (Lv1), Dark Stance (Lv10), Bloodthirst (Lv25), Crushing Edge (Lv30), Cry of Malice (Lv35)...</dd>
+<dt>Magic</dt><dd>Life Drain (Lv1), Rock (Lv5), Venom (Lv5), Fire (Lv10), Poison (Lv15), Mana Drain (Lv20)...</dd>
+</dl></article><article class="card">
+<h4>Beast Tamer <small>TMR</small></h4>
+<p>A hunter whose heart commands beasts. Wields axes; puts beasts to sleep to steer fights.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Lv28: Fur Trader, "The Yeti's Pelt" → Lv30: "Driving Off the Pack" → "The Forest King's Spores"</dd>
+<dt>Weapons</dt><dd>Axe</dd>
+<dt>Abilities</dt><dd>Soothe Beast (Lv1), Beast Scare (Lv5), Feral Surge (Lv10), Keen Scent (Lv14), Wild Run (Lv18), Pack Surge (Lv30)...</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article><article class="card">
+<h4>Ninja <small>NJA</small></h4>
+<p>Shadow-clad assassin. Baffles foes with dagger and fist; dodges blades with doubles.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Lv13: Mercenary Captain, "The Orc Threat" → Lv30: "Shadow Chaser" → "The Nightmare Dragon Scale"</dd>
+<dt>Weapons</dt><dd>Dagger (one-handed blade)</dd>
+<dt>Abilities</dt><dd>Shadow Double (Lv1), Blade Stance (Lv8), Concealing Art (Lv12), Foresight (Lv24), Afterimage (Lv38), Ki Flow (Lv52)...</dd>
+<dt>Magic</dt><dd>Fire Trail (Lv5), Numbing Needle (Lv12), Ink Mist (Lv20), Ice Shard (Lv29), Wind Step (Lv39), Fire Trail II (Lv42)...</dd>
+</dl></article><article class="card">
+<h4>Bard <small>BDR</small></h4>
+<p>A back-liner who carries an instrument and moves the party with song. While playing, allies keep receiving attack and evasion boosts and HP and MP recovery. Cannot melee.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Lv22: Fang Carver, "Fangs for Trade" → Lv30: "Sounds of the Forest" → "The Dragon Songbone"</dd>
+<dt>Weapons</dt><dd>Instrument (can't melee)</dd>
+<dt>Instrument</dt><dd>Your instrument changes how your songs work: a flute extends your songs' reach, a drum boosts Battle Songs, a lyre boosts Healing Songs and Arcane Songs, and a horn boosts the power of Dissonance.</dd>
+<dt>Abilities</dt><dd>Heaven's Echo (Lv1), Solo (Lv20), Duet (Lv32), Encore (Lv45), Medley (Lv50), Soulful Aria (Lv58)</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article><article class="card">
+<h4>Sword Saint <small>SST</small></h4>
+<p>A master swordsman who carves a path with one greatsword. No magic; mows foes down with fierce sword arts. A job only Bonds can have.</p>
+<dl>
+<dt>How to Unlock</dt><dd>Bond only. Players can't take this job (recruit Sword Saint Sigurd)</dd>
+<dt>Weapons</dt><dd>Greatsword</dd>
+<dt>Abilities</dt><dd>Flash Cut (Lv56), Great Whirlwind (Lv57), Supreme Foresight (Lv58), Unleash Blade Spirit (Lv59), Secret Art: Skysunder (Lv60)</dd>
+<dt>Magic</dt><dd>None</dd>
+</dl></article></div>
+<h3>Sub Job (Lv18+)</h3>
+<p>Complete the town Pomly's quests "Proof of Flame" (Gara-Hei), "Proof of Earth" (Soldier Crawler), and "Proof of Water" (Princess Toad), then "The Pomly's Trial" (Serpent Priest Shezal), and you can set a <b>Sub Job</b> in addition to your Main Job. Your Sub Job works at up to half your Main Job's level, and you can use its spells and abilities within that range.</p>
+<h3>Weapon Techniques</h3>
+<p>When the TP you build up by attacking reaches 100% or more, you can unleash one from "Weapon Technique" in the Command Menu. The techniques you learn depend on your weapon type and level. Using them back-to-back with allies creates a Chain for extra damage (follow a Chain with a spell for a Spell Pursuit).</p>
+<div class="tw"><table><thead><tr><th>Weapons</th><th>Weapon Techniques (level learned)</th></tr></thead><tbody><tr><td>One-Handed Sword</td><td>Sonic Slash (Lv1), Flame Slash (Lv9), Flame Riposte (Lv15), Flash Blade (Lv30), Azure Sky Slash (Lv40), Radiant Edge (Lv50), Heavenly Doom (Lv60)</td></tr>
+<tr><td>Hand-to-Hand</td><td>Rush (Lv1), Body Charge (Lv5), Demon Palm (Lv15), Flame Dance Kick (Lv30), Collapsing Fist (Lv40), Skyward Kick (Lv50), Hundred Blossoms (Lv60)</td></tr>
+<tr><td>Axe</td><td>Crash Axe (Lv7), Full-Force Axe (Lv18), Rock Cleaver (Lv30), Whirlwind Axe (Lv40), Earthsplitter (Lv50), Conqueror's Axe (Lv60)</td></tr>
+<tr><td>Dagger</td><td>Serpent Fang Thrust (Lv8), Blade Wind (Lv24), Swallow Turn (Lv32), Shadow Stab (Lv40), Crimson Hornet (Lv50), Phantom Moon (Lv60)</td></tr>
+<tr><td>Two-Handed Sword</td><td>Great Cleave (Lv10), Moonwheel Slash (Lv20), Brute Cleave (Lv30), Inferno Slash (Lv40), Landslide (Lv50), Conqueror's Edge (Lv60)</td></tr>
+<tr><td>Staff</td><td>Starbreaker (Lv1), Ley Line Strike (Lv20), Flowing Water (Lv30), Heavenly Staff (Lv40), Astral Strike (Lv50), Divine Might (Lv60)</td></tr>
+<tr><td>Scythe</td><td>Reaping Wind (Lv10), Underworld Moon (Lv20), Shadow Reap (Lv30), Reaper's Scythe (Lv40), Soul Hunt (Lv50), Underworld Sendoff (Lv60)</td></tr>
+<tr><td>Club</td><td>Boulder Breaker (Lv1), Bell Strike (Lv20), Thunder Maul (Lv30), Holy Strike (Lv40), Starshatter (Lv50), Heaven's Peal (Lv60)</td></tr>
+<tr><td>Instrument</td><td>Finale (Lv20), Requiem (Lv40), Nocturne (Lv50), Chord of Demise (Lv60)</td></tr></tbody></table></div>
+</section>
+
+<section id="kizuna"><h2>Bonds — Companions Who Fight Beside You</h2>
+<p>Bonds are companions who fight beside you whenever you call them. You can call <b>up to 5</b>, and their strength scales to your level. With a healer, a tank, and damage dealers, you can take on stronger monsters and even Lords. To unlock a Bond, complete the "Proof of Bond" quests from Drillmaster Dorg (front-line Bonds) and Mentor Elna (spellcaster Bonds) in town.</p>
+<ul>
+<li><b>Call:</b> Select yourself with <kbd>Z</kbd>, then <kbd>Enter</kbd> → "Call Bond". Or press <kbd>Ctrl+Q</kbd> to call in missing Bonds one by one (you can't call them during combat, while riding a Kururu, in the Arena, or in the Sky Corridor).</li>
+<li><b>Dismiss:</b> "Dismiss Bond" in the same Command Menu. Bonds can come with you into dungeons, but inside Shadow Rockhill you can't call replacements.</li>
+<li>Each Bond thinks for itself. Tanks draw enemies with Taunt, Clerics heal based on how fast HP is dropping, and Sorcerers put one enemy to sleep when there are two.</li>
+<li>When a Bond falls, the enemies that were targeting it head for you, its nearby master.</li>
+</ul>
+<div class="tw"><table><thead><tr><th>Lv</th><th>Bond</th><th>Quest (Given By)</th><th>Objective</th><th>Combat</th></tr></thead><tbody><tr><td class="lv">Lv10</td><td><b>Cleric Sera</b><div class="dim">Cleric</div></td><td>Proof of Bond: Healing<div class="dim">Mentor Elna</div></td><td>Armabee ×8</td><td>A Cleric who spots hurt allies and heals with just the strength needed.</td></tr><tr><td class="lv">Lv15</td><td><b>Warrior Rio</b><div class="dim">Warrior</div></td><td>Proof of Bond: Blade<div class="dim">Drillmaster Dorg</div></td><td>Squidle ×8</td><td>A warrior who draws enemy focus to protect you and the healer.</td></tr><tr><td class="lv">Lv20</td><td><b>Sorcerer Noa</b><div class="dim">Sorcerer</div></td><td>Proof of Bond: Flame<div class="dim">Mentor Elna</div></td><td>Dino ×8</td><td>A Sorcerer who keeps distance, choosing between strong elemental spells and sleep as needed.</td></tr><tr><td class="lv">Lv25</td><td><b>Monk Gai</b><div class="dim">Monk</div></td><td>Proof of Bond: Fist<div class="dim">Drillmaster Dorg</div></td><td>Yeti ×8</td><td>A Monk who strikes foes from behind them and heals himself when hurt.</td></tr><tr><td class="lv">Lv32</td><td><b>Rogue Mina</b><div class="dim">Rogue</div></td><td>Proof of Bond: Shadow<div class="dim">Drillmaster Dorg</div></td><td>Spore Eye ×8</td><td>A Rogue who slips behind foes, tries one steal, and strikes at openings.</td></tr><tr><td class="lv">Lv35</td><td><b>Spellsword Lira</b><div class="dim">Spellsword</div></td><td>Proof of Bond: Reason<div class="dim">Mentor Elna</div></td><td>Blue Demon ×8</td><td>A Spellsword who sees if there's a healer and swaps healing, debuffs, or attacks.</td></tr><tr><td class="lv">Lv36</td><td><b>Bard Luka</b><div class="dim">Bard</div></td><td>Proof of Bond: Sound<div class="dim">Mentor Elna</div></td><td>Skull Ghost ×14</td><td>A wandering minstrel with a lyre. Never strikes; supports allies with Battle Songs and Healing Songs.</td></tr><tr><td class="lv">Lv41</td><td><b>Knight Aldo</b><div class="dim">Knight</div></td><td>Proof of Bond: Shield<div class="dim">Drillmaster Dorg</div></td><td>Salt Crystal Golem ×8</td><td>A Knight facing foes, shielding allies with shield arts and guard stances.</td></tr><tr><td class="lv">Lv51</td><td><b>Ninja Kagerou</b><div class="dim">Ninja</div></td><td>Proof of Bond: Mist<div class="dim">Drillmaster Dorg</div></td><td>Golemling ×8</td><td>A Ninja whose shadow doubles take frontal hits; fights with ninjutsu.</td></tr><tr><td class="lv">Lv52</td><td><b>Beast Tamer Luca</b><div class="dim">Beast Tamer</div></td><td>Proof of Bond: Fang<div class="dim">Drillmaster Dorg</div></td><td>Salt-Eating Lizard ×8</td><td>A Beast Tamer who wears down strong beasts with surge and vigor.</td></tr><tr><td class="lv">Lv57</td><td><b>Dread Knight Val</b><div class="dim">Dread Knight</div></td><td>Proof of Bond: Darkness<div class="dim">Drillmaster Dorg</div></td><td>Brinelake Black Knight ×8</td><td>A Dread Knight who attacks from behind at the cost of life, holding on with drain magic.</td></tr><tr><td class="lv">Lv60</td><td><b>Sword Saint Sigurd</b><div class="dim">Sword Saint</div></td><td>Path of the Sword Saint: The Test<div class="dim">Sword Saint Sigurd (Port Vermia)</div></td><td>Ruined Castle Black Knight ×10</td><td>A white-and-black armored Sword Saint with a greatsword. No magic: just Flash Cut and Great Whirlwind.</td></tr></tbody></table></div>
+<div class="note"><b>Sword Saint Sigurd</b> is special: after you clear B10 of Shadow Rockhill and unlock Dread Knight Val, finish 3 quests (Lv58–60) at Port Vermia and he joins you. He mows down enemies with the greatsword techniques "Flash Cut", "Great Whirlwind", and "Secret Art: Skysunder".</div>
+</section>
+
+<section id="battle"><h2>Combat Basics</h2>
+<h3>Reading Monster Behavior</h3>
+<ul>
+<li><b>Attacks on sight</b>: Comes at you once you're in view. Circle around from behind.</li>
+<li><b>Reacts to footsteps</b>: Notices you if you run up to it. Walk and you can slip past (riding a Kururu makes you easier to notice).</li>
+<li><b>Reacts to spellcasting</b>: Attacks if you cast magic nearby. Move away before healing.</li>
+<li><b>Passive</b>: Won't attack unless you strike first. Take them on one at a time without worry.</li>
+</ul>
+<p>A monster someone else is fighting has a gray name and can't be stolen ("Another adventurer is fighting it"). Lords stand out with gold-orange names and a ★.</p>
+<p>In the field, <b>adventurers from the Adventurers' Guild (NPCs)</b> are also out hunting. Look for &lt;Guild Adventurer&gt; above their nameplate. They won't answer if you talk to them, but you'll see them fighting in the same hunting grounds.</p>
+<h3>Parties</h3>
+<p>Parties hold up to 6 players. Select someone with <kbd>Tab</kbd>, then <kbd>Enter</kbd> → "Invite to Party". EXP is shared based on <b>the highest-level member of the party</b>, so with a big level gap you'll get almost nothing. In that case, the leader sets a <b>Level Match</b> (matches everyone to one member's level; Lv10+). Select party members with <kbd>F1</kbd>–<kbd>F6</kbd> to heal or buff them, and use <kbd>E</kbd> (Assist) to target the same enemy.</p>
+<h3>Recovery & Supplies</h3>
+<ul>
+<li>Sit with <kbd>H</kbd> to recover HP and MP. Moving stops it.</li>
+<li>Buy Potions, Mana Potions, Antidotes, and Voice Tonics at the item shop. Use them from "Items" in the Command Menu or with <code>/item item name</code>.</li>
+<li>Food (Grilled Mutton, Salt-Grilled Fish, and more) grants a buff for a while when eaten. Get it by crafting in Veil Village or at the Fish Wholesaler.</li>
+</ul>
+<h3>Auto-Hunt Mode</h3>
+<p>Once any job reaches Lv30, you can use Auto-Hunt Mode with <kbd>Ctrl+Shift+Q</kbd> (or <code>/ai</code>). Your character walks to a hunting ground suited to your level, calls Bonds, hunts monsters, and flees when things get dangerous. You can also choose whether it uses potions under "Auto-Hunt Potions" in the Main Menu. It can't be used in the trial (Shadow Rockhill) or the Sky Corridor.</p>
+</section>
+
+<section id="derby"><h2>Kururu Derby (Kururu Races)</h2>
+<figure><img src="../img/%E7%AB%B6%E3%82%AF%E3%83%AB%E3%83%AB%E7%99%BA%E8%B5%B0%E6%AD%A3%E9%9D%A2.jpg" alt="The Kururu Derby starting line" loading="lazy" width="1120" height="630"><figcaption>The Kururu Derby runs through North Rockhill. Six Kururu race each time</figcaption></figure>
+<p>Kururu are birds you can ride. Kururu now look like emus and wear a riding seat and a harness, but no footrests. In the game, <b>Kururu Derby</b> races are held regularly; buy tickets, pick the winners, and your Grim grows. Payouts use a pari-mutuel system, split among the winners (20% house cut).</p>
+<h3>In the Game</h3>
+<ol class="steps">
+<li>Talk to the <b>Kururu Ticket Booth</b> in town to see the race card and odds for the next race.</li>
+<li>Choose a bet type: <b>Win</b> (pick the 1st-place finisher), <b>Place</b> (wins if your pick finishes in the top 3), or <b>Kururu Quinella</b> (pick 2 gates and call 1st and 2nd in any order). Bets come in units of 100 Grim.</li>
+<li>Buy before betting closes. Races are broadcast on the <b>big screen</b> in town, and winnings are paid out automatically when the results are in.</li>
+</ol>
+<figure><img src="../img/%E5%88%B8%E5%A3%B2%E3%82%8A%E5%A0%B4.jpg" alt="The Kururu Ticket Booth window" loading="lazy" width="1120" height="630"><figcaption>The ticket booth window. Choose from the race card, odds, bet type, and amount</figcaption></figure>
+<figure><img src="../img/%E3%82%AF%E3%83%AB%E3%83%AB%E7%AB%B6%E8%B5%B0%E3%81%AE%E5%A4%A7%E5%9E%8B%E7%94%BB%E9%9D%A2.jpg" alt="The Kururu Derby big screen" loading="lazy" width="1120" height="630"><figcaption>The big screen showing the race. Tipster Popo's comments scroll by, too</figcaption></figure>
+<h3>Racing on Your Own Kururu</h3>
+<p>Get the Kururu Whistle from the Kururu Stable Master's quests (Lv12–16) and you can ride a Kururu with <kbd>V</kbd>. Riding speed starts at 1.5× walking speed and rises as Affection grows, reaching 2.0× at Affection Lv6. Talk to the <b>Kururu Race Desk</b> in town while mounted to take on a time trial around North Rockhill (no prizes, just records).</p>
+<div class="note">Because Kururu speed was rebalanced, personal bests and standings for the time trial were reset once in the update that made this change.</div>
+<h3>Raising Your Kururu</h3>
+<ul>
+<li><b>Affection</b>: Rises when you give your Kururu its favorite herbs. Select a favorite herb in your Bag window and choose "Use"; a confirmation window shows the item name, the Affection EXP it will actually add, and today's remaining allowance after feeding. Choose "Yes" to feed it to your Kururu. When it is full, "Yes" cannot be selected. Its favorites are Healing Herb, Fragrant Herb, Moonglow Herb, and Stardust Herb; the rarer the herb, the more it warms to you. It dislikes Mystic Herb and won't eat it. There is a daily limit on how much you can feed it.</li>
+<li><b>Kururu level</b>: Rises with the distance you ride. Running around in circles in the same spot barely counts. There is also a daily limit on how much distance counts.</li>
+<li><b>Status window</b>: In the Status window (<kbd>C</kbd>), press <kbd>Tab</kbd> to switch in order: Stats → Kururu → Titles. On the "Kururu" tab you can check Affection, Kururu level, current speed, feed given today, and distance run today (only if you have the Kururu Whistle).</li>
+</ul>
+<h3>Hover Run and Gliding (Wind Harness)</h3>
+<p>If you have the "Wind Harness", press <kbd>Space</kbd> once while riding your Kururu to float a little above the ground as you run (Hover Run); press it again to land. While hovering you can cross low ledges, and your speed rises by about 10%.</p>
+<p>Hold <kbd>Space</kbd> while falling to glide; let go to fall normally. On a controller, the jump button (LT) does the same.</p>
+<p>Hover Run and gliding use "wind". You have up to about 30 seconds of wind; it refills while you run on the ground, and when it runs out you land. They can't be used in town, Veil Village, dungeons, the Sky Corridor, or the Sky Capital. To find out where to get the Wind Harness, see "New Adventures with Your Kururu" below.</p>
+<div class="tip">Win 3, 5, or 10 Kururu Derby bets in a row to earn the titles "Bold Bettor", "Chosen of the Kururu", and "Legendary Eye".</div>
+</section>
+
+<section id="web"><h2>Web Portal (Play in a Phone or PC Browser)</h2>
+<p>Open <a href="https://grimoire-online.org" target="_blank" rel="noopener">https://grimoire-online.org</a> in your browser for 4 games you can play without launching the game. Sign in with <b>the same login name and password as the game</b> and choose a character to play (items and Grim are shared with the game). You can also create a new account and character on the portal alone. No email registration or codes needed.</p>
+<div class="tw"><table><thead><tr><th>Game</th><th>What You Can Do</th><th>Price</th></tr></thead><tbody>
+<tr><td><b>Kururu Derby</b></td><td>Check the race card and odds, buy tickets, and watch races live. You can also see past races and winner announcements</td><td>Tickets from 100 Grim</td></tr>
+<tr><td><b>Claw Machine</b></td><td>Grab capsules and 3D Grica with the claw. Prizes are Grimoire Cards</td><td>50 Grim per play</td></tr>
+<tr><td><b>Grica "Magic Circle"</b></td><td>Fight over a seven-point circle with a 4-card deck. Play vs. NPCs or other players, with lessons under "How to Play"</td><td>Free</td></tr>
+<tr><td><b>Arcane Forager's Notebook (Back Door)</b></td><td>Hands-on minigames for woodcutting, mining, herb gathering, and fishing. What you gather goes into your in-game bag. Types matching the day's element yield more, and Moonglow Herb appears only at night</td><td>12 free Gathering Tickets per day; extra tickets cost 50 Grim each</td></tr>
+</tbody></table></div>
+<ul>
+<li>The 200 Grim Login Bonus is shared between the game and the portal (once per day). Characters created on the portal also get a creation bonus.</li>
+<li>The scrolling banner (announcements) at the top of the screen can be closed with the × in the top right.</li>
+<li>To play the full game on your phone, use "Play on Phone" in the Start menu (control your PC's screen directly from a browser on a phone connected to the same Wi-Fi as the PC).</li>
+</ul>
+</section>
+
+<section id="play"><h2>Fishing, Gathering, Crafting & Grica</h2>
+<h3>Fishing</h3>
+<figure><img src="../img/%E6%B0%B4%E8%BE%BA.jpg" alt="A waterside in North Rockhill" loading="lazy" width="1120" height="630"><figcaption>You can fish at any water's edge, pond or river</figcaption></figure>
+<p>Buy a <b>Wooden Fishing Rod</b> (equip in main hand) and <b>bait</b> (Earthworms, etc.; equip in sub slot) at the item shop, then press <kbd>N</kbd> (or <code>/fish</code>) by the water. When a fish bites, press <kbd>Enter</kbd> the moment the bars line up. Different bait catches different fish (Earthworm = small fish, River Shrimp = medium, Glowfly = big or rare fish, Phantom Fish Paste = legendary fish), and rods grow stronger from Wooden → Artisan → the legendary Dragonwhisker. Angler Ved's quest in town (Lv10, 20 fish) earns you the Artisan Fishing Rod. The Fish Wholesaler buys your catch in lots of 10, and the daily special fetches a high price. The buying limit resets in about a week.</p>
+<h3>Gathering (Woodcutting, Mining, Herb Gathering)</h3>
+<p>Press <kbd>Enter</kbd> at a tree, rock, or plant Gathering Point in the field to start working; when the bar fills, you get materials (Logs, Copper Ore, Healing Herbs, and more). Higher tiers yield thicker trees and rarer ores. You can gather the same materials in the Web Portal's "Arcane Forager's Notebook", too.</p>
+<h3>Crafting (Veil Village)</h3>
+<p>In Veil Village, south of Mistveil Jungle, combine materials with Essences (Fire, Ice, Wind, Earth, Thunder, Water) using <code>/craft</code>. There are 3 crafts: <b>Cooking</b> (Cook), <b>Alchemy</b> (Materials Dealer; potions), and <b>Smithing</b> (Warehouse Keeper; weapons and armor). Working through the village quests in order shows you skill goals to aim for. Check your skills with <kbd>U</kbd>.</p>
+<h3>Grimoire Cards (Grica)</h3>
+<p><b>Grica "Magic Circle"</b> is a game of capturing cards across 7 points: 6 on the outer ring plus the <b>Core</b> in the center. Any cards you've collected can be used as-is. Build a <b>4-card</b> deck in the <kbd>B</kbd> Card Album, select an opponent, and challenge them with <kbd>X</kbd>. To play the person across from you, sit at a table and challenge them.</p>
+<ul>
+<li>What matters on a card is its <b>power (1–10) and element</b>. On the outer ring, your card is compared with the opponent's cards on both neighboring points and at the far end of the star lines; if yours is stronger, you capture them. Equal strength can't capture.</li>
+<li>The <b>Cycle</b> runs Fire → Wind → Thunder → Water → Ice → Earth → Fire. Attacking the next element in the cycle gives +2. Light and Dark get +2 against each other and +1 against the other 6 elements. <b>Circle Blessing</b>: +1 if the card's element matches the outer point it's placed on. Defending cards get the blessing too.</li>
+<li>After each side places 3 cards on the outer ring in turn, the side holding fewer outer points (or the second player, if tied) places the last card on the <b>Core</b>. The Core is compared with all 6 outer points. Finally, count 1 point per outer point and 2 for the Core; the higher score wins. Cards left in hand don't count.</li>
+<li><b>Circle Inscriptions</b> change the rules of a match. They're set per opponent and table, so read the description on the board before placing. The <b>Preview</b> before placing shows the strengths being compared and which cards you can capture.</li>
+<li>If you're new, talk to the <b>Grica Teacher</b> in the Grica Parlor and try <b>"Your First Magic Circle"</b>. The teacher explains out loud. In the Web version, you can play the same seven lessons from <b>"How to Play"</b>.</li>
+</ul>
+<p>Board controls: ↑↓ for your hand, A/D for the outer ring, W for the Core, and S to go back to the outer ring. Enter shows the Preview; press it again to place. P toggles the Preview, and pressing Esc during a match asks whether to resign (Enter to resign, Esc to continue). In the Web version, tap a card and a spot, check the Preview, then confirm.</p>
+</section>
+
+<section id="high"><h2>What Opens Up at High Level</h2>
+<h3>Sky Corridor (Anyone)</h3>
+<p>Talk to the Corridor Guide in town to be sent to a tower you climb by jumping, with no fighting. Falling won't kill you; you just return to the highest Brazier you've passed. A 10-minute time trial starts when you enter: 80 Grim at each of the 4 Braziers along the way, 200 Grim at the summit, and a bonus for climbing fast (under 3 min +600, under 5 min +700, under 8 min +350, under 10 min +100). Rewards are limited to 3 runs a day, up to 1,500 Grim per day (you can keep climbing after that). Reaching the top earns the title "Skyrunner", and doing it in under 3 minutes earns "Skysoarer". Your jumps are higher only inside the Corridor. Bonds and Kururu can't come in.</p>
+<p><b>The course changes daily</b> (switching at 4 a.m. every morning), rotating in this order: <b>Weathervane Spiral</b> (blue sky and stone footholds) → <b>Crimson Cloud Isles</b> (sunset clouds; shuttling platforms, rising-and-falling platforms, and bounce pads) → <b>Starcrossing Skybridge</b> (night sky; star platforms, platforms that appear and vanish, and a single-plank bridge). Crimson Cloud and Starcrossing are harder: every jump differs in distance and height, with round, square, triangular, and hexagonal footholds, spots where you drop down before climbing, and forks that dead-end. Only the bottom two tiers have a route anyone can climb. Today's course appears above the guide's head as "Today: ...". Personal bests and record times are kept per course. Chimes ring at the checkpoint Braziers and the summit, and when you climb the last stone steps to the Sky Capital Homeport Plaza, you're wrapped in light.</p>
+<h3>New Adventures with Your Kururu (for Kururu Whistle holders)</h3>
+<p>Once you have the Kururu Whistle, new quests are added that make use of moves only a Kururu can make (such as Hover Run and gliding). Where to go and what you can do there is for you to discover as you play.</p>
+<h3>Shadow Rockhill (Lv50+) — The Trial to Become [Hero]</h3>
+<p>Shadowwarden Seira, keeper of the <b>Mirror Shrine</b> west of town and north of the castle, gives the "Hero's Credentials" quest (from Lv50 on any job). Defeat the 3 King Lords — <b>Spore Queen Morga</b> (Morga Sporewood, Lv35), <b>Salt-Crown King Salta</b> (Salta Salt Flats, Lv44), and <b>Tidal King Galmare</b> (Emel Coast, Lv52) — and collect their crests to open the shrine.</p>
+<ul>
+<li>Inside are 11 floors. On each floor a <b>party of human "Shadow Adventurers"</b> awaits; defeat them all <b>within 10 minutes</b> of the duel door closing to clear the floor. If you fall, you lose (and are sent back to the front of the shrine).</li>
+<li>Call your Bonds before entering (up to 6 including you; no replacements inside). At each floor's entrance is a Prayer Spring that fully restores HP and MP once per floor.</li>
+<li>Clearing a floor earns <b>Trial Tokens</b> (10 × (floor + 1) the first time, 2 × (floor + 1) after that). Trade them with the shrine's keeper for <b>Shadowbronze → Shadowsilver → Shadowgold → Hero</b> gear (30 / 80 / 180 / 350 per piece. Silver unlocks after clearing B3, gold after B6, Hero after B9. Gold and Hero also require a Lakebed Crystal from Lakebed King Nergal).</li>
+<li>Clearing B3 earns the title "Challenger", B5 "Paragon", B8 "Hero Candidate", and B10 the <b>[Hero]</b> title plus "United Valor", in which all your Bonds unleash their strongest Weapon Techniques in turn.</li>
+</ul>
+<div class="tw"><table><thead><tr><th>Floor</th><th>Location</th><th>Floor Hint</th><th>Shadow Party</th></tr></thead><tbody><tr><td class="lv">1F</td><td>Stone Prison</td><td><b>Defeat the healer first</b><div class="dim">As long as a healer stands, the blade will not break</div></td><td>Gladiator Garo (WRR), White Supplicant Mira (CLR)</td></tr>
+<tr><td class="lv">B1</td><td>Underground Waterway</td><td><b>Don't be fooled by the shield</b><div class="dim">Ignore the taunts and target the mages in back</div></td><td>Shieldbearer Rou (KNT), Black Caster Nene (SOR), White Healer Yura (CLR)</td></tr>
+<tr><td class="lv">B2</td><td>Archive</td><td><b>Keep an eye that can catch shadows</b><div class="dim">To break through Shadow Doubles and evasion, you need accuracy</div></td><td>Thief Kai (ROG), Shinobi Shino (NJA), Crimson Blade Rize (SPS)</td></tr>
+<tr><td class="lv">B3</td><td>Chapel</td><td><b>Stop the song</b><div class="dim">The bard's song turns the front line into demons</div></td><td>Darkblade Glen (DRD), Brawler Ban (MON), Bard Fio (BDR), White Priest Sora (CLR)</td></tr>
+<tr><td class="lv">B4</td><td>Beast Pens</td><td><b>Don't miscount them</b><div class="dim">Beside the beast tamer lurks one more creature</div></td><td>Beast Tamer Rana (TMR), Warrior Gou (WRR), Black Sage Kuro (SOR), Crimson Guardian Emma (SPS)</td></tr>
+<tr><td class="lv">B5</td><td>Hall of Mirrors</td><td><b>Know thyself</b><div class="dim">What the mirror shows is yourselves</div></td><td>Reflections (the same jobs as your party)</td></tr>
+<tr><td class="lv">B6</td><td>Arcane Furnace</td><td><b>Seal their magic</b><div class="dim">Silence them. Guard against magic</div></td><td>Twin-Star Sorcerer ×2, Crimson Mentor, White Mentor, Bard...</td></tr>
+<tr><td class="lv">B7</td><td>Fighting Pit</td><td><b>Withstand the blow</b><div class="dim">If the shield falls, everything crumbles</div></td><td>Warrior Zan, Dread Knight Val, Fist Saint Mei, Ninja Chief Ren, Bard...</td></tr>
+<tr><td class="lv">B8</td><td>Ice Corridor</td><td><b>Break their Chains</b><div class="dim">Overlapping techniques are the most fearsome</div></td><td>Holy Knight Al, White Sage Tia, Black Sage Bell, Crimson Sage Mina, Bard...</td></tr>
+<tr><td class="lv">B9</td><td>Lava Altar</td><td><b>Read their Trump Cards</b><div class="dim">They unleash their final power one by one</div></td><td>Elite Shield, Blade, Fist, Shinobi, Crimson...</td></tr>
+<tr><td class="lv">B10</td><td>Throne Room</td><td><b>Inherit the Hero's seat</b><div class="dim">The Former Hero's party: the final trial</div></td><td>Former Hero Leon, his Warrior Din, his Brawler Mao...</td></tr></tbody></table></div>
+<div class="warn">Shadow Sorcerers and Spellswords will <b>put you to sleep</b> (up to 20 seconds; zZz appears over your head). While asleep, neither attacks nor commands work. Getting hit wakes you up, so wait calmly. Defeating the shadow Cleric first ends the fight sooner.</div>
+<h3>Titles</h3>
+<p>You can switch titles you've earned in the <kbd>C</kbd> Status window, and the title appears before your name as [Title]. The title you wear raises your stats.</p>
+<div class="tw"><table><thead><tr><th>Titles</th><th>Requirement</th><th>Effect</th></tr></thead><tbody><tr><td><b>[Bold Bettor]</b></td><td>Win 3 Kururu Derby bets in a row</td><td>ACC+5</td></tr>
+<tr><td><b>[Chosen of the Kururu]</b></td><td>Win 5 Kururu Derby bets in a row</td><td>ACC+8 EVA+5</td></tr>
+<tr><td><b>[Legendary Eye]</b></td><td>Win 10 Kururu Derby bets in a row</td><td>ACC+12 EVA+8</td></tr>
+<tr><td><b>[Skyrunner]</b></td><td>Reach the top of the Sky Corridor</td><td>EVA+8</td></tr>
+<tr><td><b>[Skysoarer]</b></td><td>Reach the top of the Sky Corridor in under 3 minutes</td><td>ACC+5 EVA+12</td></tr>
+<tr><td><b>[Card Champion]</b></td><td>Beat 10 people at Grica</td><td>MP+30 DEF+5</td></tr>
+<tr><td><b>[Veteran Adventurer]</b></td><td>Raise any job to Lv60</td><td>HP+60 MP+20</td></tr>
+<tr><td><b>[Challenger]</b></td><td>Clear B3 of Shadow Rockhill</td><td>ATK+6 DEF+6</td></tr>
+<tr><td><b>[Paragon]</b></td><td>Clear B5 of Shadow Rockhill</td><td>ATK+10 DEF+10</td></tr>
+<tr><td><b>[Hero Candidate]</b></td><td>Clear B8 of Shadow Rockhill</td><td>HP+50 ATK+12 DEF+12</td></tr>
+<tr><td><b>[Hero]</b></td><td>Clear B10 of Shadow Rockhill</td><td>HP+100 MP+50 ATK+15 DEF+15 ACC+10</td></tr></tbody></table></div>
+</section>
+
+<section id="item"><h2>Items</h2>
+<figure><img src="../img/%E3%81%9D%E3%81%86%E3%81%B3%E7%AA%93.jpg" alt="The equipment and items window" loading="lazy" width="1120" height="630"><figcaption>The equipment and items window (P key). Equipment on top, bag below</figcaption></figure>
+<h3>Gear Guide</h3>
+<p>Gear has a required level and a set of jobs that can wear it. The basics: check the shops whenever you reach a new town or village, and fill in the gaps with quest rewards and Lord drops.</p>
+<div class="tw"><table><thead><tr><th>Lv</th><th>Armor</th><th>Weapons</th><th>Where to Get It</th></tr></thead><tbody><tr><td class="lv">Lv1</td><td>Leather Bandana, Cloth Tunic, Leather Gloves, Leather Trousers, Leather High Boots</td><td>Bronze gear (sword, dagger, axe, club, knuckles), Apprentice Staff</td><td>The town's armor and weapon shops</td></tr>
+<tr><td class="lv">Lv10</td><td>Brass Cap, Chainmail, Brass Gauntlets, Chain Leggings, Greaves</td><td>Iron gear, Oak Staff, Greatsword, War Scythe</td><td>Town shops. Rings and earrings also from Lv10</td></tr>
+<tr><td class="lv">Lv20</td><td>Mithril Mail (front line) / Swiftwind Tunic (light armor) / Glyphed Coif (spellcasters)</td><td>Mithril Sword, Mithril Axe</td><td>Town shops and quest rewards</td></tr>
+<tr><td class="lv">Lv30</td><td>Mithril Helm, Concealing Hood, Starchanter's Robe, Herbal Cloak</td><td>Damascus Sword, Damascus Claw</td><td>Village crafting, monster drops, the auction</td></tr>
+<tr><td class="lv">Lv40</td><td>Adamant Gauntlets, Swiftfoot Gauntlets, Purechant Boots, Moonglow Legguards</td><td>Adamant Sword, Adamant Claw, Darkbane Greatsword</td><td>Guild Adamant quests, shops (Lv40+)</td></tr>
+<tr><td class="lv">Lv50</td><td>Shadowbronze → Shadowsilver → Shadowgold → Hero gear (head, body, hands, legs, feet)</td><td>Shadowbronze to Hero weapons of every type</td><td>Trade in Trial Tokens from Shadow Rockhill (Mirror Shrine)</td></tr>
+<tr><td class="lv">Lv60</td><td>Archsage's Robe, Skyfeather Gi, Dragonscale Armor, Stardust Robe</td><td>Hero's Holy Sword, Conqueror's Fist, Sage's Staff, Star Iron Hammer</td><td>Town shops (Lv60), Cape Vermia drops, crafting</td></tr></tbody></table></div>
+<h3>Medicine & Food</h3>
+<div class="tw"><table><thead><tr><th>Item</th><th>Effect</th></tr></thead><tbody><tr><td>Potion</td><td>A medicine that restores 60 HP.</td></tr>
+<tr><td>Greater Potion</td><td>A high-quality medicine that restores 150 HP.</td></tr>
+<tr><td>Mana Potion</td><td>A medicine that restores 30 MP.</td></tr>
+<tr><td>Greater Mana Potion</td><td>A high-quality medicine that restores 150 MP.</td></tr>
+<tr><td>Antidote</td><td>A medicine that cures poison.</td></tr>
+<tr><td>Voice Tonic</td><td>A medicine that cures silence.</td></tr>
+<tr><td>Grilled Mutton</td><td>Skewered grilled mutton. Raises attack and defense for a while.</td></tr>
+<tr><td>Fresh Fish</td><td>A fish caught by fishing. Eating it restores a little HP. Also a crafting material.</td></tr>
+<tr><td>Salt-Grilled Fish</td><td>A simple dish of salt-grilled river fish. Strength wanes more slowly for a while.</td></tr>
+<tr><td>Herbed Moonglow Fish</td><td>Moonglow Fish roasted on Fragrant Herbs. Strength slowly wells up.</td></tr>
+<tr><td>Stardust Soup</td><td>A faintly glowing soup simmered from Stardust Herb. Brings deep rest.</td></tr>
+<tr><td>Herb-Steamed Trout</td><td>Trout steamed with Fragrant Herbs. Gentle, lasting strength.</td></tr>
+<tr><td>Nut Bread</td><td>Simple bread baked over Sapling Branches. Keeps you full.</td></tr>
+<tr><td>Catfish Hotpot</td><td>A hearty hotpot with a whole Giant Catfish. Warms you to the core.</td></tr>
+<tr><td>Frostgrain Smoked Fish</td><td>Fish smoked over Frostgrain Wood. Keeps well and tastes rich.</td></tr>
+<tr><td>Simmered Pool King</td><td>Village's finest feast: a whole simmered Deep Pool King.</td></tr>
+<tr><td>Homeport Feather</td><td>Use it to fly to the Sky Capital Homeport Plaza. Only those who have visited the plaza can use it.</td></tr>
+<tr><td>Feather to Town</td><td>Use it to fly to Rockhill Town.</td></tr>
+<tr><td>Feather to Village</td><td>Use it to fly to Veil Village.</td></tr></tbody></table></div>
+<h3>Other Items</h3>
+<ul>
+<li><b>Important Items</b>: Items entrusted to you for quests (proofs, maps, passes, etc.). They don't take up bag space and can't be sold.</li>
+<li><b>Essences</b>: Crafting ingredients dropped by monsters. Fire = metal, Ice = sharpening, Wind = cloth and leather, Earth = ore and wood, Thunder = high-grade arms and armor, Water = medicine and food.</li>
+<li><b>Treasure Chest Key</b>: Opens treasure chests found in the zones. Monsters rarely drop them. The Scholar's quest "In Search of the Queen's Orb" (Lv25) has you open an old treasure chest on the outskirts of town.</li>
+<li><b>Rare / Bound</b>: You can hold only one of a [Rare] item, and [Bound] items can't be given to others.</li>
+</ul>
+<figure><img src="../img/%E5%80%89%E5%BA%AB%E7%AA%93.jpg" alt="The storage window" loading="lazy" width="1120" height="630"><figcaption>The window listing items stored with the Warehouse Keeper</figcaption></figure>
+</section>
+
+<section id="tips"><h2>Handy Features & Settings</h2>
+<h3>Settings (Main Menu → Settings)</h3>
+<ul>
+<li><b>Resolution / Display Mode</b>: Windowed or fullscreen.</li>
+<li><b>Graphics Quality</b>: Choose from Auto, Low, Medium, High, or Ultra. Changes are saved right away.</li>
+<li><b>Auto-Adjust</b>: Press Enter to measure your PC's performance and set the Graphics Quality and render scale to match. The first time you launch the game, it measures and chooses automatically.</li>
+<li><b>Enable Sound / Master Volume / BGM / Sound Effects / Voice (skill name callouts)</b>: Set "Voice" to 0 to turn off the spoken names of techniques and spells.</li>
+<li><b>Show Beginner's Guide at bottom</b>: Control hints (Tips) that scroll along the bottom of the screen. Uncheck it once you're used to things to hide them.</li>
+<li><b>Show active quests at bottom</b>: Scrolls your active quests and their progress along the bottom of the screen. It can be turned on and off separately from the Beginner's Guide; with both on, they alternate.</li>
+<li><b>Read Beginner's Guide aloud</b>: Reads the hints at the bottom of the screen aloud.</li>
+<li><b>Language</b>: Choose between Japanese and English. The display switches as soon as you choose.</li>
+</ul>
+<h3>Good to Know</h3>
+<ul>
+<li><kbd>K</kbd> opens <b>Area Scan</b>, a list of nearby monsters and their levels. Lords appear in gold-orange.</li>
+<li>The color next to a target's name shows its strength (from weaker than you to very strong).</li>
+<li>Place a marker with <kbd>G</kbd> to tell your party "Target this enemy."</li>
+<li>Riding a Kururu makes you move faster. You can't start a fight while mounted (you dismount automatically).</li>
+<li>You get a notice when someone on your Friends list (<kbd>Y</kbd>) logs in.</li>
+<li>If you see a quest "!" but can't accept it, either your level is too low or you haven't finished the previous quest (the required level appears like "!Lv30").</li>
+<li>Materials you gather in the Web "Arcane Forager's Notebook" go straight into your bag while you're logged into the game.</li>
+</ul>
+<h3>Chat & Commands (type with <kbd>/</kbd>)</h3>
+<div class="tw"><table class="keys"><tbody><tr><th><code>/help</code></th><td>Show the list of commands</td></tr>
+<tr><th><code>/invite name</code></th><td>Invite to your party (or use "Invite to Party" in the Command Menu)</td></tr>
+<tr><th><code>/join</code></th><td>Accept an invitation</td></tr>
+<tr><th><code>/decline</code></th><td>Decline an invitation</td></tr>
+<tr><th><code>/leave</code></th><td>Leave Party</td></tr>
+<tr><th><code>/p message</code></th><td>Talk to your party</td></tr>
+<tr><th><code>/friend name</code></th><td>Send a friend request</td></tr>
+<tr><th><code>/attack</code></th><td>Attack your target</td></tr>
+<tr><th><code>/assist</code></th><td>Assist</td></tr>
+<tr><th><code>/ws technique name</code></th><td>Weapon Technique</td></tr>
+<tr><th><code>/ma spell name</code></th><td>Magic</td></tr>
+<tr><th><code>/ja ability name</code></th><td>Abilities</td></tr>
+<tr><th><code>/item item name</code></th><td>Use an item</td></tr>
+<tr><th><code>/fish</code></th><td>Fishing</td></tr>
+<tr><th><code>/craft · /synth</code></th><td>Craft (Veil Village)</td></tr>
+<tr><th><code>/kururu</code></th><td>Mount / Dismount Kururu</td></tr>
+<tr><th><code>/ah</code></th><td>Open the auction window (near the clerk)</td></tr>
+<tr><th><code>/job</code></th><td>View your job</td></tr>
+<tr><th><code>/subjob</code></th><td>Sub Job</td></tr>
+<tr><th><code>/quest</code></th><td>Quest window</td></tr>
+<tr><th><code>/loc</code></th><td>Coordinates of your current location</td></tr>
+<tr><th><code>/ai</code></th><td>Toggle Auto-Hunt Mode (Lv30+)</td></tr></tbody></table></div>
+</section>
+
+<section id="faq"><h2>Troubleshooting</h2>
+<ul>
+<li><b>Can't connect</b>: Check that you're connected to the internet, wait a little, and restart the game. During maintenance, a notice appears on the title screen. If it still doesn't work, restart your PC.</li>
+<li><b>I installed Cloudflare WARP or ZeroTier before</b>: They're no longer needed. Your account and characters still work as before. Feel free to uninstall them from "Settings → Apps" in Windows.</li>
+<li><b>The game closes right away</b>: Update your graphics driver to the latest version.</li>
+<li><b>The game is slow or choppy</b>: Go to Main Menu → Settings and lower "Graphics Quality" one step at a time, or use "Auto-Adjust" to match it to your PC again.</li>
+<li><b>The text is in Japanese</b>: Go to Main Menu → Settings and set "Language" to "English" to switch back.</li>
+<li><b>The Main Menu or Controls List won't open</b>: For the Main Menu, close all windows first and then press <kbd>Esc</kbd>. The Controls List opens with <kbd>,</kbd> (comma).</li>
+<li><b>Neither keys nor mouse work</b>: Press <kbd>Esc</kbd> a few times to close all windows. While typing in chat (after <kbd>/</kbd>), keys type letters.</li>
+<li><b>The attack button doesn't work</b>: You can't act while affected by sleep, stun, or fear. The reason appears on screen.</li>
+<li><b>"Another adventurer is fighting it"</b>: That monster is someone else's prey. Pick another monster or form a party.</li>
+<li><b>Can't cast magic</b>: You're holding an instrument (Bard), you're silenced, you're out of MP, or your Sub Job level is too low.</li>
+<li><b>Can't call Bonds</b>: You can't call them during combat, while riding, in the Arena, in the Sky Corridor, or inside Shadow Rockhill. You'll also be refused if the same Bond is already nearby.</li>
+<li><b>The update failed</b>: Your previous version is still intact. Launch the game again to retry the download.</li>
+</ul>
+</section>
+
+</main></div>
+<footer>Grion Guide — for version 1.5.503 (October 14, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
+</body>
+</html>

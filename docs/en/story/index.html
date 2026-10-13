@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Story of Grion</title>
+<meta name="description" content="The story of Grimoire Online. An adventure tale of a capital lost to the sky, and the seventh Crown.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Grimoire Online">
+<meta property="og:title" content="The Story of Grion">
+<meta property="og:description" content="The story of Grimoire Online. An adventure tale of a capital lost to the sky, and the seventh Crown.">
+<meta property="og:url" content="https://towa219.github.io/GrimoireOnline/en/story/">
+<meta property="og:image" content="https://towa219.github.io/GrimoireOnline/story/img/hero.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="ja" href="https://towa219.github.io/GrimoireOnline/story/">
+<link rel="alternate" hreflang="en" href="https://towa219.github.io/GrimoireOnline/en/story/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Source+Sans+3:wght@400;700&display=swap">
+<style>
+
+:root{
+  --night:#0d1022; --night-2:#141833; --ink:#ebe3cf; --ink-dim:#b3ab98; --muted:#8a87a3;
+  --gold:#e3b862; --gold-soft:rgba(227,184,98,.16); --ember:#e0784b; --shade:#71c6c0;
+  --rule:rgba(227,184,98,.28);
+  --serif:"EB Garamond","Garamond","Georgia",serif;
+  --display:"Cinzel","Trajan Pro","Georgia",serif;
+  --ui:"Source Sans 3","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{margin:0;background:var(--night);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.72;font-weight:500;padding-inline:16px;-webkit-font-smoothing:antialiased;hyphens:auto}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{max-width:62rem;margin:0 auto}
+.col{max-width:34em;margin:0 auto}
+
+
+.lang{position:absolute;top:14px;right:16px;z-index:2;font-family:var(--ui);font-size:.85rem;font-weight:700;text-decoration:none;color:var(--gold);background:rgba(13,16,34,.6);border:1px solid var(--rule);padding:.3rem .8rem;border-radius:2px}
+.lang:hover{background:rgba(13,16,34,.85)}
+
+
+.cover{position:relative;margin-inline:-16px;min-height:min(78vh,720px);display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.cover::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,16,34,.05) 30%,rgba(13,16,34,.7) 68%,var(--night) 100%)}
+#motes{position:absolute;inset:0;z-index:-1;width:100%;height:100%;pointer-events:none}
+.cover .inner{padding:0 16px 3.2rem;max-width:62rem;margin:0 auto;width:100%}
+.kicker{font-family:var(--ui);font-size:.78rem;letter-spacing:.32em;color:var(--gold);margin:0 0 .6rem}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(2.3rem,7.4vw,4.6rem);line-height:1.1;margin:0;letter-spacing:.04em;text-shadow:0 2px 24px rgba(0,0,0,.6);text-wrap:balance}
+h1 small{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);letter-spacing:.04em;color:var(--gold);margin-top:.9rem}
+.cover p.lead{max-width:34em;margin:1.4rem 0 0;color:var(--ink);font-size:1.06rem;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+
+
+.gauge{margin:3.5rem auto 1rem;max-width:62rem}
+.gauge h2{font-family:var(--ui);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 1rem;line-height:1.6}
+.gauge-scroll{overflow-x:auto;padding-bottom:.4rem}
+.gauge svg{display:block;min-width:640px;width:100%;height:auto}
+.gauge .t{font-family:var(--ui);font-size:12px;fill:var(--ink-dim)}
+.gauge .cap{font-family:var(--ui);font-size:12px;fill:var(--gold);font-weight:700}
+.gauge .ch{font-family:var(--serif);font-size:14px;fill:var(--ink);font-weight:700}
+.gauge .next{font-family:var(--serif);font-size:14px;fill:var(--muted)}
+.gauge p{font-family:var(--ui);font-size:.85rem;color:var(--ink-dim);margin:.6rem 0 0;line-height:1.7}
+
+
+.legend{margin:4rem auto 0;border-block:1px solid var(--rule);padding-block:2.6rem}
+.legend h2,.section-title{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,4.4vw,2.3rem);letter-spacing:.06em;margin:0 0 1.4rem;text-align:center;color:var(--gold);line-height:1.25;text-wrap:balance}
+.legend p+p{clear:left}
+.legend p:first-of-type::first-letter{font-family:var(--display);font-size:3.3em;float:left;line-height:.9;margin:.08em .1em 0 0;color:var(--gold)}
+p{margin:0 0 1.1em}
+.say{border-left:2px solid var(--gold);padding-left:1em;color:var(--ink);font-weight:700;font-style:italic}
+
+
+.chapter{margin-top:5.5rem}
+.plate{position:relative;margin-inline:-16px}
+.plate img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.plate::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(180deg,transparent,var(--night))}
+.chead{max-width:34em;margin:-3.2rem auto 1.6rem;position:relative;z-index:1}
+.chead .no{font-family:var(--display);font-size:.95rem;letter-spacing:.24em;color:var(--gold)}
+.chead h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,4.8vw,2.5rem);line-height:1.2;margin:.3rem 0 .7rem;letter-spacing:.03em;text-wrap:balance}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem .6rem;font-family:var(--ui);font-size:.8rem;line-height:1.5}
+.meta span{border:1px solid var(--rule);color:var(--ink-dim);padding:.15rem .6rem;border-radius:2px}
+.meta span.lv{color:var(--night);background:var(--gold);border-color:var(--gold);font-weight:700}
+.crown{color:var(--ember);font-weight:700}
+.shadow{color:var(--shade);font-weight:700}
+.inset{margin:2rem auto;max-width:44em}
+.inset img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule)}
+.inset figcaption{font-family:var(--ui);font-size:.8rem;color:var(--muted);margin-top:.4rem;text-align:right}
+
+
+.crowns{margin:4.5rem auto 0;max-width:44em}
+.crowns ol{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:c;border-top:1px solid var(--rule)}
+.crowns li{counter-increment:c;display:grid;grid-template-columns:3.2em 1fr auto;gap:1rem;align-items:baseline;padding:.8rem .2rem;border-bottom:1px solid var(--rule)}
+.crowns li::before{content:counter(c,upper-roman);font-family:var(--display);color:var(--ember);font-size:1.2rem}
+.crowns .nm{font-weight:700}
+.crowns .wh{font-family:var(--ui);font-size:.82rem;color:var(--ink-dim);text-align:right}
+.crowns li.seventh{border-bottom:1px dashed var(--ember)}
+.crowns li.seventh .nm{color:var(--ember)}
+
+
+.people{margin:5rem auto 0}
+.people .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1.4rem 1.6rem}
+.person h4{font-family:var(--serif);font-weight:800;font-size:1.15rem;margin:0 0 .2rem}
+.person .role{font-family:var(--ui);font-size:.75rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin:0 0 .4rem}
+.person p{font-size:.95rem;line-height:1.65;color:var(--ink-dim);margin:0}
+
+
+.beyond{margin-top:6rem;border-top:1px solid var(--rule);padding-top:1rem}
+.beyond .stamp{font-family:var(--ui);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ember);text-align:center;margin:2rem 0 0}
+.next-part{margin-top:4rem}
+.next-part .chead .no{color:var(--ember)}
+.tag-plan{font-family:var(--ui);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--night);background:var(--ember);padding:.1rem .5rem;border-radius:2px;margin-left:.6rem;vertical-align:.2em}
+.mysteries{max-width:34em;margin:4rem auto 0}
+.mysteries ul{padding-left:1.2em;margin:0}
+.mysteries li{margin:.5em 0;color:var(--ink-dim)}
+.mysteries li b{color:var(--ink)}
+
+.cta{max-width:34em;margin:5rem auto 0;text-align:center;border:1px solid var(--rule);padding:2rem 1.2rem;background:var(--gold-soft)}
+.cta h2{font-family:var(--display);font-weight:400;font-size:1.55rem;margin:0 0 .6rem;letter-spacing:.05em;line-height:1.3}
+.cta p{font-family:var(--ui);font-size:.92rem;line-height:1.7;color:var(--ink-dim);margin:0 0 1.2rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.btns a{font-family:var(--ui);font-weight:700;font-size:.92rem;text-decoration:none;padding:.65rem 1.2rem;border:1px solid var(--gold);color:var(--gold)}
+.btns a.main{background:var(--gold);color:var(--night)}
+footer{max-width:34em;margin:4rem auto 0;padding-block:2rem 3rem;border-top:1px solid var(--rule);font-family:var(--ui);font-size:.8rem;line-height:1.7;color:var(--muted)}
+
+@media (max-width:560px){
+  body{font-size:17.5px;line-height:1.68}
+  .chead{margin-top:-1.6rem}
+  .crowns li{grid-template-columns:2.4em 1fr;}
+  .crowns .wh{grid-column:2;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){#motes{display:none}}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <a class="lang" href="https://towa219.github.io/GrimoireOnline/story/" hreflang="ja" lang="ja">日本語</a>
+  <img src="../../story/img/hero.jpg" alt="A colossal grimoire floating in a sunset sky, watched by an adventurer on a clifftop">
+  <canvas id="motes" aria-hidden="true"></canvas>
+  <div class="inner">
+    <p class="kicker">GRIMOIRE ONLINE — THE STORY</p>
+    <h1>The Story of Grion<small>The Seventh Crown and the Capital Lost to the Sky</small></h1>
+    <p class="lead">This world is written in a single grimoire.<br>Each time you swing your sword, each time you share a laugh with your companions, a new line is added to its pages.<br>And at the end of the book lie blank pages that no one has ever read.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="gauge" aria-labelledby="g-title">
+  <h2 id="g-title">Pages of Adventure — Up to Lv60 for now. Beyond that, the pages are still blank</h2>
+  <div class="gauge-scroll">
+  <svg viewBox="0 0 980 150" role="img" aria-label="Lv1 to Lv60 is Part One. Lv70 and beyond is planned as the sequel.">
+    <defs>
+      <linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#e0784b"/><stop offset="1" stop-color="#e0784b" stop-opacity="0"/></linearGradient>
+    </defs>
+    <line x1="30" y1="70" x2="740" y2="70" stroke="#e3b862" stroke-width="4"/>
+    <line x1="740" y1="70" x2="960" y2="70" stroke="url(#fade)" stroke-width="4" stroke-dasharray="10 8"/>
+    <g class="t" text-anchor="middle">
+      <line x1="30" y1="62" x2="30" y2="78" stroke="#e3b862"/><text x="30" y="98">Lv1</text>
+      <line x1="138" y1="64" x2="138" y2="76" stroke="#e3b862"/><text x="138" y="98">10</text>
+      <line x1="259" y1="64" x2="259" y2="76" stroke="#e3b862"/><text x="259" y="98">20</text>
+      <line x1="379" y1="64" x2="379" y2="76" stroke="#e3b862"/><text x="379" y="98">30</text>
+      <line x1="499" y1="64" x2="499" y2="76" stroke="#e3b862"/><text x="499" y="98">40</text>
+      <line x1="620" y1="64" x2="620" y2="76" stroke="#e3b862"/><text x="620" y="98">50</text>
+      <line x1="860" y1="64" x2="860" y2="76" stroke="#e0784b" stroke-dasharray="3 3"/><text x="860" y="98" fill="#e0784b">70?</text>
+    </g>
+    <circle cx="740" cy="70" r="9" fill="#0d1022" stroke="#e3b862" stroke-width="3"/>
+    <text class="cap" x="740" y="98" text-anchor="middle">Lv60 — Now</text>
+    <g class="ch" text-anchor="middle">
+      <text x="84" y="44">Prologue</text><text x="200" y="44">I</text><text x="349" y="44">II</text><text x="469" y="44">III</text><text x="547" y="44">IV</text><text x="680" y="44">V–VI</text>
+    </g>
+    <text class="next" x="860" y="44" text-anchor="middle">Part Two: Sky Capital Arc</text>
+    <text class="next" x="860" y="128" text-anchor="middle">Part Three: Southern Seas Arc</text>
+  </svg>
+  </div>
+  <p>In Grion today, you can play from the Prologue through Chapter Six (Lv1–60). Parts Two and Three are planned as pages yet to be written.</p>
+</section>
+
+<section class="legend col" aria-labelledby="legend-title">
+  <h2 id="legend-title">The Legend of the Beginning</h2>
+  <p>Long ago, a book floated in the sky. People called it the <b>Grimoire</b>.</p>
+  <p>Whatever is written in the book takes shape: mountains, towns, monsters, and the people who live among them. When adventurers make a name for themselves, that name is inscribed in a corner of a page, and those who are inscribed can call to one another, however far apart they may be. People came to call this a <b>Bond</b>. The "art of calling to those far away" that Mentor Elna teaches in Rockhill is the craft of pulling on these threads across the page.</p>
+  <p>The book was guarded by the city above the clouds, the <b>Sky Capital Aership</b>, and by the queen who dwelt there.</p>
+  <p>One night, a dragon tried to steal the book's <b>Quill</b>, so that it could rewrite the world with its own hand. In the battle against that dragon, later known as the <b class="crown">Usurper Dragon</b>, the Sky Capital vanished beyond the clouds, and the pages of the book scattered across the land like a storm.</p>
+  <p>The dragon did not fall. Nor was it sealed away. It simply sank into a deep sleep, and from within that sleep it cast <b class="crown">Crowns</b> down to the monsters of the land. Every monster that took a Crown proclaimed itself a King, and grew stronger by devouring the scattered pages.</p>
+  <p class="say">Seven are the Crowns. Six upon the earth, the seventh in the sky.<br>When all six Crowns have fallen, the bearer of the seventh shall wake.</p>
+  <p>Everyone in Rockhill had long forgotten this old saying. Now you will put it to the test with your own sword.</p>
+</section>
+
+<article class="chapter" aria-labelledby="c0">
+  <figure class="plate"><img src="../../story/img/c0_rockhill.jpg" alt="Rockhill Town in the morning mist, with the glow of the inn and the castle on the hill" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Prologue</div>
+    <h3 id="c0">Morning at the Sleeping Cat Inn</h3>
+    <div class="meta"><span class="lv">Lv1–10</span><span>Rockhill Town</span><span>North Rockhill</span><span>Rockhill Great Mine</span></div>
+  </div>
+  <div class="col">
+    <p>Rockhill, a town tucked among the mountains. You wake to the smell of straw at the Sleeping Cat Inn. In your pocket are a few Grim and a scrap of paper you can't remember ever picking up. You don't know it yet, but it is one of the grimoire's pages, fallen from the sky.</p>
+    <p>The guard at the East Gate warns you: "If you're heading out, watch out for monsters." You chase Goblins across the northern fields, hunt Rabbits, and help the townsfolk with their troubles, and little by little the town comes to know your name.</p>
+    <p>Then one day a miner grumbles, "A Lord has taken up residence deep in the mine." Waiting at the bottom of the dark Great Mine is <b>Great Mine Lord Dorgan</b>. And on the night after your first battle, Mentor Elna tells you:</p>
+    <p class="say">"Your name has been written on the page. You are no longer alone."</p>
+    <p>The healer <b>Cleric Sera</b> takes a place at your side as your first Bond.</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c1">
+  <figure class="plate"><img src="../../story/img/c1_jungle.jpg" alt="A spring in a misty jungle: a moss-covered stone face, and a serpent-bodied priest performing a ritual" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter One</div>
+    <h3 id="c1">Prayers in the Mist</h3>
+    <div class="meta"><span class="lv">Lv8–20</span><span>Mistveil Jungle</span><span>Veil Village</span><span>South Rockhill</span></div>
+  </div>
+  <div class="col">
+    <p>Orcs and Wargs prowl the southern road. When you need someone to stand in front, Warrior Rio raises a shield. One by one, new companions join you on the page.</p>
+    <p>The Mistveil Jungle lies wrapped in fog. Beside a spring dappled with sunlight, a <b>giant stone face</b>, carved by no one knows whom, sleeps with its gaze fixed to the south.</p>
+    <p>At that spring, a serpent-bodied priest was praying: <b>Serpent Priest Shezal</b>. Listen closely, and the prayers of the Naga sound like this: "O sleeping bearer of the Crown, devour the pages and awaken."</p>
+    <p>On the night the ritual was broken, the guild receptionist set down a cup and muttered:</p>
+    <p class="say">"The prayers have stopped... But perhaps it was only a sign of things to come."</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c2">
+  <figure class="plate"><img src="../../story/img/c2_mausoleum.jpg" alt="An underground mausoleum: a black coffin bound in silver chains, and kneeling skeleton soldiers" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter Two</div>
+    <h3 id="c2">The Silver Chains of the Mausoleum</h3>
+    <div class="meta"><span class="lv">Lv20–36</span><span>Verdan Highlands</span><span>Underground Mausoleum</span><span>Path of the Expert Jobs</span></div>
+  </div>
+  <div class="col">
+    <p>Beneath the Verdan Highlands sleeps the mausoleum of an ancient kingdom. Stone pillars, crumbling banners, and at the center, a coffin. The <b>silver chains</b> that bind it have snapped in places, from the inside.</p>
+    <p>Even after you lay the Lord of the Mausoleum, <b>Velga</b>, to rest, the gravekeeper's face does not brighten.</p>
+    <p class="say">"It's quiet now... but something darker has woken."</p>
+    <p>In the darkness of the highlands, the first Crown gleams: <b class="crown">Abyss King Gualdos</b>. Swollen from devouring pages, the Abyss Demon King laughed as he fell. "The Crown is not mine. We only hold it for another."</p>
+    <p>At Lv30, a "second way of life" opens before you. The lord of the castle offers a knight's shield; the gravekeeper, a sword of darkness; the mercenary captain, the arts of shadow; the fang carver, a lyre of dragon bone. Each master will put you to the test.</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c3">
+  <figure class="plate"><img src="../../story/img/c3_dragons.jpg" alt="A valley lit by glowing lava: dragons lined up along the cliffs, and a Dragon Monarch crowned with black horns" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter Three</div>
+    <h3 id="c3">The Dragon Monarch of the Vale</h3>
+    <div class="meta"><span class="lv">Lv30–46</span><span>Vale of Myriad Fiends</span><span>Dragon Valley</span><span>Final Quest of the Adventurers' Guild</span></div>
+  </div>
+  <div class="col">
+    <p>Deep within the Vale of Myriad Fiends, where Demons roam, lies a valley lined with dragons. The Nightmare Dragon Valgana, the Terror Dragon, the Soul-Devourer Dragon, and the one who commands them all: the <b class="crown">Dragon Monarch</b>.</p>
+    <p class="say">"This is the Guild's final quest... Come back alive, and your name will go down in the records."</p>
+    <p>Crowned with black horns, the Dragon Monarch took the blows of your sword and growled in an ancient tongue: "Little one, shattering the Crowns is futile. Our master is in the sky. The <b class="crown">Usurper Dragon</b> awaits the day it takes the Quill in hand."</p>
+    <p>The name of the dragon-slayer did indeed go down in the records. And the second Crown rolled to the floor of the valley.</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c4">
+  <figure class="plate"><img src="../../story/img/c4_crests.jpg" alt="Three crests floating in the night sky: a mushroom, a salt crystal, and a wave" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter Four</div>
+    <h3 id="c4">The Three Crests</h3>
+    <div class="meta"><span class="lv">Lv35–52</span><span>Morga Sporewood</span><span>Salta Salt Flats</span><span>Emel Coast</span></div>
+  </div>
+  <div class="col">
+    <p>West of town, north of the castle. The keeper of the Mirror Shrine, <b>Shadowwarden Seira</b>, looked at you for a long moment and said:</p>
+    <p class="say">"The Mirror Shrine opens only to those who have slain a King."</p>
+    <p>Gather the three Crests, she told you. <b class="crown">Spore Queen Morga</b>, who rules the forest of spores. <b class="crown">Salt-Crown King Salta</b>, who reigns over the dried-up salt lake. And <b class="crown">Tidal King Galmare</b>, who rises from the waters off the Emel Coast, where the wreckage of ships washes ashore.</p>
+    <p>On the sands of the Emel Coast stands a lone <b>statue</b> that gazes only at the southern sea. The stone face in the jungle faced south, too. ...Could that be a coincidence?</p>
+    <p>(By the way, the Mushroom King who calls himself "Lord of the Forest" wears a crown that, if you look closely, turns out to be a mushroom cap he wove himself.)</p>
+    <p class="say">"The three Crests are gathered. Go to the Mirror Shrine. The Shadow Adventurers are waiting for you."</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c5">
+  <figure class="plate"><img src="../../story/img/c5_mirror.jpg" alt="A shrine on a moonlit night: a party standing before a gate of shining mirror, and a keeper holding a lantern" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter Five</div>
+    <h3 id="c5">Shadows Beyond the Mirror</h3>
+    <div class="meta"><span class="lv">Lv50+</span><span>Mirror Shrine</span><span>Shadow Rockhill 1F–B10</span><span>Title: [Hero]</span></div>
+  </div>
+  <div class="col">
+    <p>Step through the mirror, and you find yourself in another Rockhill. The same cobblestones, the same castle, only with everything turned inside out. These are the <b>reverse pages</b> of the grimoire.</p>
+    <p>No monsters wait here. Instead there are adventurers who have jobs just as you do and who support one another: the <b class="shadow">Shadow Adventurers</b>. They are the shadows of those whose stories broke off mid-page, those who never became Heroes, and they still guard the Hero's Seat.</p>
+    <p>The Stone Prison, the Underground Waterway, the Archive, the Chapel. "Take down the healer first." In the Hall of Mirrors, your own reflection draws its sword. "Know yourself. What the mirror shows is you."</p>
+  </div>
+  <figure class="inset"><img src="../../story/img/c5_hero.jpg" alt="A knight in silver-white standing before a throne, with translucent companions" loading="lazy"><figcaption>B10, the King's Chamber — the Former Hero's party</figcaption></figure>
+  <div class="col">
+    <p>And on the lowest floor, in the King's Chamber, a knight bearing a silver-white shield stands before the throne: <b class="shadow">Former Hero Leon</b>, with five companions. Twenty years ago, this party tried to climb the stair to the Sky Capital, and fell, pages and all.</p>
+    <p class="say">"It's not over yet...!"</p>
+    <p>Fallen companions rise again and again. The Hero does not fall. Not until you inherit that seat.</p>
+    <p>After the final blow, Leon's shadow smiled gently. "Write what comes next." On that day, the mightiest combined attack, unleashed by you and all of your Bonds, became yours: <b>United Valor</b>.</p>
+  </div>
+</article>
+
+<article class="chapter" aria-labelledby="c6">
+  <figure class="plate"><img src="../../story/img/c6_cape.jpg" alt="A ruined castle on a moonlit cape with a single lit window, and a swordsman with a greatsword standing on the pier" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">Chapter Six</div>
+    <h3 id="c6">The Cape at the World's End, and the King Beneath the Lake</h3>
+    <div class="meta"><span class="lv">Lv54–60</span><span>Cape Vermia</span><span>Leaden Salt Basin</span><span>Path of the Sword Saint</span></div>
+  </div>
+  <div class="col">
+    <p>At the farthest edge of the map lies Cape Vermia. The harbor's head fisherman points to the hill in the northeast. "That castle's been abandoned for ages. Some folks say they see a light there at night."</p>
+    <p>At the eastern edge of the harbor stood a man in white and black armor, a greatsword on his back: <b>Sword Saint Sigurd</b>.</p>
+    <p class="say">"Ruined Castle Lord Galderic. The man who cut down my master. Slay him. I won't lift a finger."</p>
+    <p>Even after his enemy had returned to the earth, Sigurd did not lay down his sword. "There is one more thing I need to know." His master was <b>Dinn</b>, a warrior in the Former Hero's party: the very shadow you crossed swords with in the King's Chamber of Shadow Rockhill. When the Sword Saint learns that his master's story found its ending at your hand, he draws his greatsword for your sake for the first time.</p>
+  </div>
+  <figure class="inset"><img src="../../story/img/c6_lakeking.jpg" alt="A giant king seated on a throne at the bottom of a dried-up salt lake" loading="lazy"><figcaption>Leaden Salt Basin — Lakebed King Nergal</figcaption></figure>
+  <div class="col">
+    <p>At the bottom of the dry lake sits one who calls himself a King: the bearer of the sixth Crown, <b class="crown">Lakebed King Nergal</b>. Having drunk the lake's memories down to the very last drop, the King looked up at the sky as he crumbled.</p>
+    <p class="say">"Six... Crowns have fallen. Do you hear it, little one? In the sky. The beating of wings."</p>
+    <p>On the night the lake fell silent, many of the townsfolk say they saw the grimoire flare brightly in the sky above Rockhill, just for a moment.</p>
+  </div>
+</article>
+
+<section class="crowns" aria-labelledby="crowns-title">
+  <h2 class="section-title" id="crowns-title">The Seven Crowns</h2>
+  <ol>
+    <li><span class="nm">Abyss King Gualdos</span><span class="wh">Verdan Highlands — Chapter Two</span></li>
+    <li><span class="nm">Dragon Monarch</span><span class="wh">Vale of Myriad Fiends — Chapter Three</span></li>
+    <li><span class="nm">Spore Queen Morga</span><span class="wh">Morga Sporewood — Chapter Four</span></li>
+    <li><span class="nm">Salt-Crown King Salta</span><span class="wh">Salta Salt Flats — Chapter Four</span></li>
+    <li><span class="nm">Tidal King Galmare</span><span class="wh">Emel Coast — Chapter Four</span></li>
+    <li><span class="nm">Lakebed King Nergal</span><span class="wh">Leaden Salt Basin — Chapter Six</span></li>
+    <li class="seventh"><span class="nm">Usurper Dragon —</span><span class="wh">Sky Capital Aership — Part Two</span></li>
+  </ol>
+</section>
+
+<section class="people" aria-labelledby="people-title">
+  <h2 class="section-title" id="people-title">Those Whose Names Are Written</h2>
+  <div class="grid">
+    <div class="person"><p class="role">Bond — Cleric</p><h4>Sera</h4><p>The healer who is first to stand at your side. Knows when a foe must be struck down, and when to reach out a hand.</p></div>
+    <div class="person"><p class="role">Bond — Warrior</p><h4>Rio</h4><p>A shield who draws every enemy's attention, protecting you and your healer.</p></div>
+    <div class="person"><p class="role">Bond — Bard</p><h4>Luka</h4><p>A wandering musician with a lyre. Never lands a blow, but sets the whole party's hearts ablaze with Battle Songs.</p></div>
+    <div class="person"><p class="role">Bond — Dread Knight</p><h4>Val</h4><p>Has a will that the life-devouring darkness cannot swallow. In Shadow Rockhill, there is a shadow who bears the same name...</p></div>
+    <div class="person"><p class="role">Bond — Sword Saint</p><h4>Sigurd</h4><p>White and black armor, and a greatsword. Came to the cape at the world's end hunting his master's killer. Uses no magic, and clears the way with a single Flash Cut.</p></div>
+    <div class="person"><p class="role">Keeper of the Mirror Shrine</p><h4>Shadowwarden Seira</h4><p>A witch who tests your Hero's Credentials. She seems to have had some tie to the Former Hero's party.</p></div>
+    <div class="person"><p class="role">Shadow Rockhill B10</p><h4>Former Hero Leon</h4><p>The Hero who tried to climb the stair to the Sky Capital twenty years ago. Now a shadow, still guarding the Hero's Seat.</p></div>
+    <div class="person"><p class="role">The Seventh Crown</p><h4>Usurper Dragon</h4><p>The dragon that tried to steal the grimoire's Quill. It has slept beyond the sky, waiting for the six Crowns to fall.</p></div>
+  </div>
+</section>
+
+<section class="beyond" aria-labelledby="beyond-title">
+  <figure class="plate"><img src="../../story/img/end_blank.jpg" alt="A glowing blank page with a quill of light floating above it" loading="lazy"></figure>
+  <div class="chead">
+    <div class="no">The Final Chapter, and a Prologue</div>
+    <h3 id="beyond-title">The Margins of the Page</h3>
+  </div>
+  <div class="col">
+    <p>Lv60. A Veteran Adventurer. All six Crowns have fallen.</p>
+    <p>But as you leaf through the grimoire, you notice something. The written pages end here. Beyond them stretch <b>blank pages</b> without end, and drifting above them, a single <b>Quill of Light</b>.</p>
+    <p class="say">Lv60 is not the last line of this book.<br>It is the first line of the next page, one no one has written yet.</p>
+  </div>
+  <p class="stamp">— Beyond this point lies a story yet to be written (in planning) —</p>
+
+  <article class="next-part" aria-labelledby="p2">
+    <figure class="plate"><img src="../../story/img/p2_skycity.jpg" alt="A white city floating on a sea of clouds, with a giant dragon coiled around a tower" loading="lazy"></figure>
+    <div class="chead">
+      <div class="no">Part Two<span class="tag-plan">In Planning</span></div>
+      <h3 id="p2">Sky Capital Arc — The Throne Above the Clouds</h3>
+      <div class="meta"><span class="lv">Lv60–70</span><span>Sky Corridor Summit</span><span>Sky Capital Aership</span></div>
+    </div>
+    <div class="col">
+      <p>Everyone thought the <b>Sky Corridor</b> was just a tower on the edge of town, a place to jump around for fun. The flower spiral, the swaying rope bridge, the windmill tower... and past its summit, a stone stair hidden in the clouds comes into view. It was never a playground. It is what remains of the <b>Skyward Stair</b> that once joined the land to the Sky Capital.</p>
+      <p>The key is the <b>Queen's Orb</b> the scholar was searching for. Do you remember the two untitled paintings hanging in the throne room of Rockhill Castle? One shows a city above the clouds. The other, a queen holding an orb to her breast.</p>
+      <p>Beyond the clouds, coiled around the highest tower of a white marble city, is the <b class="crown">Usurper Dragon</b>, bearer of the seventh Crown. Quill in its grasp, the dragon had begun to rewrite the grimoire, and with the Hero's Seat left empty, <b class="shadow">shadows</b> come pouring out across the land.</p>
+      <p>Sword Saint Sigurd entrusts you with a single sword form. A day will come when the path of the Sword Saint belongs to more than the Bonds alone.</p>
+    </div>
+  </article>
+
+  <article class="next-part" aria-labelledby="p3">
+    <figure class="plate"><img src="../../story/img/p3_southsea.jpg" alt="A stone statue gazing out at the southern sea, with a tower beyond the horizon" loading="lazy"></figure>
+    <div class="chead">
+      <div class="no">Part Three<span class="tag-plan">In Planning</span></div>
+      <h3 id="p3">Southern Seas Arc — What the Stone Watchers See</h3>
+      <div class="meta"><span class="lv">Lv70+</span><span>South of the Emel Coast</span><span>An Uncharted Continent</span></div>
+    </div>
+    <div class="col">
+      <p>The stone face in the jungle. The stone guardian that sleeps in the Ancient Wood. The statue on the Emel Coast that gazes only at the southern sea. All three stone watchers were facing the same way.</p>
+      <p>Not every page of the grimoire that scattered from the sky on that stormy night came down on the land. Many of them, it is said, crossed the southern sea and settled on a continent no one knows. The wrecked ships that wash up on the beach belonged to those who set out for it and never returned.</p>
+      <p>The gravekeeper remembers, one by one, "the names of the adventurers who never came back." Among them is a single name that you know.</p>
+    </div>
+  </article>
+</section>
+
+<section class="mysteries" aria-labelledby="mys-title">
+  <h2 class="section-title" id="mys-title">Mysteries Yet Unsolved</h2>
+  <ul>
+    <li><b>Worn Map</b> — An "old map of the surrounding lands," given to you by a traveling merchant. Surrounding what, exactly?</li>
+    <li><b>Holy Sigil Shard</b> — An old holy sigil a Goblin was carrying. No one knows which temple it came from.</li>
+    <li><b>Star Iron and Stardust Herb</b> — Iron that fell from the sky. An herb that grows only where a star has fallen. Was it really a star that fell?</li>
+    <li><b>The Nameless Black Knight</b> — An ancient soldier wandering the Leaden Salt Basin. His earring holds a grief that never fades.</li>
+    <li><b>Two Pairs of Names</b> — Beast Tamer Luca and Bard Luka. Shadowwarden Seira and Cleric Sera. Are the similar names just a coincidence?</li>
+  </ul>
+</section>
+
+<section class="cta" aria-labelledby="cta-title">
+  <h2 id="cta-title">Write the Next Page with Your Own Hand</h2>
+  <p>Grimoire Online is a free 3D MMORPG made by a solo developer.<br>A Windows version is available (in development, free to play).</p>
+  <div class="btns">
+    <a class="main" href="https://freegame-mugen.jp/onlinegame/game_15450.html">Download for Free (Freegame Mugen)</a>
+    <a href="../">Beginner's Guide</a>
+    <a href="https://x.com/GrimoireOnline">X @GrimoireOnline</a>
+  </div>
+</section>
+
+<footer>
+  <p>This story is an official Grimoire Online companion piece, written from the places, characters, quests, and Lords found in the game. Parts Two and Three are still in planning, and their contents may change.</p>
+  <p>The illustrations were created with AI image generation and do not show actual in-game screens.</p>
+</footer>
+</main>
+
+<script>
+(function(){
+  const c=document.getElementById('motes');
+  if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const x=c.getContext('2d');let w,h,ps=[];
+  function size(){const r=c.getBoundingClientRect();w=c.width=r.width*devicePixelRatio;h=c.height=r.height*devicePixelRatio}
+  function make(){ps=Array.from({length:70},()=>({x:Math.random()*w,y:Math.random()*h,r:(Math.random()*1.6+.4)*devicePixelRatio,s:(Math.random()*.25+.08)*devicePixelRatio,a:Math.random()*Math.PI*2}))}
+  function tick(){x.clearRect(0,0,w,h);for(const p of ps){p.y-=p.s;p.a+=.01;p.x+=Math.sin(p.a)*.3;if(p.y<-5){p.y=h+5;p.x=Math.random()*w}
+    x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle='rgba(227,184,98,'+(.35+Math.sin(p.a)*.25)+')';x.fill()}requestAnimationFrame(tick)}
+  size();make();tick();addEventListener('resize',()=>{size();make()});
+})();
+</script>
+</body>
+</html>
