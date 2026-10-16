@@ -93,7 +93,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <header class="hero"><div class="in">
 <h1>Grion Guide</h1>
 <p>A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.</p>
-<span class="tag">For version 1.5.509 · Updated October 14, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+<span class="tag">For version 1.5.527 · Updated October 16, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
 </div></header>
 <div class="wrap">
 <nav class="toc"><b>Contents</b><a href="#start">Introduction</a><a href="#ctrl">Controls at a Glance</a><a href="#first">First Steps</a><a href="#road">Progression by Level</a><a href="#quest">Quest List</a><a href="#zone">Zones</a><a href="#job">Jobs</a><a href="#kizuna">Bonds (Companions)</a><a href="#battle">Combat Basics</a><a href="#derby">Kururu Derby</a><a href="#web">Web Portal (Phone)</a><a href="#play">Fishing, Gathering, Crafting & Grica</a><a href="#high">High-Level Content</a><a href="#item">Items</a><a href="#tips">Handy Features & Settings</a><a href="#faq">Troubleshooting</a></nav>
@@ -144,7 +144,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <li><b>Buy 2–3 Potions at the item shop.</b> Potions (restore 60 HP) are your lifeline early on. The Novice's Blessing reduces the damage you take at Lv1–3, but getting jumped by two monsters at once is still dangerous.</li>
 <li><b>Head out the east gate and hunt Goblins (Lv1) and Chickens (Lv1) in North Rockhill.</b> Select with <kbd>Tab</kbd>, then <kbd>Enter</kbd> → "Attack". Fight one at a time, and when your HP drops below half, sit and rest with <kbd>H</kbd> or go back to town. Stay here until Lv4–5.</li>
 <li><b>At Lv3–5, move on to Bats, Slimes, and Scorpions.</b> Bats and Scorpions "react to footsteps", so approach at a walk instead of running and they're less likely to ambush you.</li>
-<li><b>Report your quest to earn Grim, gear, and your first companion.</b> Equip the "Goblin Extermination" reward, the Adventurer's Ring (HP/MP+10), right away (<kbd>P</kbd>). When you report it, a Bond joins you: if you started as a Warrior, Monk, Sorcerer, or Rogue, you get the healer "Cleric Sera"; if you started as a Cleric or Spellsword, you get the tank "Warrior Rio". Select yourself with <kbd>Z</kbd>, then <kbd>Enter</kbd> → "Call Bond" to call them. Things get much easier from here.</li>
+<li><b>Report your quest to earn Grim, gear, and your first companion.</b> Equip the "Goblin Extermination" reward, the Adventurer's Ring (HP/MP+10), right away (<kbd>P</kbd>). When you report it, a Bond joins you: Warriors, Monks, and Rogues get the healer "Cleric Sera"; fragile Sorcerers, Clerics, and Spellswords get the tank "Warrior Rio". Rio uses Taunt to draw enemies away from you. Select yourself with <kbd>Z</kbd>, then <kbd>Enter</kbd> → "Call Bond" to call them. Things get much easier from here.</li>
 <li><b>At Lv6–9, take on Goblin Sentries and Cactuses, then head to the entrance of South Rockhill.</b> Finishing "Taking Down the Goblin Leaders" (Guild Receptionist) starts the Adventurers' Guild quest series.</li>
 <li><b>From Lv10, gain more companions with Proofs of Bond.</b> Mentor Elna's "Proof of Bond: Healing" (Lv10, 8 Armabees in South Rockhill) lets you call "Cleric Sera", and Drillmaster Dorg's "Proof of Bond: Blade" (Lv15) lets you call "Warrior Rio". The Proof for the Bond you got from your first quest counts as already done. Until you reach that Proof's level (Lv10 for Sera, Lv15 for Rio), you can't call your first Bond together with other Bonds.</li>
 </ol>
@@ -424,8 +424,10 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <dl>
 <dt>How to Unlock</dt><dd>Available from the start</dd>
 <dt>Weapons</dt><dd>Staff</dd>
-<dt>Abilities</dt><dd>Unleash Mana (Lv1)</dd>
-<dt>Magic</dt><dd>Rock (Lv1), Poison (Lv5), Aqua (Lv9), Venom (Lv10), Life Drain (Lv12), Gale (Lv13)...</dd>
+<dt>Abilities</dt><dd>Unleash Mana (Lv1), Dispel Presence (Lv10), Dispel Presence II (Lv25), Dispel Presence III (Lv45)</dd>
+<dt>Magic</dt><dd>Rock (Lv1), Arcane Ward (Lv1), Poison (Lv5), Aqua (Lv9), Venom (Lv10), Life Drain (Lv12)...</dd>
+<dt>Dispel Presence</dt><dd>An instant ability that cuts your aggro with every enemy that has you on its aggro list. Reduction: I: 20% at Lv10 → 35% at Lv24; II: 40% at Lv25 → 60% at Lv44; III: 65% at Lv45 → 80% at Lv60. Within each tier, the reduction scales linearly with level and stays fixed once it reaches the tier's maximum. Recast: 60 seconds for I and II, 90 seconds for III. Using any tier locks the other tiers for 15 seconds.</dd>
+<dt>Arcane Ward</dt><dd>A ward you can cast only on yourself. Absorbs physical and magic damage for 60 seconds. Capacity as a share of maximum HP: I: 15% at Lv1–5 → 25% at Lv27; II: 30% at Lv28 → 38% at Lv47; III: 40% at Lv48 → 50% at Lv60. Sorcerer and Spellsword use the same formula: linear in between, endpoint values outside the range. Cast: 1.5 seconds; MP: 9/28/45; Recast: 30/40/50 seconds. Casting any tier also locks the other tiers for 15 seconds. If you already have a ward, the one with more absorption remaining is kept.</dd>
 </dl></article><article class="card">
 <h4>Spellsword <small>SPS</small></h4>
 <p>A versatile do-it-all job. Wields both Sorcery and Divine Magic and fights up front too.</p>
@@ -433,7 +435,8 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <dt>How to Unlock</dt><dd>Available from the start</dd>
 <dt>Weapons</dt><dd>One-handed sword, shield</dd>
 <dt>Abilities</dt><dd>Spell Cascade (Lv1), Mana Exchange (Lv40), Spellsword Stance (Lv58)</dd>
-<dt>Magic</dt><dd>Heal (Lv3), Rock (Lv4), Aqua (Lv5), Guardwall (Lv7), Gale (Lv9), Holy Ray (Lv10)...</dd>
+<dt>Magic</dt><dd>Heal (Lv3), Rock (Lv4), Aqua (Lv5), Arcane Ward (Lv5), Guardwall (Lv7), Gale (Lv9)...</dd>
+<dt>Arcane Ward</dt><dd>A ward you can cast only on yourself. Absorbs physical and magic damage for 60 seconds. Capacity as a share of maximum HP: I: 15% at Lv1–5 → 25% at Lv27; II: 30% at Lv28 → 38% at Lv47; III: 40% at Lv48 → 50% at Lv60. Sorcerer and Spellsword use the same formula: linear in between, endpoint values outside the range. Cast: 1.5 seconds; MP: 9/28/45; Recast: 30/40/50 seconds. Casting any tier also locks the other tiers for 15 seconds. If you already have a ward, the one with more absorption remaining is kept.</dd>
 </dl></article><article class="card">
 <h4>Rogue <small>ROG</small></h4>
 <p>A nimble fighter. The Main Job trait "Dagger Vitals" boosts dagger critical hits, and Surprise Strike is available from Lv5. Also skilled at stealing and managing aggro.</p>
@@ -757,6 +760,6 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 </section>
 
 </main></div>
-<footer>Grion Guide — for version 1.5.509 (October 14, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
+<footer>Grion Guide — for version 1.5.527 (October 16, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
 </body>
 </html>

@@ -64,7 +64,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <header class="hero"><div class="in">
 <h1>グリオン攻略ガイド</h1>
 <p>Grimoire Online（グリオン）を初めて遊ぶ人のための手引き。操作・最初の一歩・レベル別の進め方・ゾーン・ジョブ・仲間・競クルル・Webポータルまで。</p>
-<span class="tag">対応版 1.5.509　更新 2026年10月14日</span> <a class="tag" href="https://towa219.github.io/GrimoireOnline/story/" style="text-decoration:none">📖 グリオン物語を読む</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+<span class="tag">対応版 1.5.527　更新 2026年10月16日</span> <a class="tag" href="https://towa219.github.io/GrimoireOnline/story/" style="text-decoration:none">📖 グリオン物語を読む</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
 </div></header>
 <div class="wrap">
 <nav class="toc"><b>もくじ</b><a href="#start">はじめに</a><a href="#ctrl">操作のまとめ</a><a href="#first">最初にやること</a><a href="#road">レベル別の進め方</a><a href="#quest">クエスト一覧</a><a href="#zone">ゾーン紹介</a><a href="#job">ジョブ紹介</a><a href="#kizuna">絆(仲間)</a><a href="#battle">戦いの基礎</a><a href="#derby">競クルル</a><a href="#web">Webポータル(スマホ)</a><a href="#play">釣り・採取・合成・グリカ</a><a href="#high">高レベルの遊び</a><a href="#item">アイテム</a><a href="#tips">便利な機能と設定</a><a href="#faq">困った時</a></nav>
@@ -115,7 +115,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <li><b>道具屋でポーションを2〜3本買う。</b>ポーション（HP60回復）は序盤の命綱。「初心者の加護」でLv1〜3は受ける傷が減りますが、それでも同時に2体に絡まれると危険です。</li>
 <li><b>東門を出て、ロックヒル北部でゴブリン（Lv1）とチキン（Lv1）を狩る。</b><kbd>TAB</kbd>で選んで<kbd>ENTER</kbd>→「攻撃」。1体ずつ相手にし、HPが半分を切ったら<kbd>H</kbd>で座って休むか町へ戻ります。Lv4〜5までここで。</li>
 <li><b>Lv3〜5でコウモリ・スライム・サソリへ。</b>コウモリとサソリは「足音に反応」するので、走らずに近づけば不意打ちされにくくなります。</li>
-<li><b>依頼を報告してグリムと装備、そして最初の仲間をもらう。</b>「ゴブリン退治」の褒美「冒険者の指輪」（HP/MP+10）はすぐ着けましょう（<kbd>P</kbd>）。報告すると絆の者が1人仲間になります。戦士・モンク・黒導士・ローグで始めた人には回復役の「白導士セラ」、白導士・紅導士で始めた人には盾役の「戦士リオ」。自分を<kbd>Z</kbd>で選んで<kbd>ENTER</kbd>→「絆の者を呼ぶ」で呼べます。ここから一気に楽になります。</li>
+<li><b>依頼を報告してグリムと装備、そして最初の仲間をもらう。</b>「ゴブリン退治」の褒美「冒険者の指輪」（HP/MP+10）はすぐ着けましょう（<kbd>P</kbd>）。報告すると絆の者が1人仲間になります。戦士・モンク・ローグで始めた人には回復役の「白導士セラ」、打たれ弱い黒導士と、白導士・紅導士で始めた人には盾役の「戦士リオ」。リオは挑発で敵を引き受けます。自分を<kbd>Z</kbd>で選んで<kbd>ENTER</kbd>→「絆の者を呼ぶ」で呼べます。ここから一気に楽になります。</li>
 <li><b>Lv6〜9はゴブリン番兵・カクタス、そしてロックヒル南部の入口へ。</b>「ゴブリンの頭目退治」（ギルド受付）を終えると冒険者ギルドの連続依頼が始まります。</li>
 <li><b>Lv10からは「絆の証」で仲間を増やす。</b>町の「導師エルナ」の「絆の証・癒」（Lv10・南部のアルマビー8匹）で「白導士セラ」、「訓練官ドルグ」の「絆の証・剣」（Lv15）で「戦士リオ」を呼べるようになります。最初の依頼でもらった方の証は済んだ扱いです。最初にもらった絆の者は、その証のレベル（セラはLv10・リオはLv15）に届くまで、ほかの絆の者と並べて呼べません。</li>
 </ol>
@@ -395,8 +395,10 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <dl>
 <dt>なり方</dt><dd>最初から</dd>
 <dt>武器</dt><dd>杖</dd>
-<dt>アビリティ</dt><dd>魔力解放(Lv1)</dd>
-<dt>魔法</dt><dd>ロック(Lv1)、ポイズン(Lv5)、アクア(Lv9)、ヴェノム(Lv10)、ドレイン(Lv12)、ゲイル(Lv13)…</dd>
+<dt>アビリティ</dt><dd>魔力解放(Lv1)、気配散らし(Lv10)、気配散らしII(Lv25)、気配散らしIII(Lv45)</dd>
+<dt>魔法</dt><dd>ロック(Lv1)、魔障壁(Lv1)、ポイズン(Lv5)、アクア(Lv9)、ヴェノム(Lv10)、ドレイン(Lv12)…</dd>
+<dt>気配散らし</dt><dd>自分を敵対心の表に持つ全敵の、自分への敵対心を減らす即時技。IはLv10で20%→Lv24で35%、IIはLv25で40%→Lv44で60%、IIIはLv45で65%→Lv60で80%。段の中ではレベルに比例して伸び、上限後は一定。I・IIの再使用は60秒、IIIは90秒。どれかを使うと、ほかの段も15秒使えません。</dd>
+<dt>魔障壁</dt><dd>自分だけに張る壁。60秒間、物理・魔法ダメージを吸収。最大HPに対してIはLv1〜5で15%→Lv27で25%、IIはLv28で30%→Lv47で38%、IIIはLv48で40%→Lv60で50%。両職で同じ式を使い、間は直線、範囲外は端の割合。詠唱1.5秒、MP9／28／45、再使用30／40／50秒。ほかの段も15秒待ちます。残量の多い壁が残ります。</dd>
 </dl></article><article class="card">
 <h4>紅導士 <small>RDM</small></h4>
 <p>何でもこなす万能職。黒・白の両魔法を扱い、前衛戦闘もこなす。</p>
@@ -404,7 +406,8 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <dt>なり方</dt><dd>最初から</dd>
 <dt>武器</dt><dd>片手剣・盾</dd>
 <dt>アビリティ</dt><dd>連鎖詠唱(Lv1)、魔力転換(Lv40)、剣魔の構え(Lv58)</dd>
-<dt>魔法</dt><dd>ヒール(Lv3)、ロック(Lv4)、アクア(Lv5)、プロテクト(Lv7)、ゲイル(Lv9)、ホーリーレイ(Lv10)…</dd>
+<dt>魔法</dt><dd>ヒール(Lv3)、ロック(Lv4)、アクア(Lv5)、魔障壁(Lv5)、プロテクト(Lv7)、ゲイル(Lv9)…</dd>
+<dt>魔障壁</dt><dd>自分だけに張る壁。60秒間、物理・魔法ダメージを吸収。最大HPに対してIはLv1〜5で15%→Lv27で25%、IIはLv28で30%→Lv47で38%、IIIはLv48で40%→Lv60で50%。両職で同じ式を使い、間は直線、範囲外は端の割合。詠唱1.5秒、MP9／28／45、再使用30／40／50秒。ほかの段も15秒待ちます。残量の多い壁が残ります。</dd>
 </dl></article><article class="card">
 <h4>ローグ <small>THF</small></h4>
 <p>俊敏な戦士。メインジョブの特性「短剣の急所」で短剣の会心を強め、Lv5から不意打ちを使える。盗む・敵対心の操作も得意とする。</p>
@@ -728,4 +731,4 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 </section>
 
 </main></div>
-<footer>グリオン攻略ガイド ─ 対応版 1.5.509（2026年10月14日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
+<footer>グリオン攻略ガイド ─ 対応版 1.5.527（2026年10月16日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
