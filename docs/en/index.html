@@ -93,10 +93,10 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <header class="hero"><div class="in">
 <h1>Grion Guide</h1>
 <p>A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.</p>
-<span class="tag">For version 1.5.527 · Updated October 16, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+<span class="tag">For version 1.5.560 · Updated October 21, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
 </div></header>
 <div class="wrap">
-<nav class="toc"><b>Contents</b><a href="#start">Introduction</a><a href="#ctrl">Controls at a Glance</a><a href="#first">First Steps</a><a href="#road">Progression by Level</a><a href="#quest">Quest List</a><a href="#zone">Zones</a><a href="#job">Jobs</a><a href="#kizuna">Bonds (Companions)</a><a href="#battle">Combat Basics</a><a href="#derby">Kururu Derby</a><a href="#web">Web Portal (Phone)</a><a href="#play">Fishing, Gathering, Crafting & Grica</a><a href="#high">High-Level Content</a><a href="#item">Items</a><a href="#tips">Handy Features & Settings</a><a href="#faq">Troubleshooting</a></nav>
+<nav class="toc"><b>Contents</b><a href="#start">Introduction</a><a href="#race">Race</a><a href="#ctrl">Controls at a Glance</a><a href="#first">First Steps</a><a href="#road">Progression by Level</a><a href="#quest">Quest List</a><a href="#zone">Zones</a><a href="#job">Jobs</a><a href="#kizuna">Bonds (Companions)</a><a href="#battle">Combat Basics</a><a href="#derby">Kururu Derby</a><a href="#web">Web Portal (Phone)</a><a href="#play">Fishing, Gathering, Crafting & Grica</a><a href="#high">High-Level Content</a><a href="#item">Items</a><a href="#tips">Handy Features & Settings</a><a href="#faq">Troubleshooting</a></nav>
 <main>
 
 <section id="start"><h2>Introduction</h2>
@@ -109,20 +109,23 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <li>Open "Grimoire Online" on your desktop, choose a login name and password, and press "Create Account".</li>
 <li>Create your character. Choose from 5 races, each in either gender, and 6 jobs (you can change jobs in town as often as you like later).</li>
 </ol>
-<div class="tw"><table><thead><tr><th>Race</th><th>Traits</th></tr></thead><tbody>
-<tr><td>Alden</td><td>A well-balanced, versatile race. Easy to play with any job. Pick this one if you can't decide</td></tr>
-<tr><td>Selva</td><td>Tall, strong, and devout. Excels in strength and mind, but weak in intelligence and agility</td></tr>
-<tr><td>Myur</td><td>Small, but unmatched in magical power. Fragile, yet with outstanding intelligence</td></tr>
-<tr><td>Ferin</td><td>Nimble beastfolk. Excel in dexterity and agility, and fight on the front line with a flurry of attacks</td></tr>
-<tr><td>Graud</td><td>A race of mighty giants. Excel in vitality and strength, but poor at magic</td></tr>
+<h3 id="race">Race</h3>
+<div class="tip"><b>You can enjoy the game with any race you choose.</b> Race differences aren't large enough to determine how strong a job is. Feel free to choose by looks or preference.</div>
+<p>The + and - stat values are racial modifiers added to a job's base values. HP and MP use percentage modifiers on the job's values. A job with 0 MP stays at 0 even with an MP modifier.</p>
+<div class="tw"><table><thead><tr><th>Race</th><th>Appearance</th><th>HP / MP</th><th>Stat Modifiers</th><th>Well-Suited Jobs</th></tr></thead><tbody>
+<tr><td><b>Alden</b></td><td>Average height</td><td>100% / 100%</td><td>No modifiers</td><td>All jobs. An easy choice when you're unsure</td></tr>
+<tr><td><b>Selva</b></td><td>Tall</td><td>104% / 92%</td><td>STR +3, DEX -1, VIT +1, AGI -2, INT -3, MND +3, CHR +1</td><td>Warrior, which uses STR; Cleric, with high MND</td></tr>
+<tr><td><b>Myur</b></td><td>Small</td><td>88% / 115%</td><td>STR -3, DEX -1, VIT -3, AGI +1, INT +4, MND +2, CHR -1</td><td>Sorcerer, with high INT and MP; Spellsword, which uses magic</td></tr>
+<tr><td><b>Ferin</b></td><td>Beastfolk with ears and a tail</td><td>98% / 94%</td><td>STR +1, DEX +3, VIT -1, AGI +4, MND -3, CHR -2</td><td>Rogue, with high DEX and AGI</td></tr>
+<tr><td><b>Graud</b></td><td>Especially large</td><td>112% / 80%</td><td>STR +2, DEX -1, VIT +4, AGI -2, INT -2, MND -3, CHR -3</td><td>Monk, with high HP and VIT; Warrior, which uses STR</td></tr>
 </tbody></table></div>
-<p class="dim">Race differences are just a little "seasoning" on your stats. Your character's playstyle is decided by job.</p>
+<p class="dim">Racial stat modifiers are fixed values. Your job determines how stats grow with each level. You can change jobs any number of times after creating your character, but you can't change your race.</p>
 <div class="tip">From the second time on, just click the desktop icon. The game checks for a new version at launch and updates itself.</div>
 </section>
 
 <section id="ctrl"><h2>Controls at a Glance (All You Need to Get Moving)</h2>
 <div class="note"><b>The most important flow:</b> Get close → select the target with <kbd>Tab</kbd> → press <kbd>Enter</kbd> to talk or examine (for monsters, choose "Attack" in the Command Menu). When nothing is open to close, <kbd>Esc</kbd> opens the Main Menu, and <kbd>,</kbd> (comma) opens the Controls List. There is no mouse cursor.</div>
-<div class="tip"><b>First-time controls are explained at the top of the screen:</b> When the moment comes, an explanation of the controls appears at the top of the screen for the Main Menu, the Controls List, the map, switching where your chat message goes, Auto-Gathering, and Grica, as well as for Auto-Hunt Mode once it becomes available and for mounting and dismounting once you receive the Kururu Whistle.</div>
+<div class="tip"><b>Beginner Guidance:</b> Guidance suited to the situation appears at the top of the screen when you first use a control or reach a milestone in your adventure. There are 28 scenes in all, including the Main Menu, Controls List, map, Quest List, chat recipient, auto-gathering, Grica, unlocking Auto-Hunt Mode, and receiving the Kururu Whistle. You can reread guidance you've already seen from "Beginner Guidance" in the Main Menu.</div>
 <figure><img src="../img/en/%E6%93%8D%E4%BD%9C%E4%B8%80%E8%A6%A7.jpg" alt="The Controls List window" loading="lazy" width="1120" height="630"><figcaption>The Controls List, opened with the comma (,) key. You can check every key here</figcaption></figure>
 <figure><img src="../img/en/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%AE%E6%93%8D%E4%BD%9C%E6%A1%88%E5%86%85.jpg" alt="First-time control hints appear at the top of the screen." loading="lazy" width="1120" height="630"><figcaption>First-time control hints appear at the top of the screen.</figcaption></figure>
 <h4>Moving</h4><table class="keys"><tbody><tr><th><kbd>W A S D</kbd></th><td>Walk forward, back, left, and right</td></tr><tr><th><kbd>Space</kbd></th><td>Jump (while riding a Kururu: Hover Run and glide; requires the Wind Harness)</td></tr><tr><th><kbd>Move the mouse while holding the right button</kbd></th><td>Rotate the camera</td></tr><tr><th><kbd>Hold both mouse buttons</kbd></th><td>Walk forward (move the mouse while holding to turn)</td></tr><tr><th><kbd>Mouse wheel</kbd></th><td>Camera distance</td></tr><tr><th><kbd>V</kbd></th><td>Mount or dismount a Kururu (requires a Kururu Whistle)</td></tr><tr><th><kbd>T</kbd></th><td>Walk behind the selected person (Follow)</td></tr></tbody></table>
@@ -130,7 +133,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <h4>Fighting</h4><table class="keys"><tbody><tr><th><kbd>Enter → choose "Attack"</kbd></th><td>Select an enemy and press Enter to open the Command Menu. Choose "Attack" with ↑↓ and press Enter: even from a distance, you walk up to the enemy automatically and keep attacking once you arrive (recommended. You can also attack with the R key; press R again to stop)</td></tr><tr><th><kbd>Enter → choose "Weapon Technique"</kbd></th><td>Use a Weapon Technique from "Weapon Technique" in the same Command Menu (when TP is 100% or more. The 1 key also works)</td></tr><tr><th><kbd>Enter → choose "Magic"</kbd></th><td>Cast spells from "Magic" in the same Command Menu (the 2 key also works)</td></tr><tr><th><kbd>E</kbd></th><td>Target whatever your ally is attacking (Assist. Typing /assist in chat does the same)</td></tr><tr><th><kbd>H</kbd></th><td>Sit and rest (recovers HP and MP)</td></tr><tr><th><kbd>G</kbd></th><td>Place a marker on your target</td></tr></tbody></table>
 <h4>Opening Windows</h4><table class="keys"><tbody><tr><th><kbd>ESC</kbd></th><td>Main Menu when nothing is open to close (every feature starts here)</td></tr><tr><th><kbd>P</kbd></th><td>Equipment & Items</td></tr><tr><th><kbd>C</kbd></th><td>Status, Kururu & Titles (press Tab in the window to switch)</td></tr><tr><th><kbd>U</kbd></th><td>Skills</td></tr><tr><th><kbd>L</kbd></th><td>List of techniques you've learned</td></tr><tr><th><kbd>J</kbd></th><td>Quests</td></tr><tr><th><kbd>M</kbd></th><td>Map</td></tr><tr><th><kbd>K</kbd></th><td>Area Scan (list of nearby monsters and allies). Choose an enemy with ↑↓ and press Enter to target it and walk up to it automatically (when you arrive, Enter → "Attack"). Choose an ally to walk to where they are</td></tr><tr><th><kbd>Y</kbd></th><td>Friends</td></tr><tr><th><kbd>B</kbd></th><td>Card Album (Grica). Press B again to close</td></tr><tr><th><kbd>X</kbd></th><td>Challenge your target to a Grica "Magic Circle" match. At a table, challenge the person across from you</td></tr><tr><th><kbd>N</kbd></th><td>Fishing (equip a rod and bait, then stand by water)</td></tr><tr><th><kbd>, (comma)</kbd></th><td>Controls List</td></tr></tbody></table>
 <h4>Other</h4><table class="keys"><tbody><tr><th><kbd>/ (slash)</kbd></th><td>Chat and command input</td></tr><tr><th><kbd>Ctrl+Q</kbd></th><td>Call in missing Bonds (companions) one by one</td></tr><tr><th><kbd>Ctrl+Shift+Q</kbd></th><td>Toggle Auto-Hunt Mode. From Lv30</td></tr></tbody></table>
-<p><b>Target markers:</b> The first time you select a target, a speech bubble explains them. The gold "▶◀" marks your Main Target; press <kbd>Enter</kbd> to choose an action such as Talk or Attack. The green "《 》" is your Sub Target, the one your commands such as Heal and buffs are used on; your enemy Main Target stays the same. Choose the ally to support with <kbd>↑</kbd><kbd>↓</kbd> or <kbd>F1</kbd>–<kbd>F6</kbd>.</p>
+<p><b>Target markers:</b> The first time you select a target, a speech bubble explains them. The gold "▶◀" marks your Main Target; press <kbd>Enter</kbd> to choose an action such as Talk or Attack. The green "《 》" is your Sub Target, the one your commands such as Heal and buffs are used on; your enemy Main Target stays the same. In the "Cast on whom?" list, choose the ally to support with <kbd>↑</kbd><kbd>↓</kbd> or <kbd>←</kbd><kbd>→</kbd>. You can also select them directly with <kbd>F1</kbd>–<kbd>F6</kbd>.</p>
 <figure><img src="../img/en/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E7%AA%93.jpg" alt="Command Menu" loading="lazy" width="1120" height="630"><figcaption>The Command Menu that appears when you select a target and press Enter: Attack, Magic, Weapon Technique, Abilities, Talk, Examine, Call Bond, and more</figcaption></figure>
 <h4>Talking to NPCs & Shopping</h4>
 <p class="dim">Close windows and prompts with <kbd>Esc</kbd>.</p>
@@ -155,7 +158,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <li><b>Inn (Sleeping Cat Inn)</b>: Talk to the landlady to fully restore HP and MP.</li>
 <li><b>Item Shop, Weapon Shop, Armor Shop</b>: Gear for the early game up to Lv10, Potions, fishing rods, and bait.</li>
 <li><b>The Rockhill fountain</b>: At the top of every hour it shoots up for about 30 seconds, and at 6 a.m., noon, and 6 p.m. it becomes a grand fountain. At night it glows (one hour in the game is 144 seconds of real time).</li>
-<li><b>Warehouse Keeper</b>: Store items you aren't using. <b>Mailbox</b>: Send items and letters to other players. <b>Auction Clerk</b>: Buy and sell items with other players (<code>/ah</code>).</li>
+<li><b>Warehouse Keeper</b>: Store items you aren't using. <b>Mailbox</b>: Send items and letters to other players. An envelope symbol appears on the screen when you have uncollected mail. <b>Auction Clerk</b>: Buy and sell items with other players (<code>/ah</code>).</li>
 <li><b>Job Instructor</b>: Change your job. Each job levels up separately.</li>
 <li><b>Guild Receptionist / Drillmaster Dorg / Mentor Elna / Pomly / Kururu Stable Master / Corridor Guide</b>: Explained in their own sections.</li>
 </ul>
@@ -198,7 +201,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <tr><td class="lv">Lv11</td><td><b>Deliver the Secret Letter</b><div class="dim">The informant has a secret letter. Collect it and bring it to me, the mayor.</div></td><td>Mayor</td><td>Gather and hand over items</td><td>90 Grim, Sage's Earring</td></tr>
 <tr><td class="lv">Lv17</td><td><b>Find the Holy Sigil Shard</b><div class="dim">A Goblin Sentry should be carrying the Holy Sigil Shard. Defeat it while you have this quest and bring the shard back.</div></td><td>Priest</td><td>Gather and hand over items</td><td>120 Grim, Warrior's Armlet</td></tr>
 <tr><td class="lv">Lv25</td><td><b>In Search of the Queen's Orb</b><div class="dim">They say the Queen's Orb lies in an old treasure chest at the edge of town. Open the chest while you have this quest and bring the Orb to me.</div></td><td>Scholar</td><td>Gather and hand over items</td><td>140 Grim, Thief's Dagger</td></tr>
-<tr><td class="lv">Lv10</td><td><b>The Angler's Path</b><div class="dim">Fishin' is a fine thing, it is. Equip a rod and bait, then by the water press the fishing key (N) or type /fish. Catch me 20 fish, and I'll hand over my Artisan Fishing Rod.</div></td><td>Angler Ved</td><td>Catch 20 fish</td><td>60 Grim, Artisan Fishing Rod</td></tr></tbody></table></div><h3>Adventurers' Guild Quests (Series)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv9</td><td><b>Taking Down the Goblin Leaders</b><div class="dim">Those pesky Goblin Sentries need dealing with. Take down 10 of them.</div></td><td>Guild Receptionist</td><td>Goblin Sentry ×10</td><td>70 Grim, Guard Helm</td></tr>
+<tr><td class="lv">Lv10</td><td><b>The Angler's Path</b><div class="dim">Fishin' is a fine thing, it is. Equip a rod and bait, then by the water press the fishing key (N) or type /fish. Catch me 10 fish, and I'll hand over my Artisan Fishing Rod.</div></td><td>Angler Ved</td><td>Catch 10 fish</td><td>60 Grim, Artisan Fishing Rod</td></tr></tbody></table></div><h3>Adventurers' Guild Quests (Series)</h3><div class="tw"><table><thead><tr><th>Lv</th><th>Quest</th><th>Given By</th><th>Objective</th><th>Reward</th></tr></thead><tbody><tr><td class="lv">Lv9</td><td><b>Taking Down the Goblin Leaders</b><div class="dim">Those pesky Goblin Sentries need dealing with. Take down 10 of them.</div></td><td>Guild Receptionist</td><td>Goblin Sentry ×10</td><td>70 Grim, Guard Helm</td></tr>
 <tr><td class="lv">Lv11</td><td><b>Sweeping Out the Orc Squads</b><div class="dim">Orcs are banding together in South Rockhill. Scatter about 12 of them for us.</div></td><td>Guild Receptionist</td><td>Orc ×12</td><td>75 Grim</td></tr>
 <tr><td class="lv">Lv12</td><td><b>The Warg Pack</b><div class="dim">Wargs have shown up on the road. Thin out about 10 of them. Travelers can't get through.</div></td><td>Guild Receptionist</td><td>Warg ×10</td><td>85 Grim</td></tr>
 <tr><td class="lv">Lv13</td><td><b>Sabercat Hunting Grounds</b><div class="dim">Take down 10 Sabercats in Mistveil Jungle. We want our hunting grounds back.</div></td><td>Guild Receptionist</td><td>Sabercat ×10</td><td>95 Grim</td></tr>
@@ -396,7 +399,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <p>At the start you can choose from the 6 basic jobs (Warrior, Monk, Cleric, Sorcerer, Spellsword, Rogue). The 5 Expert Jobs unlock through quests around Lv30. You can change jobs anytime with the Job Instructor in town, and each job levels up separately. <b>If you can't decide, pick Warrior or Cleric</b>. Warriors have high HP and hunt easily solo; Clerics are steady once you call your Bonds.</p>
 <div class="grid2"><article class="card">
 <h4>Warrior <small>WRR</small></h4>
-<p>A combat pro who handles every kind of weapon. Excels on the front line with high HP and STR.</p>
+<p>A combat expert who wields all kinds of weapons. High HP and STR make Warrior excel on the front line.</p>
 <dl>
 <dt>How to Unlock</dt><dd>Available from the start</dd>
 <dt>Weapons</dt><dd>Anything: one-handed swords, axes, two-handed swords, clubs, and more</dd>
@@ -420,13 +423,13 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <dt>Magic</dt><dd>Heal (Lv1), Holy Ray (Lv3), Light Blast (Lv5), Guardwall (Lv7), Cleanse Poison (Lv7), Heal II (Lv11)...</dd>
 </dl></article><article class="card">
 <h4>Sorcerer <small>SOR</small></h4>
-<p>A specialist in offensive magic. Unleashes powerful spells with the highest INT and MP.</p>
+<p>An offensive magic specialist. Top-class INT and MP fuel powerful spells.</p>
 <dl>
 <dt>How to Unlock</dt><dd>Available from the start</dd>
 <dt>Weapons</dt><dd>Staff</dd>
 <dt>Abilities</dt><dd>Unleash Mana (Lv1), Dispel Presence (Lv10), Dispel Presence II (Lv25), Dispel Presence III (Lv45)</dd>
 <dt>Magic</dt><dd>Rock (Lv1), Arcane Ward (Lv1), Poison (Lv5), Aqua (Lv9), Venom (Lv10), Life Drain (Lv12)...</dd>
-<dt>Dispel Presence</dt><dd>An instant ability that cuts your aggro with every enemy that has you on its aggro list. Reduction: I: 20% at Lv10 → 35% at Lv24; II: 40% at Lv25 → 60% at Lv44; III: 65% at Lv45 → 80% at Lv60. Within each tier, the reduction scales linearly with level and stays fixed once it reaches the tier's maximum. Recast: 60 seconds for I and II, 90 seconds for III. Using any tier locks the other tiers for 15 seconds.</dd>
+<dt>Dispel Presence</dt><dd>An instant ability that cuts your aggro with every enemy that has you on its aggro list. Reduction: I: 50% at Lv10 → 65% at Lv24; II: 70% at Lv25 → 80% at Lv44; III: 85% at Lv45 → 95% at Lv60. Within each tier, the reduction scales linearly with level and stays fixed once it reaches the tier's maximum. Recast: 60 seconds for I and II, 90 seconds for III. Using any tier locks the other tiers for 15 seconds.</dd>
 <dt>Arcane Ward</dt><dd>A ward you can cast only on yourself. Absorbs physical and magic damage for 60 seconds. Capacity as a share of maximum HP: I: 15% at Lv1–5 → 25% at Lv27; II: 30% at Lv28 → 38% at Lv47; III: 40% at Lv48 → 50% at Lv60. Sorcerer and Spellsword use the same formula: linear in between, endpoint values outside the range. Cast: 1.5 seconds; MP: 9/28/45; Recast: 30/40/50 seconds. Casting any tier also locks the other tiers for 15 seconds. If you already have a ward, the one with more absorption remaining is kept.</dd>
 </dl></article><article class="card">
 <h4>Spellsword <small>SPS</small></h4>
@@ -561,6 +564,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <p>Get the Kururu Whistle from the Kururu Stable Master's quests (Lv12–16) and you can ride a Kururu with <kbd>V</kbd>. Riding speed starts at 1.5× walking speed and rises as Affection grows, reaching 2.0× at Affection Lv6. Talk to the <b>Kururu Race Desk</b> in town while mounted to take on a time trial around North Rockhill (no prizes, just records).</p>
 <div class="note">Because Kururu speed was rebalanced, personal bests and standings for the time trial were reset once in the update that made this change.</div>
 <h3>Raising Your Kururu</h3>
+<p>A character who doesn't yet have a Kururu Whistle receives one <b>Kururu Trial Ride Ticket</b> through Guild Mail. Use it from your bag to ride a Kururu for a set amount of logged-in time. The remaining time appears on screen and doesn't decrease while you're logged out. You can earn the whistle through the Kururu Stable Master's quests.</p>
 <figure><img src="../img/en/%E3%82%AF%E3%83%AB%E3%83%AB%E3%81%AE%E7%8A%B6%E6%85%8B.jpg" alt="The Kururu tab in the Status window shows its level and affection." loading="lazy" width="1120" height="630"><figcaption>The Kururu tab in the Status window shows its level and affection.</figcaption></figure>
 <figure><img src="../img/en/%E3%82%AF%E3%83%AB%E3%83%AB%E3%81%AE%E3%81%88%E3%81%95%E7%A2%BA%E8%AA%8D.jpg" alt="The feeding confirmation shows the affection gain and today&#x27;s remaining allowance." loading="lazy" width="1120" height="630"><figcaption>The feeding confirmation shows the affection gain and today's remaining allowance.</figcaption></figure>
 <ul>
@@ -577,15 +581,17 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 </section>
 
 <section id="web"><h2>Web Portal (Play in a Phone or PC Browser)</h2>
-<p>Open <a href="https://grimoire-online.org" target="_blank" rel="noopener">https://grimoire-online.org</a> in your browser for 4 games you can play without launching the game. Sign in with <b>the same login name and password as the game</b> and choose a character to play (items and Grim are shared with the game). You can also create a new account and character on the portal alone. No email registration or codes needed.</p>
+<p>Open <a href="https://grimoire-online.org" target="_blank" rel="noopener">https://grimoire-online.org</a> in your browser for 5 games you can play without launching the game. Sign in with <b>the same login name and password as the game</b> and choose a character to play (items and Grim are shared with the game). You can also create a new account and character on the portal alone. No email registration or codes needed.</p>
 <div class="tw"><table><thead><tr><th>Game</th><th>What You Can Do</th><th>Price</th></tr></thead><tbody>
 <tr><td><b>Kururu Derby</b></td><td>Check the race card and odds, buy tickets, and watch races live. You can also see past races and winner announcements</td><td>Tickets from 100 Grim</td></tr>
 <tr><td><b>Claw Machine</b></td><td>Grab capsules and 3D Grica with the claw. Prizes are Grimoire Cards</td><td>50 Grim per play</td></tr>
 <tr><td><b>Grica "Magic Circle"</b></td><td>Fight over a seven-point circle with a 4-card deck. Play vs. NPCs or other players, with lessons under "How to Play"</td><td>Free</td></tr>
-<tr><td><b>Arcane Forager's Notebook (Back Door)</b></td><td>Hands-on minigames for woodcutting, mining, herb gathering, and fishing. What you gather goes into your in-game bag. Types matching the day's element yield more, and Moonglow Herb appears only at night</td><td>12 free Gathering Tickets per day; extra tickets cost 50 Grim each</td></tr>
+<tr><td><b>Arcane Forager's Notebook (Back Door)</b></td><td>Hands-on minigames for woodcutting, mining, and herb gathering. What you gather goes into your in-game bag. Types matching the day's element yield more, and Moonglow Herb appears only at night</td><td>12 free Gathering Tickets per day; extra tickets cost 50 Grim each (up to 8 per day)</td></tr>
+<tr><td><b>Waterside Fishing Grounds</b></td><td>Fishing where you read the float and answer the fish's pull with your rod. Fish you catch go into your in-game bag, and their size (cm) and your personal best are recorded. Fishing Skill is shared with the game (see "Fishing" below for how to play)</td><td>12 free Fishing Tickets per day; extra tickets cost 50 Grim each (up to 8 per day). Separate from Gathering Tickets</td></tr>
 </tbody></table></div>
 <ul>
 <li>The 200 Grim Login Bonus is shared between the game and the portal (once per day). Characters created on the portal also get a creation bonus.</li>
+<li>Gathering Tickets and Fishing Tickets reset for the new day at 6:00 AM Japan time. Tickets you bought can't be carried over to the next day either.</li>
 <li>The scrolling banner (announcements) at the top of the screen can be closed with the × in the top right.</li>
 <li>To play the full game on your phone, use "Play on Phone" in the Start menu (control your PC's screen directly from a browser on a phone connected to the same Wi-Fi as the PC).</li>
 </ul>
@@ -594,7 +600,44 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <section id="play"><h2>Fishing, Gathering, Crafting & Grica</h2>
 <h3>Fishing</h3>
 <figure><img src="../img/en/%E6%B0%B4%E8%BE%BA.jpg" alt="A waterside in North Rockhill" loading="lazy" width="1120" height="630"><figcaption>You can fish at any water's edge, pond or river</figcaption></figure>
-<p>Buy a <b>Wooden Fishing Rod</b> (equip in main hand) and <b>bait</b> (Earthworms, etc.; equip in sub slot) at the item shop, then press <kbd>N</kbd> (or <code>/fish</code>) by the water. When a fish bites, press <kbd>Enter</kbd> the moment the bars line up. Different bait catches different fish (Earthworm = small fish, River Shrimp = medium, Glowfly = big or rare fish, Phantom Fish Paste = legendary fish), and rods grow stronger from Wooden → Artisan → the legendary Dragonwhisker. Angler Ved's quest in town (Lv10, 20 fish) earns you the Artisan Fishing Rod. The Fish Wholesaler buys your catch in lots of 10, and the daily special fetches a high price. The buying limit resets in about a week.</p>
+<p>Buy a <b>Wooden Fishing Rod</b> (main) and <b>bait</b> (such as Earthworms; sub) at the Item Shop. Press <kbd>N</kbd> (or <code>/fish</code>) by the water to automatically equip a rod and bait from your bag and ready your line. After each attempt, you stay ready with that gear equipped; while the result card is shown, press <kbd>Enter</kbd> to close it and cast again. The same bait is replenished automatically if more remains in your bag; if only other bait remains, a selection window opens. While ready, press <kbd>,</kbd> (the Controls List key) to change bait. Press <kbd>N</kbd> again or <kbd>Esc</kbd>, walk, enter combat, fall, change zones, or log out to stop and restore your previous gear. Different bait catches different fish (Earthworm = small fish, River Shrimp = medium fish, Glowfly = big or rare fish, Phantom Fish Paste = legendary fish), and rods grow stronger from Wooden to Artisan to the legendary Dragonwhisker. Angler Ved's quest in town (Lv10, 10 fish) rewards the Artisan Fishing Rod. The Fish Wholesaler buys catches in lots of 10; the daily special pays more, and the buying limit resets in about a week.</p>
+<h3>The Web "Waterside Fishing Grounds"</h3>
+<p>The Web Portal's "Waterside Fishing Grounds" plays differently from fishing in the game. Use 1 Fishing Ticket to cast (<kbd>N</kbd> or "Cast"), then go through these steps.</p>
+<ol>
+<li><b>Read the float</b>: Don't press while the float only twitches; wait (hook too early and it gets away). When it sinks hard, hook it with <kbd>Space</kbd> or <kbd>Enter</kbd>. Hook too late and it also gets away.</li>
+<li><b>The fight</b>: While the fish rests, hold <kbd>Space</kbd>/<kbd>Enter</kbd> to reel. When it runs, tilt the rod opposite to its run (<kbd>←</kbd><kbd>→</kbd>); when it dives, raise the rod (<kbd>↑</kbd>); when it jumps, lower it (<kbd>↓</kbd>). A small sign appears before the fish moves.</li>
+<li>Watch the <b>Tension</b> meter (Slack · Good · About to snap) and the <b>Distance left</b> (in m) on screen, and land the fish by pulling it all the way in while the tension is "Good". The line snaps if you pull too hard, and also if you do nothing.</li>
+<li><b>Result</b>: The size (cm) of your catch is shown, with a notice when you beat your personal best. The fish goes into your in-game bag.</li>
+</ol>
+<ul>
+<li>Small fish can be caught just by reeling and tilting the rod left and right. Diving and jumping start with medium-sized fish.</li>
+<li>You use the best rod in your bag (or a Loaner Rod if you have none). Choose one bait from your bag to use; better bait hooks bigger fish. Big fish beyond your Rod Power snap the line almost every time, however skilled you are. Even without bait, you can fish with Loaner Bait (like an Earthworm), which never runs out.</li>
+<li>Fishing Skill is one and the same in the game and on the Web. Raising it in either place increases the same number.</li>
+<li>On a phone, use the on-screen buttons (Hook/Reel and the arrows) for the same controls.</li>
+</ul>
+<h4>"Now" and "To do" at the Top of the Screen</h4>
+<figure><img src="../img/en/%E6%B0%B4%E8%BE%BA%E3%81%AE%E9%87%A3%E3%82%8A%E5%A0%B4_%E3%82%84%E3%82%8A%E5%8F%96%E3%82%8A.jpg" alt="A fight at the Waterside Fishing Grounds, with &quot;Now&quot; and a red &quot;To do&quot; at the top and an arrow in the pond" loading="lazy" width="1120" height="630"><figcaption>The small upper line is "Now" and the large lower line is "To do". Red means "right away"</figcaption></figure>
+<p>While you fish, two lines of guidance appear at the top of the screen.</p>
+<ul>
+<li><b>Now</b>: What is happening (watching the float, the float twitched, the float sank hard, the fish ran right, and so on). During the fight, the tension and the distance to go are added at the end.</li>
+<li><b>To do</b>: The one thing to press right now, with the name of the key (on a phone, the name of the on-screen button). If you're unsure, just press what this line says.</li>
+</ul>
+<p>The color of "To do" shows how urgent it is.</p>
+<ul>
+<li><b>Teal</b>: Wait. Don't press yet.</li>
+<li><b>Gold</b>: Press (cast, reel, and so on).</li>
+<li><b>Red</b>: Press right away (the float sank, the fish is about to move, the rod is tilted the wrong way, or the line is about to snap).</li>
+</ul>
+<p>While your skill is low (up to 30), a big arrow also appears in the pond, and the edge of the button to press lights up.</p>
+<h4>Expert Mode</h4>
+<figure><img src="../img/en/%E6%B0%B4%E8%BE%BA%E3%81%AE%E9%87%A3%E3%82%8A%E5%A0%B4_%E6%8A%95%E3%81%92%E3%82%8B%E5%89%8D.jpg" alt="The Waterside Fishing Grounds control panel, with the &quot;Expert mode&quot; checkbox at the very bottom" loading="lazy" width="1120" height="630"><figcaption>Switch it with the "Expert mode" checkbox at the very bottom of the control panel</figcaption></figure>
+<p>Check <b>"Expert mode"</b> at the very bottom of the control panel to play without the "Now" and "To do" guides and the arrows. It's for players who are used to fishing and want to read the float and the fish with their own eyes.</p>
+<ul>
+<li>The tension, the distance, the fish's movements (such as "Running right!"), and the result still appear as before.</li>
+<li>The fish you can catch, their size, and the rewards don't change. Only the guides disappear.</li>
+<li>Your choice is saved to your character and shared between fishing on the Web and in the game. It starts off (guides shown).</li>
+</ul>
+<figure><img src="../img/en/%E6%B0%B4%E8%BE%BA%E3%81%AE%E9%87%A3%E3%82%8A%E5%A0%B4_%E4%B8%8A%E7%B4%9A%E8%80%85.jpg" alt="A fight in Expert mode: no &quot;Now&quot;/&quot;To do&quot; guides or arrows, only the text describing the fish&#x27;s movements" loading="lazy" width="1120" height="630"><figcaption>Expert mode: no "Now"/"To do" guides or arrows, only the fish's movements</figcaption></figure>
 <h3>Gathering (Woodcutting, Mining, Herb Gathering)</h3>
 <p>Press <kbd>Enter</kbd> at a tree, rock, or plant Gathering Point in the field to start working; when the bar fills, you get materials (Logs, Copper Ore, Healing Herbs, and more). Higher tiers yield thicker trees and rarer ores. You can gather the same materials in the Web Portal's "Arcane Forager's Notebook", too.</p>
 <h3>Crafting (Veil Village)</h3>
@@ -672,6 +715,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <tr><td>Voice Tonic</td><td>A medicine that cures silence.</td></tr>
 <tr><td>Grilled Mutton</td><td>Skewered grilled mutton. Raises attack and defense for a while.</td></tr>
 <tr><td>Fresh Fish</td><td>A fish caught by fishing. Eating it restores a little HP. Also a crafting material.</td></tr>
+<tr><td>Kururu Trial Ride Ticket</td><td>Use it to ride a Kururu for 1 hour of time logged in. It is used up when you use it.</td></tr>
 <tr><td>Salt-Grilled Fish</td><td>A simple dish of salt-grilled river fish. Strength wanes more slowly for a while.</td></tr>
 <tr><td>Herbed Moonglow Fish</td><td>Moonglow Fish roasted on Fragrant Herbs. Strength slowly wells up.</td></tr>
 <tr><td>Stardust Soup</td><td>A faintly glowing soup simmered from Stardust Herb. Brings deep rest.</td></tr>
@@ -700,7 +744,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <li><b>Graphics Quality</b>: Choose from Low, Medium, High, or Ultra. Changes are saved right away.</li>
 <li><b>Auto-Adjust</b>: Press Enter to measure your PC's performance and set the Graphics Quality and render scale to match. The result is shown in the Graphics Quality field and saved. The first time you launch the game, it also measures and chooses automatically.</li>
 <li><b>Enable Sound / Master Volume / BGM / Sound Effects / Voice (skill name callouts)</b>: Set "Voice" to 0 to turn off the spoken names of techniques and spells.</li>
-<li><b>Show Beginner's Guide at bottom</b>: Control hints (Tips) that scroll along the bottom of the screen. Uncheck it once you're used to things to hide them.</li>
+<li><b>Show Beginner Tips at the bottom of the screen</b>: Control hints (Tips) scroll along the bottom of the screen. This is separate from "Beginner Guidance", which appears at the top for each situation. Once you're used to the controls, clear the checkbox to hide them.</li>
 <li><b>Show active quests at bottom</b>: Scrolls your active quests and their progress along the bottom of the screen. It can be turned on and off separately from the Beginner's Guide; with both on, they alternate.</li>
 <li><b>Read Beginner's Guide aloud</b>: Reads the hints at the bottom of the screen aloud.</li>
 <li><b>Language</b>: Choose between Japanese and English. The display switches as soon as you choose.</li>
@@ -714,7 +758,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <li>Riding a Kururu makes you move faster. You can't start a fight while mounted (you dismount automatically).</li>
 <li>You get a notice when someone on your Friends list (<kbd>Y</kbd>) logs in.</li>
 <li>If you see a quest "!" but can't accept it, either your level is too low or you haven't finished the previous quest (the required level appears like "!Lv30").</li>
-<li>Materials you gather in the Web "Arcane Forager's Notebook" go straight into your bag while you're logged into the game.</li>
+<li>Materials you gather in the Web "Arcane Forager's Notebook" and fish you catch in the "Waterside Fishing Grounds" go straight into your bag, even while you're logged into the game.</li>
 </ul>
 <h3>Chat & Commands (type with <kbd>/</kbd>)</h3>
 <div class="tw"><table class="keys"><tbody><tr><th><code>/help</code></th><td>Show the list of commands</td></tr>
@@ -760,6 +804,6 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 </section>
 
 </main></div>
-<footer>Grion Guide — for version 1.5.527 (October 16, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
+<footer>Grion Guide — for version 1.5.560 (October 21, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
 </body>
 </html>
