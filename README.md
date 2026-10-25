@@ -1,6 +1,6 @@
 # グリモワールオンライン（グリオン）
 
-グリモワールオンライン（グリオン）は、みんなで遊ぶ MMORPG 風のオンラインゲームです。
+グリモワールオンライン（グリオン）は、無料の本格3D MMORPGです。
 
 ## リンク
 
@@ -27,7 +27,7 @@ Studio.Towa27@gmail.com
 
 # Grimoire Online (Grion)
 
-Grimoire Online (Grion) is an MMORPG-style online game to play together.
+Grimoire Online (Grion) is a free 3D MMORPG.
 
 ## Links
 
