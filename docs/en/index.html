@@ -30,6 +30,8 @@ a{color:var(--blue)}img{max-width:100%;height:auto;display:block}
 .hero h1{font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:.04em;text-wrap:balance}
 .hero p{margin:0;color:#dfeee2;font-size:15px}
 .hero .tag{display:inline-block;margin-top:14px;padding:3px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:12px;letter-spacing:.12em;color:#fff}
+.hero-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-links .tag{margin-top:0}
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:16px;display:grid;grid-template-columns:230px 1fr;gap:28px;padding-block:20px 60px}
 nav.toc{position:sticky;top:12px;align-self:start;font-size:13px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;max-height:calc(100vh - 24px);overflow:auto}
 nav.toc b{display:block;margin-bottom:6px;color:var(--green);letter-spacing:.1em;font-size:11px}
@@ -93,14 +95,15 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <header class="hero"><div class="in">
 <h1>Grion Guide</h1>
 <p>A guide for first-time players of Grimoire Online (Grion). Covers controls, first steps, progression by level, zones, jobs, companions, Kururu Derby, and the Web Portal.</p>
-<span class="tag">For version 1.5.571 · Updated October 24, 2026</span> <a class="tag" href="story/" style="text-decoration:none">📖 Read the Grion Story</a> <a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+<span class="tag">For version 1.5.571 · Updated October 25, 2026</span>
+<div class="hero-links"><a class="tag" href="story/" style="text-decoration:none">📖 The Story of Grion</a><a class="tag" href="controller/" style="text-decoration:none">🎮 Controller Guide</a><a class="tag" href="https://grimoire-online.org" target="_blank" rel="noopener" style="text-decoration:none">🌐 Play on the Web</a><a class="tag lang" href="https://towa219.github.io/GrimoireOnline/" hreflang="ja" lang="ja" style="text-decoration:none">日本語</a></div>
 </div></header>
 <div class="wrap">
 <nav class="toc"><b>Contents</b><a href="#start">Introduction</a><a href="#race">Race</a><a href="#ctrl">Controls at a Glance</a><a href="#first">First Steps</a><a href="#road">Progression by Level</a><a href="#quest">Quest List</a><a href="#zone">Zones</a><a href="#job">Jobs</a><a href="#kizuna">Bonds (Companions)</a><a href="#battle">Combat Basics</a><a href="#derby">Kururu Derby</a><a href="#web">Web Portal (Phone)</a><a href="#play">Fishing, Gathering, Crafting & Grica</a><a href="#high">High-Level Content</a><a href="#item">Items</a><a href="#tips">Handy Features & Settings</a><a href="#faq">Troubleshooting</a></nav>
 <main>
 
 <section id="start"><h2>Introduction</h2>
-<p>Grion is an online RPG set in a world of swords and magic, where you hunt monsters with friends, complete quests, and grow stronger. It's free to play (Windows 11/10). Defeating monsters outside town earns you EXP and Grim (money), and you can reach up to level 60.</p>
+<p>Grion is an online RPG set in a world of swords and magic, where you hunt monsters with friends, complete quests, and grow stronger. It's free to play during Early Access (Windows 11/10). If the full release becomes paid, everyone who played before then keeps playing for free. Defeating monsters outside town earns you EXP and Grim (money), and you can reach up to level 60.</p>
 <div class="note"><b>Early Access</b>: For now, you can play <b>up to Lv60</b> and <b>up to the summit of the Sky Corridor</b>. Lv61–70 and the "Sky Capital Arc" will become playable in the full release.</div>
 <figure><img src="../img/en/%E7%8E%8B%E5%9F%8E%E5%A4%A7%E9%80%9A%E3%82%8A.jpg" alt="The castle avenue in Rockhill Town" loading="lazy" width="1120" height="630"><figcaption>Rockhill, the town where your journey begins. In the distance stands the castle, home of the Lord of the Castle</figcaption></figure>
 <a class="story" href="story/"><img src="../story/img/hero.jpg" alt="An adventurer gazing up at the Grimoire floating in the sky" loading="lazy"><span><b>The Grion Story</b>This world is written in a single Grimoire floating in the sky. A tale of the Seven Crowns and a city that vanished into the sky, with plans for sequels beyond Lv60. Read it before you play, and towns and monsters will look different to you.</span></a>
@@ -668,7 +671,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 
 <section id="high"><h2>What Opens Up at High Level</h2>
 <h3>Sky Corridor (Anyone)</h3>
-<p>Talk to the Corridor Guide in town to be sent to a tower you climb by jumping, with no fighting. Falling won't kill you; you just return to the highest Brazier you've passed. A 10-minute time trial starts when you enter: 80 Grim at each of the 4 Braziers along the way, 200 Grim at the summit, and a bonus for climbing fast (under 3 min +600, under 5 min +700, under 8 min +350, under 10 min +100). Rewards are limited to 3 runs a day, up to 1,500 Grim per day (you can keep climbing after that). Reaching the top earns the title "Skyrunner", and doing it in under 3 minutes earns "Skysoarer". Your jumps are higher only inside the Corridor. Bonds and Kururu can't come in.</p>
+<p>Talk to the Corridor Guide in town to be sent to a tower you climb by jumping, with no fighting. Falling won't kill you; you just return to the highest Brazier you've passed. A 10-minute time trial starts when you enter. The Braziers along the way only mark your progress; Grim is awarded only when you reach the summit. Your first clear of the day pays 300–600 Grim (250 Grim plus a speed bonus: under 3 min +350, under 5 min +300, under 8 min +175, under 10 min +50), and later clears pay 10%. Rewards are limited to 3 clears a day, up to 1,500 Grim per day (you can keep climbing after that). Reaching the top earns the title "Skyrunner", and doing it in under 3 minutes earns "Skysoarer". Your jumps are higher only inside the Corridor. Bonds and Kururu can't come in.</p>
 <p><b>The course changes daily</b> (switching at 4 a.m. every morning), rotating in this order: <b>Weathervane Spiral</b> (blue sky and stone footholds) → <b>Crimson Cloud Isles</b> (sunset clouds; shuttling platforms, rising-and-falling platforms, and bounce pads) → <b>Starcrossing Skybridge</b> (night sky; star platforms, platforms that appear and vanish, and a single-plank bridge). Crimson Cloud and Starcrossing are harder: every jump differs in distance and height, with round, square, triangular, and hexagonal footholds, spots where you drop down before climbing, and forks that dead-end. Only the bottom two tiers have a route anyone can climb. Today's course appears above the guide's head as "Today: ...". Personal bests and record times are kept per course. Chimes ring at the checkpoint Braziers and the summit. What lies beyond the summit (the Sky Capital Arc) opens in the full release.</p>
 <h3>New Adventures with Your Kururu (for Kururu Whistle holders)</h3>
 <p>Once you have the Kururu Whistle, new quests are added that make use of moves only a Kururu can make (such as Hover Run and gliding). Where to go and what you can do there is for you to discover as you play.</p>
@@ -752,7 +755,7 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 <ul>
 <li><b>Important Items</b>: Items entrusted to you for quests (proofs, maps, passes, etc.). They don't take up bag space and can't be sold.</li>
 <li><b>Essences</b>: Crafting ingredients dropped by monsters. Fire = metal, Ice = sharpening, Wind = cloth and leather, Earth = ore and wood, Thunder = high-grade arms and armor, Water = medicine and food.</li>
-<li><b>Treasure Chest Key</b>: Opens treasure chests found in the zones. Monsters rarely drop them. The Scholar's quest "In Search of the Queen's Orb" (Lv25) has you open an old treasure chest on the outskirts of town.</li>
+<li><b>Treasure Chest Key</b>: Opens treasure chests found in the zones. Monsters rarely drop them. The Scholar's quest "In Search of the Queen's Orb" (Lv25) has you open an old treasure chest on the outskirts of town. After someone opens the regular treasure chest in North Rockhill, it reappears elsewhere in the same zone. The old quest chest stays in place.</li>
 <li><b>Rare / Bound</b>: You can hold only one of a [Rare] item, and [Bound] items can't be given to others.</li>
 <li><b>Items that overflow your Bag</b>: They go to Storage first. If Storage is also full, they arrive by Mail. An on-screen notice tells you where they went.</li>
 </ul>
@@ -829,6 +832,6 @@ kbd{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 </section>
 
 </main></div>
-<footer>Grion Guide — for version 1.5.571 (October 24, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
+<footer>Grion Guide — for version 1.5.571 (October 25, 2026). The numbers are generated automatically from the game's data tables. Contents may change with game updates.<br>Update news: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X (formerly Twitter) @GrimoireOnline</a></footer>
 </body>
 </html>

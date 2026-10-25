@@ -10,6 +10,8 @@ a{color:var(--blue)}img{max-width:100%;height:auto;display:block}
 .hero h1{font-family:"Shippori Mincho B1","Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(28px,5vw,44px);margin:0 0 6px;letter-spacing:.04em;text-wrap:balance}
 .hero p{margin:0;color:#dfeee2;font-size:15px}
 .hero .tag{display:inline-block;margin-top:14px;padding:3px 12px;border:1px solid #ffffff66;border-radius:999px;font-size:12px;letter-spacing:.12em;color:#fff}
+.hero-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hero-links .tag{margin-top:0}
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:16px;display:grid;grid-template-columns:230px 1fr;gap:28px;padding-block:20px 60px}
 nav.toc{position:sticky;top:12px;align-self:start;font-size:13px;background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;max-height:calc(100vh - 24px);overflow:auto}
 nav.toc b{display:block;margin-bottom:6px;color:var(--green);letter-spacing:.1em;font-size:11px}
@@ -64,14 +66,15 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <header class="hero"><div class="in">
 <h1>グリオン攻略ガイド</h1>
 <p>Grimoire Online（グリオン）を初めて遊ぶ人のための手引き。操作・最初の一歩・レベル別の進め方・ゾーン・ジョブ・仲間・競クルル・Webポータルまで。</p>
-<span class="tag">対応版 1.5.571　更新 2026年10月24日</span> <a class="tag" href="https://towa219.github.io/GrimoireOnline/story/" style="text-decoration:none">📖 グリオン物語を読む</a> <a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a>
+<span class="tag">対応版 1.5.571　更新 2026年10月25日</span>
+<div class="hero-links"><a class="tag" href="https://towa219.github.io/GrimoireOnline/story/" style="text-decoration:none">📖 グリオン物語</a><a class="tag" href="https://towa219.github.io/GrimoireOnline/controller/" style="text-decoration:none">🎮 ボタンの割り当て</a><a class="tag" href="https://grimoire-online.org" target="_blank" rel="noopener" style="text-decoration:none">🌐 Web 版で遊ぶ</a><a class="tag" href="https://towa219.github.io/GrimoireOnline/en/" hreflang="en" lang="en" style="text-decoration:none">English</a></div>
 </div></header>
 <div class="wrap">
 <nav class="toc"><b>もくじ</b><a href="#start">はじめに</a><a href="#race">種族</a><a href="#ctrl">操作のまとめ</a><a href="#first">最初にやること</a><a href="#road">レベル別の進め方</a><a href="#quest">クエスト一覧</a><a href="#zone">ゾーン紹介</a><a href="#job">ジョブ紹介</a><a href="#kizuna">絆(仲間)</a><a href="#battle">戦いの基礎</a><a href="#derby">競クルル</a><a href="#web">Webポータル(スマホ)</a><a href="#play">釣り・採取・合成・グリカ</a><a href="#high">高レベルの遊び</a><a href="#item">アイテム</a><a href="#tips">便利な機能と設定</a><a href="#faq">困った時</a></nav>
 <main>
 
 <section id="start"><h2>はじめに</h2>
-<p>グリオンは、剣と魔法の世界で仲間と一緒に魔物を狩り、依頼をこなして強くなるオンラインRPGです。無料で遊べます（Windows 11／10）。町の外の魔物を倒すと経験値と「グリム」（お金）が手に入り、レベルは最大60まで上がります。</p>
+<p>グリオンは、剣と魔法の世界で仲間と一緒に魔物を狩り、依頼をこなして強くなるオンラインRPGです。アーリーアクセスの間は無料で遊べます（Windows 11／10）。正式版で有料になった時も、それまでに遊んだ方はそのまま無料で遊べます。町の外の魔物を倒すと経験値と「グリム」（お金）が手に入り、レベルは最大60まで上がります。</p>
 <div class="note"><b>アーリーアクセス版（先行公開）</b>: 今遊べるのは<b>Lv60まで</b>と、<b>天空回廊の頂上まで</b>です。Lv61〜70と「空都篇」は正式版で遊べるようになります。</div>
 <figure><img src="img/王城大通り.jpg" alt="ロックヒルの町の王城大通り" loading="lazy" width="1120" height="630"><figcaption>はじまりの町「ロックヒル」。奥に見えるのが領主の城</figcaption></figure>
 <a class="story" href="https://towa219.github.io/GrimoireOnline/story/"><img src="https://towa219.github.io/GrimoireOnline/story/img/hero.jpg" alt="空に浮かぶ魔導書を見上げる冒険者" loading="lazy"><span><b>グリオン物語</b>この世界は、空に浮かぶ一冊の魔導書に綴られている──。七つの冠と、空に消えた都をめぐる物語。Lv60の先に続く続編の構想も。遊ぶ前に読むと、町や魔物の見え方が変わります。</span></a>
@@ -639,7 +642,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 
 <section id="high"><h2>高レベルでできるようになること</h2>
 <h3>天空回廊（誰でも）</h3>
-<p>町の「回廊の案内人」に話すと、戦わずに跳んで登る塔へ送られます。落ちても死なず、通り過ぎた一番上の「かがり火」へ戻されるだけ。入ると10分のタイムアタックが始まり、途中のかがり火4か所で各80グリム、頂上で200グリム、速く登るほどボーナス（3分未満+600、5分未満+700、8分未満+350、10分未満+100）。報酬は1日3回まで、1日の合計は1500グリムまで（それを超えても登ることはできます）。踏破で称号「空駆ける者」、3分未満で「天翔ける者」。回廊の中だけジャンプが高くなります。絆とクルルは連れて入れません。</p>
+<p>町の「回廊の案内人」に話すと、戦わずに跳んで登る塔へ送られます。落ちても死なず、通り過ぎた一番上の「かがり火」へ戻されるだけ。入ると10分のタイムアタックが始まります。途中のかがり火は通過の印で、グリムは頂上へ着いた時だけ受け取れます。その日の初めての踏破で300〜600グリム（基本250グリムに速さのボーナス：3分未満+350、5分未満+300、8分未満+175、10分未満+50）、2回目以降は1割です。報酬は1日3回まで、1日の合計は1500グリムまで（それを超えても登ることはできます）。踏破で称号「空駆ける者」、3分未満で「天翔ける者」。回廊の中だけジャンプが高くなります。絆とクルルは連れて入れません。</p>
 <p><b>コースは日替わり</b>（毎朝4時に切り替わり）。<b>風見の螺旋</b>（青空と石の足場）→<b>茜雲の浮島</b>（夕焼けの雲。行き来する台・上下する台・跳ね台）→<b>星渡りの天橋</b>（夜空。星の台・現れては消える台・一本橋）の順に回ります。茜雲と星渡りは難しめで、跳ぶ距離も高さも一つずつ違い、丸・四角・三角・六角の足場や、降りてから登る所・行き止まりの分かれ道があります。誰でも登れる道は下の2つの層だけです。今日のコースは案内人の頭の上に「本日：○○」と出ます。自己ベストと最速記録はコースごとに残ります。中継のかがり火と頂上では音が鳴ります。頂上の先（空都篇）は正式版で開きます。</p>
 <h3>クルルとの新しい冒険（クルルの笛を持っている人）</h3>
 <p>クルルの笛を手に入れた後は、クルルならではの動き（浮き走りや滑空）を生かした新しい依頼が加わります。どこで何ができるかは、遊んでからのお楽しみです。</p>
@@ -723,7 +726,7 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 <ul>
 <li><b>だいじなもの</b>: 依頼で預かる品（証・地図・通行証など）。バッグを使わず、売れません。</li>
 <li><b>精石</b>: 魔物が落とす合成の素。火=金属、氷=研ぎ、風=布と革、土=鉱石と木材、雷=高位の武具、水=薬と料理。</li>
-<li><b>宝箱の鍵</b>: ゾーンにある宝箱を開ける。魔物がまれに落とします。学者の依頼「女王の宝珠を求めて」（Lv25）は町はずれの古い宝箱を開ける依頼。</li>
+<li><b>宝箱の鍵</b>: ゾーンにある宝箱を開ける。魔物がまれに落とします。学者の依頼「女王の宝珠を求めて」（Lv25）は町はずれの古い宝箱を開ける依頼。ロックヒル北部の通常の宝箱は、誰かが開けると同じゾーンの別の場所に戻ります。依頼の古い宝箱は動きません。</li>
 <li><b>レア／譲渡不可</b>: 〈レア〉は1つしか持てない、〈譲渡不可〉は人に渡せない品です。</li>
 <li><b>バッグからあふれた品</b>: まず保管庫へ送られ、保管庫もいっぱいなら郵便で届きます。画面の知らせで送り先を確かめられます。</li>
 </ul>
@@ -800,4 +803,4 @@ footer{max-width:var(--max);margin:0 auto;padding:20px 16px 40px;color:var(--dim
 </section>
 
 </main></div>
-<footer>グリオン攻略ガイド ─ 対応版 1.5.571（2026年10月24日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
+<footer>グリオン攻略ガイド ─ 対応版 1.5.571（2026年10月25日）。数字はゲームのデータ表から自動で作っています。内容はゲームの更新で変わることがあります。<br>更新のお知らせ: <a href="https://x.com/GrimoireOnline" target="_blank" rel="noopener">X(旧Twitter) @GrimoireOnline</a></footer>
