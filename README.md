@@ -1,46 +1,51 @@
-# Grimoire Online
+# グリモワールオンライン（グリオン）
 
-自作MMORPG「Grimoire Online」のクライアント配布ページです。
+グリモワールオンライン（グリオン）は、みんなで遊ぶ MMORPG 風のオンラインゲームです。
 
-![世界の様子](screenshot.png)
+## リンク
 
-## 攻略ガイド(初めての方へ)
+- [グリオン攻略ガイド](https://towa219.github.io/GrimoireOnline/)
+- [ボタンの割り当て](https://towa219.github.io/GrimoireOnline/controller/)
+- [グリオン物語](https://towa219.github.io/GrimoireOnline/story/)
+- [Web 版](https://grimoire-online.org)
 
-操作の覚え方から、最初の一歩、レベルごとの狩り場と依頼、仲間(絆)の集め方までを写真付きでまとめた
-**[グリオン攻略ガイド](https://towa219.github.io/GrimoireOnline/)** を用意しました。遊び始める前に一度ご覧ください。
+## 遊び方
 
-## ダウンロード
+現在は [フリーゲーム夢現](https://freegame-mugen.jp/onlinegame/game_15450.html) と [itch.io](https://towa219.itch.io/grimoire-online) から遊べます。
 
-最新版は **[Releases](../../releases/latest)** からどうぞ。
+Steam 版を準備中です。公開後は Steam のページから遊べます。
 
-1. `GrimoireOnline_Setup.exe` をダウンロードして実行
-2. インストール先を選んで進める(途中で「管理者の確認」が出たら「はい」)
-3. デスクトップの「Grimoire Online」から起動
-4. タイトル画面でアカウント名とパスワードを入力(初回は自動で新規登録されます)
+アーリーアクセスの間は無料です。正式版で有料になった時も、それまでに遊んだ方はそのまま無料で遊べます。
 
-ゲームのサーバーへの接続に必要なもの(Cloudflare WARP)はインストーラーが一緒に入れ、
-自動でつながります。ネットワークの設定や別ソフトの操作は要りません。
-WARP はこのゲームのサーバー宛ての通信だけを扱い、ほかの通信には触れません。
+## お問い合わせ
 
-**すでに遊んでいる人へ:** 入れ直す必要はありません。今までの接続方式(ZeroTier)のまま遊べます。
-ゲーム本体は起動時に自動で最新版に更新されます。
+Studio Towa
 
-## 動作環境
-
-- Windows 11 (64bit) のみ
-- DirectX 12 対応GPU
-- 空き容量 約2GB
-
-## 遊び方(最初の一歩)
-
-- WASD=移動 / マウス右ドラッグ=視点 / Tab=敵をターゲット / R=たたかう
-- H=休憩 / P=そうび / I=もちもの / J=クエスト日誌 / M=地図
-- 街の「!」マークのNPCからクエストを受けられます
-
-## 注意
-
-- サーバーの稼働時間内のみ遊べます(稼働状況はこのページでお知らせします)
-- 個人開発の実験的なゲームです。データの巻き戻し等が起きることがあります
+Studio.Towa27@gmail.com
 
 ---
-このリポジトリは配布専用です(ソースコードは含まれません)。
+
+# Grimoire Online (Grion)
+
+Grimoire Online (Grion) is an MMORPG-style online game to play together.
+
+## Links
+
+- [Grion Guide](https://towa219.github.io/GrimoireOnline/en/)
+- [Grion Controller Guide](https://towa219.github.io/GrimoireOnline/en/controller/)
+- [The Story of Grion](https://towa219.github.io/GrimoireOnline/en/story/)
+- [Web version](https://grimoire-online.org)
+
+## How to play
+
+You can currently play it through [Free Game Mugen](https://freegame-mugen.jp/onlinegame/game_15450.html) and [itch.io](https://towa219.itch.io/grimoire-online).
+
+The Steam version is in preparation. After launch, it will be available from the Steam page.
+
+The game is free to play during Early Access. If the full release becomes paid, everyone who played before then can keep playing for free.
+
+## Contact
+
+Studio Towa
+
+Studio.Towa27@gmail.com
