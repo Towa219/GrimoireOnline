@@ -1,6 +1,6 @@
 # グリモワールオンライン（グリオン）
 
-グリモワールオンライン（グリオン）は、無料の本格3D MMORPGです。
+グリモワールオンライン（グリオン）は、本格3D MMORPGです。
 
 ## リンク
 
@@ -27,7 +27,7 @@ Studio.Towa27@gmail.com
 
 # Grimoire Online (Grion)
 
-Grimoire Online (Grion) is a free 3D MMORPG.
+Grimoire Online (Grion) is a full-scale 3D MMORPG.
 
 ## Links
 
